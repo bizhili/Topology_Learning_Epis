@@ -98,4 +98,4 @@ celerybeat-schedule.db
 
 #others
 
-logs/
+results/
