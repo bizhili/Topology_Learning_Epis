@@ -13,3 +13,6 @@ python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGr
 python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph GEO --seed 11 --strains 3 --CMDprogress_93_119
 python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph GEO --seed 11 --strains 4 --CMDprogress_94_119
 python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph BA --seed 11 --strains 4 --CMDprogress_95_119
+python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph GEO --seed 11 --strains 4 --CMDprogress_96_119
+python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph WS --seed 13 --strains 4 --CMDprogress_97_119
+python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph ER --seed 14 --strains 4 --CMDprogress_98_119
