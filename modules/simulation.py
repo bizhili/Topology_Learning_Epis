@@ -44,7 +44,7 @@ def one_strain(
     timeHorizon: int,
     n: int,
     Amat: torch.Tensor,
-    time: int = 0,
+    startTime: int = 0,
     fromS: int = 0,
     device: str = "cpu",
 ) -> torch.Tensor:
@@ -71,7 +71,7 @@ def one_strain(
     stateNow = torch.stack([stateNowS, stateNowI, stateNowR])
     # noise = torch.randn((timeHorizon + 1), dtype=torch.float32, device=device) / 400
     for i in range(timeHorizon):
-        if i == time:
+        if i == startTime:
             stateNow[0, fromS] = 0.99
             stateNow[1, fromS] = 0.01
             deltaSs[-1][fromS] = 0.01
@@ -97,7 +97,10 @@ def multi_strains(
     """
     miniTime= 20
     extraDays= 15#15
-    timeHorizon= (paras.strains)*miniTime+extraDays
+    if paras.modelLoad in ["AA", "BA"]:
+        timeHorizon= (paras.strains)*miniTime+extraDays
+    else:
+        timeHorizon= miniTime+extraDays
     R0s= paras.R0s
     taus= paras.taus
     randomList= utils.select_nodes_accroding_to_degree(G, paras.strains, intense)
@@ -105,6 +108,9 @@ def multi_strains(
         Amat[i, i]= 1
     deltaSsList= []
     for i in range(paras.strains):
-        deltaSsList.append(one_strain(R0s[i], taus[i], timeHorizon, paras.n, Amat, time= i*20, fromS= randomList[i], device= device))
+        if paras.modelLoad in ["AA", "BA"]:
+            deltaSsList.append(one_strain(R0s[i], taus[i], timeHorizon, paras.n, Amat, startTime= i*20, fromS= randomList[i], device= device))
+        else:
+            deltaSsList.append(one_strain(R0s[i], taus[i], timeHorizon, paras.n, Amat, startTime= 0, fromS= randomList[i], device= device))
     deltaSsTensor= torch.stack(deltaSsList[0:paras.strains], dim= -1)
     return deltaSsTensor

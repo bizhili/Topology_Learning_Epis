@@ -107,8 +107,8 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         '--R0Std',
         type=float,
-        default= 4,
-        help='Setting the Std value of R0s, average distribution (float): 4(defult)'
+        default= 0.5,
+        help='Setting the Std value of R0s, average distribution (float): 0.5(defult)'
     )
     parser.add_argument(
         '--tauMean',
@@ -154,7 +154,6 @@ def read_arguments(parser: argparse.ArgumentParser) -> Paras:
     paras.seed = args.seed
     paras.n = args.n
     paras.strains = args.strains
-    paras.strains= 1
     paras.plot = "2d_geo" if args.randomGraph == "GEO" else "spring"
     paras.device = args.device
     paras.weightModel = args.weightModel

@@ -72,18 +72,9 @@ elif  paras.weightModel=="gravity":
     Aw= weight.gravity_model(G, pos, P, device= device)
 elif  paras.weightModel=="identical":
     Aw= weight.identical_model(A, 0.01, device= device)
-
-utils.log_print(printFlag,"\n\n\n.........................initialize..........................")
-utils.log_print(printFlag,"FileName:", fileName)
-utils.log_print(printFlag,"Using", paras.randomGraph,"random graph model")
-utils.log_print(printFlag,"Num of links:", G.number_of_edges())
 Zmat= A_mat.create_A_mat(Aw, P)
 Zmat2= A_mat.reverse_A_mat(Zmat-torch.eye(Aw.shape[0], dtype= torch.float32, device= Aw.device), P)
-utils.log_print(printFlag,"Reverse ZERO:", torch.sum(torch.abs(Zmat2-Aw)))
-utils.log_print(printFlag,"Num links weight bigger than 0.1:", torch.sum(Zmat>0.1)-paras.n)
-utils.log_print(printFlag,"Num links weight bigger than 0.05:", torch.sum(Zmat>0.05)-paras.n)
-utils.log_print(printFlag,"Num links weight bigger than 0.01:", torch.sum(Zmat>0.01)-paras.n)
-utils.log_print(printFlag,".............................................................")
+
 #plot this network
 if plotFlag==1:
     if paras.plot== "2d_geo":
@@ -101,23 +92,17 @@ R0s_taus= [[random.uniform(paras.R0Mean-paras.R0Std, paras.R0Mean+paras.R0Std),
             random.uniform(paras.tauMean-paras.tauStd, paras.tauMean+paras.tauStd)] for _ in range(40)]
 paras.R0s=  [ R0s_taus[i][0] for i in range(40)]
 paras.taus= [ R0s_taus[i][1] for i in range(40)]
-utils.log_print(printFlag,paras.R0s)
-utils.log_print(printFlag,paras.taus)
-deltaSsTensor= simulation.multi_strains(G, paras, Zmat, intense= paras.intense, device= device)
-deltaSs= deltaSsTensor.sum(dim= -1, keepdim= True)
-propition= deltaSsTensor/(deltaSs+1e-8)
-deltaSs= deltaSs.squeeze()#(1, 2, 20), dim of nodes, dim of heads, dim of signal
+deltaSsTensor= simulation.multi_strains(G, paras, Zmat, intense= paras.intense,  device= device)
 divide= deltaSsTensor.transpose(1, 2)
-utils.log_print(printFlag,divide.shape)
+#utils.log_print(printFlag,divide.shape)
 if plotFlag==1:
-    numPlot= 4
+    numPlot= 8
     fig, axs = plt.subplots(numPlot, 1, figsize=(10, 4))
     for i, ax in enumerate(axs):
-        ax.plot(deltaSs[i, :].cpu().detach())
+        ax.plot(deltaSsTensor[i, :].cpu().detach())
     # plt.xlabel("Time(days)")
     # plt.ylabel("Propotion of newly infective")
     # plt.title(f"Example of {numPlot} nodes epidemic newly infected.")
-
 
 
 
@@ -138,12 +123,18 @@ elif paras.modelLoad=="BB":
 elif paras.modelLoad=="infer2018":
     myMatch= nn.matchingB(timeHorizon+1, paras.strains, paras.n,  device= device)
     myEpi= nn.EpisB(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
-    
+
 optimizer1 = torch.optim.Adam(myMatch.parameters(),lr=2e-4)
 optimizer2 = torch.optim.Adam({myEpi.taus},lr=2e-4)
 optimizer3 = torch.optim.Adam({myEpi.R0dTaus},lr=2e-4)
 myloss= torch.nn.MSELoss(reduction='sum')
 losses= []
+if paras.modelLoad in ["infer2018", "AB", "BB"]:
+    threshold_value= 0.1
+    hook = nn.ThresholdHook(threshold_value)
+    myEpi.taus.register_hook(hook)
+    hook = nn.ThresholdHook(threshold_value)
+    myEpi.R0dTaus.register_hook(hook)
 
 
 
@@ -151,43 +142,57 @@ losses= []
 
 
 if paras.modelLoad== "infer2018":
-    for j in tqdm(range(paras.strains)):
+    for j in (range(paras.epoches)):
         optimizer1.zero_grad()
         optimizer2.zero_grad()
         optimizer3.zero_grad()
-        inferZmat= myMatch(divide)
+        inferZmat= myMatch(divide, paras.modelLoad)
         predSignal, signal, PreZ= myEpi(divide, inferZmat)
+        tempEye= torch.eye(paras.n, device= device)
         loss= myloss(predSignal[:, :, 0:-1], signal[:, :, 1:])*10+ torch.var(myEpi.taus, dim= 0).sum()\
-            + torch.var(myEpi.R0dTaus, dim= 0).sum()+1e-3*torch.sum(torch.log(torch.sum(inferZmat, dim= 1)))
-        losses.append((loss-1e-3*torch.sum(torch.log(torch.sum(inferZmat, dim= 1)))).item())
+            + torch.var(myEpi.R0dTaus, dim= 0).sum()+1e-5*torch.sum(torch.log(torch.sum(PreZ-tempEye, dim= 1)))
+        losses.append((loss-1e-5*torch.sum(torch.log(torch.sum(PreZ-tempEye, dim= 1)))).item())
+        if torch.isnan(loss).any():
+            utils.log_print(printFlag, f"meet nan value at {j}")#
+            break
         loss.backward(retain_graph=True)
         optimizer1.step()
         optimizer2.step()
         optimizer3.step()
 else:
-    for j in tqdm(range(paras.strains)):
+    for j in (range(paras.epoches)):
         optimizer1.zero_grad()
         optimizer2.zero_grad()
         optimizer3.zero_grad()
-        inferZmat= myMatch(divide)
+        inferZmat= myMatch(divide, paras.modelLoad)
         predSignal, signal, PreZ= myEpi(divide, inferZmat)
         loss= myloss(predSignal[:, :, 0:-1], signal[:, :, 1:])*10+ torch.var(myEpi.taus, dim= 0).sum()\
             + torch.var(myEpi.R0dTaus, dim= 0).sum()
+        if torch.isnan(loss).any():
+            utils.log_print(printFlag, f"meet nan value at {j}")#
+            break
         losses.append(loss.item())
         loss.backward(retain_graph=True)
         optimizer1.step()
         optimizer2.step()
         optimizer3.step()
-
-utils.log_print(printFlag,loss/timeHorizon*100)#
+utils.log_print(printFlag,"\n\n\n.........................initialize..........................")
+utils.log_print(printFlag,"FileName:", fileName)
+utils.log_print(printFlag,"Strains:", paras.strains)
+utils.log_print(printFlag,"Using", paras.randomGraph,"random graph model")
+utils.log_print(printFlag,"Num of links:", G.number_of_edges())
+utils.log_print(printFlag,"Reverse ZERO:", torch.sum(torch.abs(Zmat2-Aw)))
+utils.log_print(printFlag,"Num links weight bigger than 0.1:", torch.sum(Zmat>0.1)-paras.n)
+utils.log_print(printFlag,"Num links weight bigger than 0.05:", torch.sum(Zmat>0.05)-paras.n)
+utils.log_print(printFlag,"Num links weight bigger than 0.01:", torch.sum(Zmat>0.01)-paras.n)
+utils.log_print(printFlag,".............................................................")
+utils.log_print(printFlag,losses[-1]/timeHorizon*100)#
 #1， 2， 3， 4
 #0.0145, 0.0073, 0.0066，0.0050
 #0.0081, 0.0068, 0.0049, 0.0044
 #0.0118, 0.0087, 0.0093, 0.0116
 #0.0191, 0.0178, 0.0150, 0.0114
 #0.0117, 
-
-
 
 
 
@@ -200,25 +205,29 @@ utils.log_print(printFlag,paras.R0s[0: paras.strains])
 utils.log_print(printFlag,myEpi.taus[0])
 utils.log_print(printFlag,(myEpi.taus*myEpi.R0dTaus)[0])
 PreA= A_mat.reverse_A_mat(PreZ-torch.eye(paras.n, device= device), P)
+IMatrix= torch.eye(paras.n, device= device)
 utils.log_print(printFlag,"err1:", torch.sqrt((PreA-Aw)**2).sum())
 utils.log_print(printFlag,"err2:", ((PreA>thred)^(Aw>thred)).sum())
 utils.log_print(printFlag,"cosine similarity:", evaluate.cosine_similarity(Aw, PreA))
-utils.log_print(printFlag,"cosine similarity 2:", evaluate.cosine_similarity(Aw>thred, PreA>thred))
+utils.log_print(printFlag,"cosine similarity 2:", evaluate.cosine_similarity((Aw>thred)+IMatrix, (PreA>thred)+IMatrix))
 utils.log_print(printFlag,"spectral_analysis:", evaluate.spectral_analysis(Aw, PreA))
-utils.log_print(printFlag,"edge_correctness:", evaluate.edge_correctness(Aw>thred, PreA>thred))
-utils.log_print(printFlag,"jaccard_index:", evaluate.jaccard_index(Aw>thred, PreA>thred))
+utils.log_print(printFlag,"spectral_analysis 2:", evaluate.spectral_analysis((Aw>thred)+IMatrix, (PreA>thred)+IMatrix))
+utils.log_print(printFlag,"edge_correctness:", evaluate.edge_correctness((Aw>thred)+IMatrix, (PreA>thred)+IMatrix))
+utils.log_print(printFlag,"jaccard_index:", evaluate.jaccard_index((Aw>thred)+IMatrix, (PreA>thred)+IMatrix))
 utils.log_print(printFlag,torch.var(myEpi.taus, dim= 0))
 utils.log_print(printFlag,torch.var(myEpi.R0dTaus, dim= 0))
 utils.log_print(printFlag,torch.sum(predSignal[29, :, 0:-1])/paras.strains)
 utils.log_print(printFlag,torch.sum(signal[29, :, 1:])/paras.strains)
 startV= 5
-deltaV= 6
+deltaV= 7
 utils.log_print(printFlag,PreA[startV:startV+deltaV, startV:startV+deltaV])
 utils.log_print(printFlag,Aw[startV:startV+deltaV, startV:startV+deltaV])
 np.savez("results/"+fileName+".npz", A= Aw.cpu().detach(), Apre= PreA.cpu().detach(), 
          cosine_similarity= evaluate.cosine_similarity(Aw, PreA).item(),
          loss= losses, taus= paras.taus, r0s= paras.R0s, tausP= myEpi.taus.cpu().detach(), 
          r0sP= (myEpi.R0dTaus*myEpi.taus).cpu().detach(), signal= signal.cpu().detach(), predSignal= predSignal.cpu().detach())
+
+
 
 
 

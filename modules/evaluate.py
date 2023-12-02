@@ -23,7 +23,7 @@ def edge_correctness(Z, preZ):
     
 def jaccard_index(Z, preZ):
     numerator= torch.sum(Z*preZ)
-    denominator= torch.sum(Z+preZ)
+    denominator= torch.sum((Z+preZ)-Z*preZ)
     return numerator/denominator
 
 

@@ -1,0 +1,9 @@
+Mon Nov 27 06:11:58 IST 2023
+
+SLURM_JOBID:		 979710
+SLURM_JOB_NODELIST:	 ise-gpu-04 
+
+
+python run.py --epoches 60000 --modelLoad infer2018 --weightModel identical --randomGraph WS --seed 11 --strains 3 --CMDprogress_0_59
+python run.py --epoches 60000 --modelLoad BB --weightModel identical --randomGraph GEO --seed 13 --strains 3 --CMDprogress_1_59
+slurmstepd: error: *** JOB 979710 ON ise-gpu-04 CANCELLED AT 2023-11-27T07:56:10 ***

@@ -12,6 +12,7 @@ build/
 *.egg-info/
 *.egg/
 
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
@@ -94,3 +95,7 @@ dmypy.json
 # Celery stuff
 celerybeat-schedule
 celerybeat-schedule.db
+
+#others
+
+logs/
