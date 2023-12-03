@@ -97,7 +97,7 @@ def multi_strains(
     """
     miniTime= 20
     extraDays= 15#15
-    if paras.modelLoad in ["AA", "BA"]:
+    if paras.modelLoad in []:
         timeHorizon= (paras.strains)*miniTime+extraDays
     else:
         timeHorizon= miniTime+extraDays
@@ -108,7 +108,7 @@ def multi_strains(
         Amat[i, i]= 1
     deltaSsList= []
     for i in range(paras.strains):
-        if paras.modelLoad in ["AA", "BA"]:
+        if paras.modelLoad in []:
             deltaSsList.append(one_strain(R0s[i], taus[i], timeHorizon, paras.n, Amat, startTime= i*20, fromS= randomList[i], device= device))
         else:
             deltaSsList.append(one_strain(R0s[i], taus[i], timeHorizon, paras.n, Amat, startTime= 0, fromS= randomList[i], device= device))
