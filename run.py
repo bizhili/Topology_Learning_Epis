@@ -45,7 +45,7 @@ fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weigh
 
 printFlag= 0
 if printFlag!=1:
-    logging.basicConfig(filename="logs/"+paras.modelLoad+".log", level=logging.INFO)
+    logging.basicConfig(filename="logs/"+paras.modelLoad+".out", level=logging.INFO)
 
 plotFlag= 0
 
