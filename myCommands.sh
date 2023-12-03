@@ -1,77 +1,46 @@
-echo "python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph GEO --seed 14 --strains 3 --CMDprogress_87_119"
-python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph GEO --seed 14 --strains 3 --CMDprogress_87_119 &
-echo "python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph ER --seed 12 --strains 4 --CMDprogress_88_119"
-python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph ER --seed 12 --strains 4 --CMDprogress_88_119 &
-echo "python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph BA --seed 13 --strains 4 --CMDprogress_89_119"
-python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph BA --seed 13 --strains 4 --CMDprogress_89_119 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph ER --seed 12 --strains 4 --CMDprogress_0_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph ER --seed 12 --strains 4 --CMDprogress_0_19 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph WS --seed 11 --strains 4 --CMDprogress_1_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph WS --seed 11 --strains 4 --CMDprogress_1_19 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph WS --seed 13 --strains 4 --CMDprogress_2_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph WS --seed 13 --strains 4 --CMDprogress_2_19 &
 wait
-echo "python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph GEO --seed 13 --strains 4 --CMDprogress_90_119"
-python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph GEO --seed 13 --strains 4 --CMDprogress_90_119 &
-echo "python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph ER --seed 10 --strains 4 --CMDprogress_91_119"
-python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph ER --seed 10 --strains 4 --CMDprogress_91_119 &
-echo "python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph GEO --seed 14 --strains 3 --CMDprogress_92_119"
-python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph GEO --seed 14 --strains 3 --CMDprogress_92_119 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph BA --seed 12 --strains 4 --CMDprogress_3_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph BA --seed 12 --strains 4 --CMDprogress_3_19 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph BA --seed 13 --strains 4 --CMDprogress_4_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph BA --seed 13 --strains 4 --CMDprogress_4_19 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph GEO --seed 14 --strains 4 --CMDprogress_5_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph GEO --seed 14 --strains 4 --CMDprogress_5_19 &
 wait
-echo "python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph GEO --seed 11 --strains 3 --CMDprogress_93_119"
-python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph GEO --seed 11 --strains 3 --CMDprogress_93_119 &
-echo "python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph GEO --seed 11 --strains 4 --CMDprogress_94_119"
-python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph GEO --seed 11 --strains 4 --CMDprogress_94_119 &
-echo "python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph BA --seed 11 --strains 4 --CMDprogress_95_119"
-python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph BA --seed 11 --strains 4 --CMDprogress_95_119 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph WS --seed 12 --strains 4 --CMDprogress_6_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph WS --seed 12 --strains 4 --CMDprogress_6_19 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph WS --seed 14 --strains 4 --CMDprogress_7_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph WS --seed 14 --strains 4 --CMDprogress_7_19 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph BA --seed 14 --strains 4 --CMDprogress_8_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph BA --seed 14 --strains 4 --CMDprogress_8_19 &
 wait
-echo "python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph GEO --seed 11 --strains 4 --CMDprogress_96_119"
-python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph GEO --seed 11 --strains 4 --CMDprogress_96_119 &
-echo "python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph WS --seed 13 --strains 4 --CMDprogress_97_119"
-python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph WS --seed 13 --strains 4 --CMDprogress_97_119 &
-echo "python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph ER --seed 14 --strains 4 --CMDprogress_98_119"
-python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph ER --seed 14 --strains 4 --CMDprogress_98_119 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph BA --seed 10 --strains 4 --CMDprogress_9_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph BA --seed 10 --strains 4 --CMDprogress_9_19 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph WS --seed 10 --strains 4 --CMDprogress_10_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph WS --seed 10 --strains 4 --CMDprogress_10_19 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph BA --seed 11 --strains 4 --CMDprogress_11_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph BA --seed 11 --strains 4 --CMDprogress_11_19 &
 wait
-echo "python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph BA --seed 14 --strains 3 --CMDprogress_99_119"
-python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph BA --seed 14 --strains 3 --CMDprogress_99_119 &
-echo "python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph GEO --seed 14 --strains 3 --CMDprogress_100_119"
-python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph GEO --seed 14 --strains 3 --CMDprogress_100_119 &
-echo "python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph BA --seed 13 --strains 4 --CMDprogress_101_119"
-python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph BA --seed 13 --strains 4 --CMDprogress_101_119 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph GEO --seed 12 --strains 4 --CMDprogress_12_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph GEO --seed 12 --strains 4 --CMDprogress_12_19 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph ER --seed 13 --strains 4 --CMDprogress_13_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph ER --seed 13 --strains 4 --CMDprogress_13_19 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph GEO --seed 13 --strains 4 --CMDprogress_14_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph GEO --seed 13 --strains 4 --CMDprogress_14_19 &
 wait
-echo "python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph ER --seed 13 --strains 3 --CMDprogress_102_119"
-python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph ER --seed 13 --strains 3 --CMDprogress_102_119 &
-echo "python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph WS --seed 14 --strains 3 --CMDprogress_103_119"
-python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph WS --seed 14 --strains 3 --CMDprogress_103_119 &
-echo "python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph ER --seed 14 --strains 3 --CMDprogress_104_119"
-python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph ER --seed 14 --strains 3 --CMDprogress_104_119 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph ER --seed 10 --strains 4 --CMDprogress_15_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph ER --seed 10 --strains 4 --CMDprogress_15_19 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph ER --seed 11 --strains 4 --CMDprogress_16_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph ER --seed 11 --strains 4 --CMDprogress_16_19 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph GEO --seed 11 --strains 4 --CMDprogress_17_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph GEO --seed 11 --strains 4 --CMDprogress_17_19 &
 wait
-echo "python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph BA --seed 11 --strains 4 --CMDprogress_105_119"
-python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph BA --seed 11 --strains 4 --CMDprogress_105_119 &
-echo "python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph GEO --seed 12 --strains 3 --CMDprogress_106_119"
-python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph GEO --seed 12 --strains 3 --CMDprogress_106_119 &
-echo "python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph BA --seed 11 --strains 3 --CMDprogress_107_119"
-python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph BA --seed 11 --strains 3 --CMDprogress_107_119 &
-wait
-echo "python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph ER --seed 14 --strains 3 --CMDprogress_108_119"
-python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph ER --seed 14 --strains 3 --CMDprogress_108_119 &
-echo "python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph WS --seed 12 --strains 4 --CMDprogress_109_119"
-python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph WS --seed 12 --strains 4 --CMDprogress_109_119 &
-echo "python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph WS --seed 14 --strains 4 --CMDprogress_110_119"
-python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph WS --seed 14 --strains 4 --CMDprogress_110_119 &
-wait
-echo "python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph BA --seed 14 --strains 4 --CMDprogress_111_119"
-python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph BA --seed 14 --strains 4 --CMDprogress_111_119 &
-echo "python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph ER --seed 12 --strains 3 --CMDprogress_112_119"
-python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph ER --seed 12 --strains 3 --CMDprogress_112_119 &
-echo "python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph ER --seed 14 --strains 4 --CMDprogress_113_119"
-python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph ER --seed 14 --strains 4 --CMDprogress_113_119 &
-wait
-echo "python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph WS --seed 10 --strains 4 --CMDprogress_114_119"
-python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph WS --seed 10 --strains 4 --CMDprogress_114_119 &
-echo "python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph ER --seed 12 --strains 4 --CMDprogress_115_119"
-python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph ER --seed 12 --strains 4 --CMDprogress_115_119 &
-echo "python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph WS --seed 10 --strains 3 --CMDprogress_116_119"
-python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph WS --seed 10 --strains 3 --CMDprogress_116_119 &
-wait
-echo "python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph BA --seed 10 --strains 4 --CMDprogress_117_119"
-python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph BA --seed 10 --strains 4 --CMDprogress_117_119 &
-echo "python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph WS --seed 11 --strains 4 --CMDprogress_118_119"
-python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph WS --seed 11 --strains 4 --CMDprogress_118_119 &
-echo "python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph WS --seed 13 --strains 4 --CMDprogress_119_119"
-python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph WS --seed 13 --strains 4 --CMDprogress_119_119 &
-wait
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph ER --seed 14 --strains 4 --CMDprogress_18_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph ER --seed 14 --strains 4 --CMDprogress_18_19 &
+echo "python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph GEO --seed 10 --strains 4 --CMDprogress_19_19"
+python run.py --epoches 100000 --modelLoad BA --weightModel identical --randomGraph GEO --seed 10 --strains 4 --CMDprogress_19_19 &
