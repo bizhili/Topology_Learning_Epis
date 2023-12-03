@@ -43,7 +43,7 @@ def continious_to_sparcity(my_tensor, top= 400):
     flat_tensor = my_tensor.flatten()
 
     # Get the indices of the top 400 elements
-    top_indices = torch.topk(flat_tensor, k=400).indices
+    top_indices = torch.topk(flat_tensor, k=int(top.item())).indices
 
     # Create a new tensor with zeros
     output_tensor = torch.zeros_like(flat_tensor)

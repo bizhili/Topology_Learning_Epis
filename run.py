@@ -41,7 +41,7 @@ paras= pramameters.read_arguments(parser)
 random.seed(paras.seed)
 
 #results and logs file name
-fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}_{paras.intense}_{paras.epoches}"
+fileName= f"{paras.modelLoad}/{paras.modelLoad}R_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}_{paras.intense}_{paras.epoches}"
 
 printFlag= 0
 if printFlag!=1:
@@ -198,22 +198,25 @@ utils.log_print(printFlag,losses[-1]/timeHorizon*100)#
 
 
 
+
 #save: A, preA, losses, taus, pretaus, R0s, preR0s, [errors]
-thred= 1e-3
 utils.log_print(printFlag,paras.taus[0: paras.strains])
 utils.log_print(printFlag,paras.R0s[0: paras.strains])
 utils.log_print(printFlag,myEpi.taus[0])
 utils.log_print(printFlag,(myEpi.taus*myEpi.R0dTaus)[0])
 PreA= A_mat.reverse_A_mat(PreZ-torch.eye(paras.n, device= device), P)
 IMatrix= torch.eye(paras.n, device= device)
+linksNum= torch.sum(Aw/0.01)
+PreAse= utils.continious_to_sparcity(PreA, linksNum)+IMatrix
+Awse= utils.continious_to_sparcity(Aw, linksNum)+IMatrix
 utils.log_print(printFlag,"err1:", torch.sqrt((PreA-Aw)**2).sum())
-utils.log_print(printFlag,"err2:", ((PreA>thred)^(Aw>thred)).sum())
+utils.log_print(printFlag,"err2:", torch.abs(PreAse-Awse).sum())
 utils.log_print(printFlag,"cosine similarity:", evaluate.cosine_similarity(Aw, PreA))
-utils.log_print(printFlag,"cosine similarity 2:", evaluate.cosine_similarity((Aw>thred)+IMatrix, (PreA>thred)+IMatrix))
+utils.log_print(printFlag,"cosine similarity 2:", evaluate.cosine_similarity(Awse, PreAse))
 utils.log_print(printFlag,"spectral_analysis:", evaluate.spectral_analysis(Aw, PreA))
-utils.log_print(printFlag,"spectral_analysis 2:", evaluate.spectral_analysis((Aw>thred)+IMatrix, (PreA>thred)+IMatrix))
-utils.log_print(printFlag,"edge_correctness:", evaluate.edge_correctness((Aw>thred)+IMatrix, (PreA>thred)+IMatrix))
-utils.log_print(printFlag,"jaccard_index:", evaluate.jaccard_index((Aw>thred)+IMatrix, (PreA>thred)+IMatrix))
+#utils.log_print(printFlag,"spectral_analysis 2:", evaluate.spectral_analysis(Awse, PreAse))
+utils.log_print(printFlag,"edge_correctness:", evaluate.edge_correctness(Awse, PreAse))
+utils.log_print(printFlag,"jaccard_index:", evaluate.jaccard_index(Awse, PreAse))
 utils.log_print(printFlag,torch.var(myEpi.taus, dim= 0))
 utils.log_print(printFlag,torch.var(myEpi.R0dTaus, dim= 0))
 utils.log_print(printFlag,torch.sum(predSignal[29, :, 0:-1])/paras.strains)
@@ -226,6 +229,7 @@ np.savez("results/"+fileName+".npz", A= Aw.cpu().detach(), Apre= PreA.cpu().deta
          cosine_similarity= evaluate.cosine_similarity(Aw, PreA).item(),
          loss= losses, taus= paras.taus, r0s= paras.R0s, tausP= myEpi.taus.cpu().detach(), 
          r0sP= (myEpi.R0dTaus*myEpi.taus).cpu().detach(), signal= signal.cpu().detach(), predSignal= predSignal.cpu().detach())
+
 
 
 
