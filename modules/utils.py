@@ -1,6 +1,7 @@
 import random
 import logging
 from datetime import datetime
+import torch
 
 def select_nodes_accroding_to_degree(G, strains, intense= 0):
     #G:
@@ -36,3 +37,21 @@ def log_print(flag, *args):
     else:
         # If flag is not 1, log to a file
         logging.info(' '.join(map(str, args)))
+
+def continious_to_sparcity(my_tensor, top= 400):
+    # Flatten the array to a 1D array
+    flat_tensor = my_tensor.flatten()
+
+    # Get the indices of the top 400 elements
+    top_indices = torch.topk(flat_tensor, k=400).indices
+
+    # Create a new tensor with zeros
+    output_tensor = torch.zeros_like(flat_tensor)
+
+    # Set the top 400 elements to 1
+    output_tensor[top_indices] = 1
+
+    # Reshape the tensor back to its original shape
+    output_tensor = output_tensor.view(my_tensor.shape)
+
+    return output_tensor

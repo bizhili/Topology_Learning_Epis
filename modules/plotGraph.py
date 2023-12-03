@@ -1,6 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.colors import Normalize
 
 
 def plot_2d_geo(G: nx.Graph, pos: dict) -> None:
@@ -29,6 +30,7 @@ def plot_2d_geo(G: nx.Graph, pos: dict) -> None:
 
 
 
+
 def plot_spring_layout(G: nx.Graph) -> None:
     """Plot a spring layout graph.
 
@@ -53,3 +55,17 @@ def plot_spring_layout(G: nx.Graph) -> None:
     plt.show()
     plt.show()
         
+def plot_adjacenty(trueGraph, preGraphs=[], campThis= "viridis"):
+    maxValue= 0
+
+    for preGraph in preGraphs:
+        maxTemp= np.max(preGraph)
+        maxValue= maxTemp if maxTemp>maxValue else maxValue
+
+    plt.figure(figsize=(6*len(preGraphs), 6))
+    plt.subplot(1, 5, 1)
+    plt.imshow(trueGraph, cmap= campThis, norm=Normalize(vmin=0, vmax= maxValue))
+    plt.title('Real graph')
+
+    for i in range(len(preGraphs)):
+        pass

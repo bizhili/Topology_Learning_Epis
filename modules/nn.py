@@ -23,13 +23,13 @@ class matchingA(torch.nn.Module):
 
         self.myEye= torch.eye(n, dtype= torch.float32, device= device)
         self.myMask= torch.ones(n, dtype= torch.float32, device= device)- self.myEye
-        self.myRelu= torch.nn.Sigmoid()
+        self.mySig= torch.nn.Sigmoid()
     def forward(self, x, mode= 0): #[50, 2, timeDim]
         transU= (self.Wu(x)).view(self.n, 1, self.channel*x.shape[1], self.midLayer)#[50, 1, 2*channel, midlayer]
         transV= (self.Wv(x)).view(1, self.n, self.channel*x.shape[1], self.midLayer)#[50, 1, 2*channel, midlayer]
         Atemp = F.cosine_similarity(transU, transV, dim=-1)
         Anorm= self.Wnorm(Atemp)
-        Ainfer= self.myRelu(Anorm+self.AmatBias[..., None])*self.myMask[..., None]
+        Ainfer= self.mySig(Anorm+self.AmatBias[..., None])*self.myMask[..., None]
         return Ainfer.squeeze()
     
 #neural network to compute the SIR spidemic gradient
