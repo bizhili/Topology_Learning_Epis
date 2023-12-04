@@ -1,9 +1,24 @@
 import torch
 import torch.nn.functional as F
 
+def pearson_correlation(x, y, dim=0):
+    # Calculate means
+    mean_x = torch.mean(x, dim=dim, keepdim=True)
+    mean_y = torch.mean(y, dim=dim, keepdim=True)
+
+    # Calculate covariance and variances
+    cov_xy = torch.mean((x - mean_x) * (y - mean_y), dim=dim, keepdim=True)
+    var_x = torch.mean((x - mean_x)**2, dim=dim, keepdim=True)
+    var_y = torch.mean((y - mean_y)**2, dim=dim, keepdim=True)
+
+    # Calculate Pearson correlation coefficient
+    corr_coeff = cov_xy / (torch.sqrt(var_x) * torch.sqrt(var_y))
+
+    return corr_coeff
+
 #neural network to compute similarity of two metapopulation nodes
 class matchingA(torch.nn.Module):
-    def __init__(self, timeDim, strainDim, n, channel= 3, midLayer= 30, device= "cpu"):
+    def __init__(self, timeDim, strainDim, n, channel= 3, midLayer= 40, device= "cpu"):
         super(matchingA, self).__init__()
 
         self.channel=  channel
@@ -12,6 +27,8 @@ class matchingA(torch.nn.Module):
 
         self.Wu= torch.nn.Linear(timeDim, midLayer*channel, device= device)
         self.Wv= torch.nn.Linear(timeDim, midLayer*channel, device= device)
+
+        self.scalar_a = torch.nn.Parameter(torch.tensor(0.0), requires_grad=True)
 
         #self.midU= torch.nn.Linear(midLayer, midLayer, device= device)
         #self.midV= torch.nn.Linear(midLayer, midLayer, device= device)
@@ -24,12 +41,22 @@ class matchingA(torch.nn.Module):
         self.myEye= torch.eye(n, dtype= torch.float32, device= device)
         self.myMask= torch.ones(n, dtype= torch.float32, device= device)- self.myEye
         self.mySig= torch.nn.Sigmoid()
+        self.mySig2= torch.nn.Sigmoid()
+
     def forward(self, x, mode= 0): #[50, 2, timeDim]
         transU= (self.Wu(x)).view(self.n, 1, self.channel*x.shape[1], self.midLayer)#[50, 1, 2*channel, midlayer]
-        transV= (self.Wv(x)).view(1, self.n, self.channel*x.shape[1], self.midLayer)#[50, 1, 2*channel, midlayer]
-        Atemp = F.cosine_similarity(transU, transV, dim=-1)
-        Anorm= self.Wnorm(Atemp)
-        Ainfer= self.mySig(Anorm+self.AmatBias[..., None])*self.myMask[..., None]
+
+        transV= (self.Wv(x)).view(1, self.n, self.channel*x.shape[1], self.midLayer)#[1, 50, 2*channel, midlayer]
+
+        Atemp = F.cosine_similarity(transU, transV, dim=-1)#[50, 50, 2*channel]
+        #Atemp = pearson_correlation(transU, transV, dim= -1).squeeze()
+
+
+        Anorm= self.Wnorm(Atemp)#[50, 50]
+        scalar_sig= self.mySig2(self.scalar_a)
+        ATemp= Anorm+self.AmatBias[..., None]
+        ATemp2= scalar_sig*ATemp+(1-scalar_sig)*ATemp.transpose(0, 1)
+        Ainfer= self.mySig(ATemp2)*self.myMask[..., None]
         return Ainfer.squeeze()
     
 #neural network to compute the SIR spidemic gradient

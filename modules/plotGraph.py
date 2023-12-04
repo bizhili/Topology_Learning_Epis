@@ -62,10 +62,26 @@ def plot_adjacenty(trueGraph, preGraphs=[], campThis= "viridis"):
         maxTemp= np.max(preGraph)
         maxValue= maxTemp if maxTemp>maxValue else maxValue
 
-    plt.figure(figsize=(6*len(preGraphs), 6))
-    plt.subplot(1, 5, 1)
+    plt.figure(figsize=(6*(len(preGraphs)+1), 6))
+    plt.subplot(1, len(preGraphs)+1, 1)
     plt.imshow(trueGraph, cmap= campThis, norm=Normalize(vmin=0, vmax= maxValue))
+    colorbar =plt.colorbar(shrink=0.01)
+    colorbar.ax.set_axis_off()
     plt.title('Real graph')
 
-    for i in range(len(preGraphs)):
-        pass
+    for i in range(len(preGraphs)-1):
+        plt.subplot(1, len(preGraphs)+1, i+2)
+        plt.imshow(preGraphs[2], cmap= campThis, norm=Normalize(vmin=0, vmax= maxValue))
+        plt.title(f'{i+1} agents')
+        colorbar =plt.colorbar(shrink=0.01)
+        colorbar.ax.set_axis_off()
+    
+    plt.subplot(1, len(preGraphs)+1, len(preGraphs)+1)
+    plt.imshow(preGraphs[-1], cmap= campThis, norm=Normalize(vmin=0, vmax= maxValue))
+    plt.title(f'{len(preGraphs)} agents')
+
+    plt.colorbar(label='',  shrink=0.4)
+    # Adjust layout for better spacing
+    plt.tight_layout()
+    # Show the plot
+    plt.show()

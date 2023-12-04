@@ -96,11 +96,8 @@ def multi_strains(
         A tensor of the change in the number of susceptible individuals for each strain and time step.
     """
     miniTime= 20
-    extraDays= 15#15
-    if paras.modelLoad in []:
-        timeHorizon= (paras.strains)*miniTime+extraDays
-    else:
-        timeHorizon= miniTime+extraDays
+    extraDays= 10#15
+    timeHorizon= miniTime+extraDays
     R0s= paras.R0s
     taus= paras.taus
     randomList= utils.select_nodes_accroding_to_degree(G, paras.strains, intense)
@@ -108,9 +105,6 @@ def multi_strains(
         Amat[i, i]= 1
     deltaSsList= []
     for i in range(paras.strains):
-        if paras.modelLoad in []:
-            deltaSsList.append(one_strain(R0s[i], taus[i], timeHorizon, paras.n, Amat, startTime= i*20, fromS= randomList[i], device= device))
-        else:
-            deltaSsList.append(one_strain(R0s[i], taus[i], timeHorizon, paras.n, Amat, startTime= 0, fromS= randomList[i], device= device))
+        deltaSsList.append(one_strain(R0s[i], taus[i], timeHorizon, paras.n, Amat, startTime= 0, fromS= randomList[i], device= device))
     deltaSsTensor= torch.stack(deltaSsList[0:paras.strains], dim= -1)
     return deltaSsTensor
