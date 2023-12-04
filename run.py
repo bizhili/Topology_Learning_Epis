@@ -41,7 +41,7 @@ paras= pramameters.read_arguments(parser)
 random.seed(paras.seed)
 
 #results and logs file name
-fileName= f"{paras.modelLoad}/{paras.modelLoad}R_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}_{paras.intense}_{paras.epoches}"
+fileName= f"{paras.modelLoad}/{paras.modelLoad}R1_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}_{paras.intense}_{paras.epoches}"
 
 printFlag= 0
 if printFlag!=1:
