@@ -71,7 +71,7 @@ if paras.weightModel=="degree":
 elif  paras.weightModel=="gravity":
     Aw= weight.gravity_model(G, pos, P, device= device)
 elif  paras.weightModel=="identical":
-    Aw= weight.identical_model(A, 0.01, device= device)
+    Aw= weight.identical_model(A, paras.identicalf, device= device)
 Zmat= A_mat.create_A_mat(Aw, P)
 Zmat2= A_mat.reverse_A_mat(Zmat-torch.eye(Aw.shape[0], dtype= torch.float32, device= Aw.device), P)
 
