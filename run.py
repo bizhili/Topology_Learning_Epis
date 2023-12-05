@@ -41,7 +41,7 @@ paras= pramameters.read_arguments(parser)
 random.seed(paras.seed)
 
 #results and logs file name
-fileName= f"{paras.modelLoad}/{paras.modelLoad}R1_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}_{paras.intense}_{paras.epoches}"
+fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}_{paras.intense}_{paras.epoches}"
 
 printFlag= 0
 if printFlag!=1:
@@ -56,11 +56,11 @@ P= population.population(paras.n, device= device)
 
 # generate random graphs: GEO(defult), ER, WS, BA'
 if paras.randomGraph=="GEO":
-    A, G, pos= random_graph.get_Geo_random_contact(paras.n, radius=0.4, device= device)
+    A, G, pos= random_graph.get_Geo_random_contact(paras.n, paras.dense, device= device)
 elif paras.randomGraph=="BA":
     A, G= random_graph.get_BA_random_contact(paras.n, paras.dense, device= device)
 elif paras.randomGraph=="WS":
-    A, G= random_graph.get_WS_random_contact(paras.n, paras.dense*2, 0.3,device= device)
+    A, G= random_graph.get_WS_random_contact(paras.n, paras.dense*2, 0.3, device= device)
 elif paras.randomGraph=="ER":
     A, G= random_graph.get_ER_random_contact(paras.n, paras.dense, device= device)
 

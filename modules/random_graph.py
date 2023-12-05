@@ -1,7 +1,14 @@
 import torch
 import networkx as nx
 import random
+import numpy as np
+import itertools
+import math
 
+
+# Function to calculate Euclidean distance between two points
+def calculate_distance(point1, point2):
+    return math.sqrt((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2)
 
 
 def get_ER_random_contact(n: int, avgDegree: float, device: str="cpu") -> torch.Tensor:
@@ -64,7 +71,7 @@ def get_BA_random_contact(n: int, m: int, device: str="cpu") -> torch.Tensor:
     contact = torch.FloatTensor(nx.to_numpy_array(graph)).to(device)
     return contact, graph
 
-def get_Geo_random_contact(n: int, radius: float, device: str="cpu") -> torch.Tensor:
+def get_Geo_random_contact(n: int, m: int, device: str="cpu") -> torch.Tensor:
     """
     Generates a random contact matrix for a random geometric graph.
 
@@ -78,8 +85,24 @@ def get_Geo_random_contact(n: int, radius: float, device: str="cpu") -> torch.Te
         graph: networkx graph object
         pos: the 2-d position of all nodes
     """
-
+    
+    linkNum= n*m
     pos = {i: (random.uniform(0, 1), random.uniform(0, 1)) for i in range(n)}
-    graph = nx.random_geometric_graph(n, radius, dim=2, pos=pos)
+    posValue= list(pos.values())
+    node_pairs = list(itertools.combinations(range(len(posValue)), 2))
+    distance_dict = {(i, j): calculate_distance(posValue[i], posValue[j]) for (i, j) in node_pairs}
+    sorted_distance_dict = sorted(distance_dict.items(), key=lambda x: x[1])
+    contactNp= np.zeros((len(posValue), len(posValue)))
+    for i in range(len(sorted_distance_dict)):
+        temp= sorted_distance_dict[i]
+        nodei= temp[0][0]
+        nodej= temp[0][1]
+        contactNp[nodei, nodej]= 1
+        contactNp[nodej, nodei]= 1
+        if i>= linkNum-1:
+            graph= nx.Graph(contactNp)
+            if nx.is_connected(graph):
+                break
+    
     contact = torch.FloatTensor(nx.to_numpy_array(graph)).to(device)
     return contact, graph, pos

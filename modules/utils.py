@@ -2,6 +2,9 @@ import random
 import logging
 from datetime import datetime
 import torch
+import os
+import shutil
+
 
 def select_nodes_accroding_to_degree(G, strains, intense= 0):
     #G:
@@ -55,3 +58,55 @@ def continious_to_sparcity(my_tensor, top= 400):
     output_tensor = output_tensor.view(my_tensor.shape)
 
     return output_tensor
+
+def rename_file(old_name, new_name):
+    try:
+        os.rename(old_name, new_name)
+        print(f"File renamed successfully from {old_name} to {new_name}.")
+    except FileNotFoundError:
+        print(f"Error: File {old_name} not found.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+def move_file(source_path, destination_folder):
+    try:
+        # Check if the source file exists
+        if not os.path.exists(source_path):
+            raise FileNotFoundError(f"The file {source_path} does not exist.")
+
+        # Check if the destination folder exists, create if not
+        if not os.path.exists(destination_folder):
+            os.makedirs(destination_folder)
+
+        # Extract the file name from the source path
+        file_name = os.path.basename(source_path)
+
+        # Construct the destination path
+        destination_path = os.path.join(destination_folder, file_name)
+
+        # Move the file
+        shutil.move(source_path, destination_path)
+        print(destination_path)
+
+        print(f"File '{file_name}' successfully moved to '{destination_folder}'.")
+    except Exception as e:
+        print(f"Error: {e}")
+
+def empty_folder(folder_path):
+    # Delete all remaining files (including sub-folder files)
+    for root, dirs, files in os.walk(folder_path):
+        for file in files:
+            file_path = os.path.join(root, file)
+            os.remove(file_path)
+
+def reset_folder(folder_path, archive_folder):
+    # Create the archive folder if it doesn't exist
+    os.makedirs(archive_folder, exist_ok=True)
+
+    # Move all files to the archive folder
+    for root, dirs, files in os.walk(folder_path):
+        for file in files:
+            file_path = os.path.join(root, file)
+            shutil.move(file_path, os.path.join(archive_folder, file))
+    empty_folder(folder_path)
+

@@ -41,6 +41,7 @@ class Paras:
         self.R0s= None
         self.modelLoad= None
         self.dense= None
+        self.identicalf= None
 
 
 def add_arguments(parser: argparse.ArgumentParser) -> None:
@@ -113,7 +114,7 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         '--tauMean',
         type=float,
-        default=6.2,
+        default=7.5,
         help='Setting the mean value of R0s, average distribution (float): 6.2(defult)'
     )
     parser.add_argument(
@@ -132,7 +133,13 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
         '--dense',
         type=int,
         default= 8,
-        help='Setting avg degree of BA, WS, ER (int): 8(defult)'
+        help='Setting avg degree of BA, WS, ER, GEO (int): 8(defult)'
+    )
+    parser.add_argument(
+        '--identicalf',
+        type=float,
+        default= 0.01,
+        help='Setting identical float (float): 0.01(defult)'
     )
 
 
@@ -165,6 +172,7 @@ def read_arguments(parser: argparse.ArgumentParser) -> Paras:
     paras.modelLoad= args.modelLoad
     paras.epoches= args.epoches
     paras.dense= args.dense
+    paras.identicalf= args.identicalf
 
 
     if paras.weightModel == "gravity" and paras.randomGraph != "GEO":
