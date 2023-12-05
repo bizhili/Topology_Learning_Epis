@@ -1,10 +1,10 @@
-usage: run.py [-h] [--randomGraph RANDOMGRAPH] [--seed SEED] [--n N] [--strains STRAINS] [--epoches EPOCHES]
-              [--device DEVICE] [--weightModel WEIGHTMODEL] [--intense INTENSE] [--R0Mean R0MEAN] [--R0Std R0STD]
-              [--tauMean TAUMEAN] [--tauStd TAUSTD] [--modelLoad MODELLOAD] [--dense DENSE]
+usage: run.py [-h] [--randomGraph RANDOMGRAPH] [--seed SEED] [--n N] [--strains STRAINS] [--epoches EPOCHES] [--device DEVICE] [--weightModel WEIGHTMODEL]
+            [--intense INTENSE] [--R0Mean R0MEAN] [--R0Std R0STD] [--tauMean TAUMEAN] [--tauStd TAUSTD] [--modelLoad MODELLOAD] [--dense DENSE]
+            [--identicalf IDENTICALF]
 
 Topology fitting parameters
 
-optional arguments:
+options:
 -h, --help            show this help message and exit
 --randomGraph RANDOMGRAPH
                     Choosing random graph model(str): GEO(defult), ER, WS, BA
@@ -17,9 +17,11 @@ optional arguments:
                     Setting adjacency weight model(str): degree(defult), gravity, identical
 --intense INTENSE     Setting the intense of selecting nodes degree from low to high(int): 0(defult), 1, 2
 --R0Mean R0MEAN       Setting the mean value of R0s, average distribution (float): 8.3(defult)
---R0Std R0STD         Setting the Std value of R0s, average distribution (float): 4(defult)
+--R0Std R0STD         Setting the Std value of R0s, average distribution (float): 0.5(defult)
 --tauMean TAUMEAN     Setting the mean value of R0s, average distribution (float): 6.2(defult)
 --tauStd TAUSTD       Setting the Std value of R0s, average distribution (float): 0.1(defult)
 --modelLoad MODELLOAD
                     Setting load model (string): AA(defult), AB, BA, BB, infer2018
---dense DENSE         Setting avg degree of BA, WS, ER (int): 8(defult)
+--dense DENSE         Setting avg degree of BA, WS, ER, GEO (int): 8(defult)
+--identicalf IDENTICALF
+                    Setting identical float (float): 0.01(defult)
