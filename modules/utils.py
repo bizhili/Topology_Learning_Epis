@@ -59,15 +59,6 @@ def continious_to_sparcity(my_tensor, top= 400):
 
     return output_tensor
 
-def rename_file(old_name, new_name):
-    try:
-        os.rename(old_name, new_name)
-        print(f"File renamed successfully from {old_name} to {new_name}.")
-    except FileNotFoundError:
-        print(f"Error: File {old_name} not found.")
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
 def move_file(source_path, destination_folder):
     try:
         # Check if the source file exists
@@ -91,6 +82,19 @@ def move_file(source_path, destination_folder):
         print(f"File '{file_name}' successfully moved to '{destination_folder}'.")
     except Exception as e:
         print(f"Error: {e}")
+
+def rename_file(old_name, new_name):
+    try:
+        os.rename(old_name, new_name)
+        print(f"File renamed successfully from {old_name} to {new_name}.")
+    except FileNotFoundError:
+        print(f"Error: File {old_name} not found.")
+    except Exception as e:
+        print(f"An error occurred: {e}, so move to archive")
+        move_file(old_name, "archive")
+
+        
+
 
 def empty_folder(folder_path):
     # Delete all remaining files (including sub-folder files)
