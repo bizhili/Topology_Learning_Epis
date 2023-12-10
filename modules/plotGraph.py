@@ -4,8 +4,8 @@ import numpy as np
 from matplotlib.colors import Normalize
 
 
-def plot_2d_geo(G: nx.Graph, pos: dict) -> None:
-    """Plot a 2D geometric graph.
+def plot_2d_RGG(G: nx.Graph, pos: dict) -> None:
+    """Plot a 2D RGGmetric graph.
 
     Args:
         G: A networkx Graph object.
@@ -17,7 +17,7 @@ def plot_2d_geo(G: nx.Graph, pos: dict) -> None:
     nx.draw_networkx_nodes(G, pos, node_size=80)
     plt.xlabel("x")
     plt.ylabel("y")
-    plt.title("Random geometric graph")
+    plt.title("Random RGGmetric graph")
     plt.subplot(1, 2, 2)
     # Get the degrees of all nodes
     degrees = [d for n, d in G.degree()]

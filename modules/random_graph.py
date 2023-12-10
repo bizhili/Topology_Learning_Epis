@@ -71,9 +71,9 @@ def get_BA_random_contact(n: int, m: int, device: str="cpu") -> torch.Tensor:
     contact = torch.FloatTensor(nx.to_numpy_array(graph)).to(device)
     return contact, graph
 
-def get_Geo_random_contact(n: int, m: int, device: str="cpu") -> torch.Tensor:
+def get_RGG_random_contact(n: int, m: int, device: str="cpu") -> torch.Tensor:
     """
-    Generates a random contact matrix for a random geometric graph.
+    Generates a random contact matrix for a random RGGmetric graph.
 
     Args:
         n: The number of nodes in the graph.

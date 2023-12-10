@@ -4,7 +4,7 @@ SLURM_JOBID:		 988303
 SLURM_JOB_NODELIST:	 dt-gpu-03 
 
 
-python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph GEO --seed 11 --strains 2 --CMDprogress_0_119
+python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph RGG --seed 11 --strains 2 --CMDprogress_0_119
 python run.py --epoches 100000 --modelLoad infer2018 --weightModel identical --randomGraph BA --seed 10 --strains 1 --CMDprogress_1_119
 python run.py --epoches 100000 --modelLoad BB --weightModel identical --randomGraph BA --seed 14 --strains 1 --CMDprogress_2_119
 python run.py --epoches 100000 --modelLoad AB --weightModel identical --randomGraph ER --seed 13 --strains 1 --CMDprogress_3_119

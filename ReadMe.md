@@ -7,7 +7,7 @@ Topology fitting parameters
 options:
 -h, --help            show this help message and exit
 --randomGraph RANDOMGRAPH
-                    Choosing random graph model(str): GEO(defult), ER, WS, BA
+                    Choosing random graph model(str): RGG(defult), ER, WS, BA
 --seed SEED           Setting random seed(int): 10(defult)
 --n N                 Setting nodes number(int): 50(defult)
 --strains STRAINS     Setting strains number(int): 1(defult)~4
@@ -22,6 +22,6 @@ options:
 --tauStd TAUSTD       Setting the Std value of R0s, average distribution (float): 0.1(defult)
 --modelLoad MODELLOAD
                     Setting load model (string): AA(defult), AB, BA, BB, infer2018
---dense DENSE         Setting avg degree of BA, WS, ER, GEO (int): 8(defult)
+--dense DENSE         Setting avg degree of BA, WS, ER, RGG (int): 8(defult)
 --identicalf IDENTICALF
                     Setting identical float (float): 0.01(defult)

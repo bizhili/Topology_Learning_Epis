@@ -4,9 +4,9 @@ SLURM_JOBID:		 999037
 SLURM_JOB_NODELIST:	 cs-pheno-03 
 
 
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 10 --strains 4  --dense 4 --CMDprogress_0_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 10 --strains 4  --dense 4 --CMDprogress_0_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 14 --strains 4  --dense 8 --CMDprogress_1_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 10 --strains 4  --identicalf 0.01 --CMDprogress_2_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 10 --strains 4  --identicalf 0.01 --CMDprogress_2_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -19,9 +19,9 @@ SyntaxError: EOL while scanning string literal
 SyntaxError: EOL while scanning string literal
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 11 --strains 4  --dense 4 --CMDprogress_3_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 11 --strains 4  --dense 4 --CMDprogress_3_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA            --seed 10 --strains 4  --n 100 --CMDprogress_4_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 11 --strains 4  --identicalf 0.01 --CMDprogress_5_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 11 --strains 4  --identicalf 0.01 --CMDprogress_5_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -36,7 +36,7 @@ SyntaxError: EOL while scanning string literal
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA            --seed 14 --strains 4  --n 50 --CMDprogress_6_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 11 --strains 4  --intense 1 --CMDprogress_7_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 13 --strains 4  --dense 8 --CMDprogress_8_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 13 --strains 4  --dense 8 --CMDprogress_8_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -65,8 +65,8 @@ SyntaxError: EOL while scanning string literal
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 10 --strains 4  --intense 1 --CMDprogress_12_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 13 --strains 4  --identicalf 0.005 --CMDprogress_13_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 10 --strains 4  --dense 6 --CMDprogress_14_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 13 --strains 4  --identicalf 0.005 --CMDprogress_13_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 10 --strains 4  --dense 6 --CMDprogress_14_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -79,7 +79,7 @@ SyntaxError: EOL while scanning string literal
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 12 --strains 4  --identicalf 0.005 --CMDprogress_15_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 12 --strains 4  --identicalf 0.005 --CMDprogress_15_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 14 --strains 4  --intense 2 --CMDprogress_16_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 12 --strains 4  --n 150 --CMDprogress_17_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
@@ -94,7 +94,7 @@ SyntaxError: EOL while scanning string literal
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO            --seed 11 --strains 4  --n 50 --CMDprogress_18_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 11 --strains 4  --n 50 --CMDprogress_18_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 11 --strains 4  --dense 6 --CMDprogress_19_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 14 --strains 4  --identicalf 0.02 --CMDprogress_20_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
@@ -124,7 +124,7 @@ SyntaxError: EOL while scanning string literal
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 12 --strains 4  --intense 2 --CMDprogress_24_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 12 --strains 4  --intense 2 --CMDprogress_24_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 11 --strains 4  --dense 6 --CMDprogress_25_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 13 --strains 4  --dense 6 --CMDprogress_26_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
@@ -155,7 +155,7 @@ SyntaxError: EOL while scanning string literal
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 11 --strains 4  --identicalf 0.02 --CMDprogress_30_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 12 --strains 4  --dense 8 --CMDprogress_31_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 12 --strains 4  --dense 8 --CMDprogress_31_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 11 --strains 4  --dense 8 --CMDprogress_32_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
@@ -185,7 +185,7 @@ SyntaxError: EOL while scanning string literal
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 12 --strains 4  --dense 8 --CMDprogress_36_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO            --seed 14 --strains 4  --n 150 --CMDprogress_37_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 14 --strains 4  --n 150 --CMDprogress_37_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 14 --strains 4  --dense 4 --CMDprogress_38_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
@@ -200,7 +200,7 @@ SyntaxError: EOL while scanning string literal
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 11 --strains 4  --dense 8 --CMDprogress_39_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 12 --strains 4  --intense 1 --CMDprogress_40_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 12 --strains 4  --intense 1 --CMDprogress_40_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 11 --strains 4  --identicalf 0.02 --CMDprogress_41_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
@@ -214,7 +214,7 @@ SyntaxError: EOL while scanning string literal
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 10 --strains 4  --dense 8 --CMDprogress_42_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 10 --strains 4  --dense 8 --CMDprogress_42_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 11 --strains 4  --identicalf 0.005 --CMDprogress_43_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 13 --strains 4  --intense 2 --CMDprogress_44_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
@@ -246,7 +246,7 @@ SyntaxError: EOL while scanning string literal
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 10 --strains 4  --dense 6 --CMDprogress_48_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 12 --strains 4  --intense 1 --CMDprogress_49_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 12 --strains 4  --identicalf 0.02 --CMDprogress_50_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 12 --strains 4  --identicalf 0.02 --CMDprogress_50_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -259,7 +259,7 @@ SyntaxError: EOL while scanning string literal
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 13 --strains 4  --identicalf 0.02 --CMDprogress_51_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 13 --strains 4  --identicalf 0.02 --CMDprogress_51_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 14 --strains 4  --identicalf 0.01 --CMDprogress_52_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 13 --strains 4  --n 150 --CMDprogress_53_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
@@ -275,7 +275,7 @@ SyntaxError: EOL while scanning string literal
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 11 --strains 4  --intense 1 --CMDprogress_54_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO            --seed 12 --strains 4  --n 100 --CMDprogress_55_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 12 --strains 4  --n 100 --CMDprogress_55_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 10 --strains 4  --intense 2 --CMDprogress_56_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
@@ -319,9 +319,9 @@ SyntaxError: EOL while scanning string literal
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 13 --strains 4  --intense 0 --CMDprogress_63_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 12 --strains 4  --dense 4 --CMDprogress_64_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 10 --strains 4  --identicalf 0.005 --CMDprogress_65_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 13 --strains 4  --intense 0 --CMDprogress_63_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 12 --strains 4  --dense 4 --CMDprogress_64_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 10 --strains 4  --identicalf 0.005 --CMDprogress_65_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -366,7 +366,7 @@ SyntaxError: EOL while scanning string literal
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 14 --strains 4  --intense 2 --CMDprogress_72_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 13 --strains 4  --intense 0 --CMDprogress_73_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 14 --strains 4  --intense 0 --CMDprogress_74_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 14 --strains 4  --intense 0 --CMDprogress_74_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -411,7 +411,7 @@ SyntaxError: EOL while scanning string literal
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA            --seed 10 --strains 4  --n 150 --CMDprogress_81_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 10 --strains 4  --intense 1 --CMDprogress_82_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO            --seed 13 --strains 4  --n 150 --CMDprogress_83_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 13 --strains 4  --n 150 --CMDprogress_83_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -424,7 +424,7 @@ SyntaxError: EOL while scanning string literal
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 10 --strains 4  --intense 1 --CMDprogress_84_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 10 --strains 4  --intense 1 --CMDprogress_84_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 10 --strains 4  --dense 6 --CMDprogress_85_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS            --seed 10 --strains 4  --n 50 --CMDprogress_86_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
@@ -455,7 +455,7 @@ SyntaxError: EOL while scanning string literal
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 12 --strains 4  --dense 8 --CMDprogress_90_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 11 --strains 4  --dense 6 --CMDprogress_91_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 11 --strains 4  --dense 6 --CMDprogress_91_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 14 --strains 4  --intense 1 --CMDprogress_92_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
@@ -469,7 +469,7 @@ SyntaxError: EOL while scanning string literal
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 11 --strains 4  --identicalf 0.005 --CMDprogress_93_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 11 --strains 4  --identicalf 0.005 --CMDprogress_93_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 14 --strains 4  --identicalf 0.005 --CMDprogress_94_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 13 --strains 4  --n 100 --CMDprogress_95_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
@@ -514,7 +514,7 @@ SyntaxError: EOL while scanning string literal
 SyntaxError: EOL while scanning string literal
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO            --seed 10 --strains 4  --n 150 --CMDprogress_102_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --strains 4  --n 150 --CMDprogress_102_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA            --seed 11 --strains 4  --n 100 --CMDprogress_103_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 14 --strains 4  --identicalf 0.005 --CMDprogress_104_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
@@ -529,7 +529,7 @@ SyntaxError: EOL while scanning string literal
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO            --seed 11 --strains 4  --n 100 --CMDprogress_105_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 11 --strains 4  --n 100 --CMDprogress_105_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA            --seed 12 --strains 4  --n 100 --CMDprogress_106_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 13 --strains 4  --identicalf 0.005 --CMDprogress_107_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
@@ -545,8 +545,8 @@ SyntaxError: EOL while scanning string literal
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA            --seed 12 --strains 4  --n 150 --CMDprogress_108_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO            --seed 10 --strains 4  --n 50 --CMDprogress_109_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 14 --strains 4  --dense 8 --CMDprogress_110_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --strains 4  --n 50 --CMDprogress_109_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 14 --strains 4  --dense 8 --CMDprogress_110_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -560,7 +560,7 @@ SyntaxError: EOL while scanning string literal
 SyntaxError: EOL while scanning string literal
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 10 --strains 4  --dense 4 --CMDprogress_111_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO            --seed 14 --strains 4  --n 50 --CMDprogress_112_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 14 --strains 4  --n 50 --CMDprogress_112_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 13 --strains 4  --dense 4 --CMDprogress_113_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
@@ -604,8 +604,8 @@ SyntaxError: EOL while scanning string literal
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 14 --strains 4  --intense 2 --CMDprogress_120_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 11 --strains 4  --dense 8 --CMDprogress_121_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 14 --strains 4  --intense 2 --CMDprogress_120_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 11 --strains 4  --dense 8 --CMDprogress_121_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 10 --strains 4  --identicalf 0.005 --CMDprogress_122_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
@@ -620,8 +620,8 @@ SyntaxError: EOL while scanning string literal
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 12 --strains 4  --intense 2 --CMDprogress_123_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 14 --strains 4  --identicalf 0.005 --CMDprogress_124_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 12 --strains 4  --identicalf 0.01 --CMDprogress_125_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 14 --strains 4  --identicalf 0.005 --CMDprogress_124_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 12 --strains 4  --identicalf 0.01 --CMDprogress_125_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -666,7 +666,7 @@ SyntaxError: EOL while scanning string literal
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 13 --strains 4  --identicalf 0.02 --CMDprogress_132_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 12 --strains 4  --intense 0 --CMDprogress_133_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 11 --strains 4  --intense 2 --CMDprogress_134_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 11 --strains 4  --intense 2 --CMDprogress_134_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -695,8 +695,8 @@ SyntaxError: EOL while scanning string literal
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 11 --strains 4  --intense 2 --CMDprogress_138_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 12 --strains 4  --intense 0 --CMDprogress_139_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 13 --strains 4  --dense 6 --CMDprogress_140_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 12 --strains 4  --intense 0 --CMDprogress_139_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 13 --strains 4  --dense 6 --CMDprogress_140_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -740,7 +740,7 @@ SyntaxError: EOL while scanning string literal
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 13 --strains 4  --intense 0 --CMDprogress_147_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 14 --strains 4  --identicalf 0.02 --CMDprogress_148_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 14 --strains 4  --identicalf 0.02 --CMDprogress_148_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 13 --strains 4  --dense 4 --CMDprogress_149_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
@@ -769,7 +769,7 @@ SyntaxError: EOL while scanning string literal
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO            --seed 10 --strains 4  --n 100 --CMDprogress_153_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --strains 4  --n 100 --CMDprogress_153_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 13 --strains 4  --intense 2 --CMDprogress_154_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS            --seed 13 --strains 4  --n 100 --CMDprogress_155_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
@@ -801,7 +801,7 @@ SyntaxError: EOL while scanning string literal
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 10 --strains 4  --dense 8 --CMDprogress_159_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 10 --strains 4  --dense 8 --CMDprogress_160_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 14 --strains 4  --dense 6 --CMDprogress_161_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 14 --strains 4  --dense 6 --CMDprogress_161_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -829,7 +829,7 @@ SyntaxError: EOL while scanning string literal
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO            --seed 13 --strains 4  --n 50 --CMDprogress_165_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 13 --strains 4  --n 50 --CMDprogress_165_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 14 --strains 4  --intense 2 --CMDprogress_166_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 11 --strains 4  --identicalf 0.005 --CMDprogress_167_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
@@ -890,7 +890,7 @@ SyntaxError: EOL while scanning string literal
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 14 --strains 4  --intense 0 --CMDprogress_177_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 14 --strains 4  --identicalf 0.01 --CMDprogress_178_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 14 --strains 4  --identicalf 0.01 --CMDprogress_178_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 11 --strains 4  --dense 6 --CMDprogress_179_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
@@ -905,7 +905,7 @@ SyntaxError: EOL while scanning string literal
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 11 --strains 4  --dense 4 --CMDprogress_180_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 12 --strains 4  --dense 6 --CMDprogress_181_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 12 --strains 4  --dense 6 --CMDprogress_181_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 12 --strains 4  --intense 1 --CMDprogress_182_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
@@ -920,8 +920,8 @@ SyntaxError: EOL while scanning string literal
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 13 --strains 4  --intense 1 --CMDprogress_183_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 10 --strains 4  --intense 2 --CMDprogress_184_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO            --seed 11 --strains 4  --n 150 --CMDprogress_185_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 10 --strains 4  --intense 2 --CMDprogress_184_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 11 --strains 4  --n 150 --CMDprogress_185_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -949,8 +949,8 @@ SyntaxError: EOL while scanning string literal
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 11 --strains 4  --intense 1 --CMDprogress_189_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO            --seed 12 --strains 4  --n 150 --CMDprogress_190_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 11 --strains 4  --intense 1 --CMDprogress_189_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 12 --strains 4  --n 150 --CMDprogress_190_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 13 --strains 4  --identicalf 0.02 --CMDprogress_191_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
@@ -965,8 +965,8 @@ SyntaxError: EOL while scanning string literal
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 13 --strains 4  --dense 8 --CMDprogress_192_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 10 --strains 4  --identicalf 0.02 --CMDprogress_193_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO            --seed 12 --strains 4  --n 50 --CMDprogress_194_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 10 --strains 4  --identicalf 0.02 --CMDprogress_193_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 12 --strains 4  --n 50 --CMDprogress_194_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -1011,7 +1011,7 @@ SyntaxError: EOL while scanning string literal
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS            --seed 11 --strains 4  --n 100 --CMDprogress_201_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 11 --strains 4  --identicalf 0.02 --CMDprogress_202_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 10 --strains 4  --intense 0 --CMDprogress_203_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 10 --strains 4  --intense 0 --CMDprogress_203_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -1026,7 +1026,7 @@ SyntaxError: EOL while scanning string literal
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 12 --strains 4  --identicalf 0.02 --CMDprogress_204_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 13 --strains 4  --identicalf 0.01 --CMDprogress_205_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 11 --strains 4  --intense 0 --CMDprogress_206_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 11 --strains 4  --intense 0 --CMDprogress_206_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -1040,8 +1040,8 @@ SyntaxError: EOL while scanning string literal
 SyntaxError: EOL while scanning string literal
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS            --seed 13 --strains 4  --n 150 --CMDprogress_207_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 13 --strains 4  --intense 2 --CMDprogress_208_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 13 --strains 4  --dense 4 --CMDprogress_209_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 13 --strains 4  --intense 2 --CMDprogress_208_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 13 --strains 4  --dense 4 --CMDprogress_209_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -1099,9 +1099,9 @@ SyntaxError: EOL while scanning string literal
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 13 --strains 4  --intense 1 --CMDprogress_219_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 13 --strains 4  --intense 1 --CMDprogress_219_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS            --seed 12 --strains 4  --n 150 --CMDprogress_220_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 11 --strains 4  --identicalf 0.02 --CMDprogress_221_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 11 --strains 4  --identicalf 0.02 --CMDprogress_221_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
@@ -1130,7 +1130,7 @@ SyntaxError: EOL while scanning string literal
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 13 --strains 4  --dense 6 --CMDprogress_225_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 14 --strains 4  --dense 4 --CMDprogress_226_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 14 --strains 4  --dense 4 --CMDprogress_226_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 10 --strains 4  --identicalf 0.01 --CMDprogress_227_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
@@ -1144,7 +1144,7 @@ SyntaxError: EOL while scanning string literal
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO            --seed 14 --strains 4  --n 100 --CMDprogress_228_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 14 --strains 4  --n 100 --CMDprogress_228_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 11 --strains 4  --intense 2 --CMDprogress_229_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 12 --strains 4  --identicalf 0.005 --CMDprogress_230_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
@@ -1174,8 +1174,8 @@ SyntaxError: EOL while scanning string literal
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 14 --strains 4  --intense 1 --CMDprogress_234_239
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO              --seed 13 --strains 4  --identicalf 0.01 --CMDprogress_235_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 14 --strains 4  --intense 1 --CMDprogress_234_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 13 --strains 4  --identicalf 0.01 --CMDprogress_235_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA            --seed 11 --strains 4  --n 50 --CMDprogress_236_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44
@@ -1189,7 +1189,7 @@ SyntaxError: EOL while scanning string literal
     fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}/
                                                                                                                          ^
 SyntaxError: EOL while scanning string literal
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph GEO            --seed 13 --strains 4  --n 100 --CMDprogress_237_239
+python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 13 --strains 4  --n 100 --CMDprogress_237_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 13 --strains 4  --identicalf 0.005 --CMDprogress_238_239
 python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 10 --strains 4  --identicalf 0.01 --CMDprogress_239_239
   File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 44

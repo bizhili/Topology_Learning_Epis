@@ -25,7 +25,7 @@ pramameters.add_arguments(parser)
 paras= pramameters.read_arguments(parser)
 #preset
 # paras.modelLoad= "BB"
-# paras.randomGraph= "GEO"
+# paras.randomGraph= "RGG"
 # paras.weightModel= "identical"
 # paras.epoches= 100
 # paras.intense= 0
@@ -55,9 +55,9 @@ device= paras.device if torch.cuda.is_available() else "cpu"
 
 P= population.population(paras.n, device= device)
 
-# generate random graphs: GEO(defult), ER, WS, BA'
-if paras.randomGraph=="GEO":
-    A, G, pos= random_graph.get_Geo_random_contact(paras.n, paras.dense, device= device)
+# generate random graphs: RGG(defult), ER, WS, BA'
+if paras.randomGraph=="RGG":
+    A, G, pos= random_graph.get_RGG_random_contact(paras.n, paras.dense, device= device)
 elif paras.randomGraph=="BA":
     A, G= random_graph.get_BA_random_contact(paras.n, paras.dense, device= device)
 elif paras.randomGraph=="WS":
@@ -78,8 +78,8 @@ Zmat2= A_mat.reverse_A_mat(Zmat-torch.eye(Aw.shape[0], dtype= torch.float32, dev
 
 #plot this network
 if plotFlag==1:
-    if paras.plot== "2d_geo":
-        plotGraph.plot_2d_geo(G, pos)
+    if paras.plot== "2d_RGG":
+        plotGraph.plot_2d_RGG(G, pos)
     elif paras.plot== "spring":
         plotGraph.plot_spring_layout(G)
 

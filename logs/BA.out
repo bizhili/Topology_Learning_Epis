@@ -2,9 +2,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_12_3_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_12_3_0_100000
 INFO:root:Strains: 3
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 448
 INFO:root:Reverse ZERO: tensor(5.5041e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -95,9 +95,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_11_3_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_11_3_0_100000
 INFO:root:Strains: 3
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 390
 INFO:root:Reverse ZERO: tensor(4.6287e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -283,9 +283,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_13_3_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_13_3_0_100000
 INFO:root:Strains: 3
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 456
 INFO:root:Reverse ZERO: tensor(5.7463e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -518,9 +518,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_14_3_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_14_3_0_100000
 INFO:root:Strains: 3
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 478
 INFO:root:Reverse ZERO: tensor(5.5693e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -659,9 +659,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_10_3_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_10_3_0_100000
 INFO:root:Strains: 3
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 431
 INFO:root:Reverse ZERO: tensor(4.8988e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -1098,9 +1098,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_10_1_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_10_1_0_100000
 INFO:root:Strains: 1
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 431
 INFO:root:Reverse ZERO: tensor(4.8988e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -1202,9 +1202,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_13_2_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_13_2_0_100000
 INFO:root:Strains: 2
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 456
 INFO:root:Reverse ZERO: tensor(5.7463e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -1254,9 +1254,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_12_1_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_12_1_0_100000
 INFO:root:Strains: 1
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 448
 INFO:root:Reverse ZERO: tensor(5.5041e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -1306,9 +1306,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_11_2_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_11_2_0_100000
 INFO:root:Strains: 2
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 390
 INFO:root:Reverse ZERO: tensor(4.6287e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -1514,9 +1514,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_14_2_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_14_2_0_100000
 INFO:root:Strains: 2
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 478
 INFO:root:Reverse ZERO: tensor(5.5693e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -1566,9 +1566,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_10_2_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_10_2_0_100000
 INFO:root:Strains: 2
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 431
 INFO:root:Reverse ZERO: tensor(4.8988e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -2034,9 +2034,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_14_1_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_14_1_0_100000
 INFO:root:Strains: 1
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 478
 INFO:root:Reverse ZERO: tensor(5.5693e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -2346,9 +2346,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_12_2_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_12_2_0_100000
 INFO:root:Strains: 2
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 448
 INFO:root:Reverse ZERO: tensor(5.5041e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -2450,9 +2450,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_13_1_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_13_1_0_100000
 INFO:root:Strains: 1
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 456
 INFO:root:Reverse ZERO: tensor(5.7463e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -2710,9 +2710,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_11_1_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_11_1_0_100000
 INFO:root:Strains: 1
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 390
 INFO:root:Reverse ZERO: tensor(4.6287e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -3250,9 +3250,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_14_4_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_14_4_0_100000
 INFO:root:Strains: 4
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 478
 INFO:root:Reverse ZERO: tensor(5.5693e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -3698,9 +3698,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_12_4_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_12_4_0_100000
 INFO:root:Strains: 4
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 448
 INFO:root:Reverse ZERO: tensor(5.5041e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -3754,9 +3754,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_13_4_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_13_4_0_100000
 INFO:root:Strains: 4
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 456
 INFO:root:Reverse ZERO: tensor(5.7463e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
@@ -3922,9 +3922,9 @@ INFO:root:
 
 
 .........................initialize..........................
-INFO:root:FileName: BA/BA_GEO_identical_11_4_0_100000
+INFO:root:FileName: BA/BA_RGG_identical_11_4_0_100000
 INFO:root:Strains: 4
-INFO:root:Using GEO random graph model
+INFO:root:Using RGG random graph model
 INFO:root:Num of links: 390
 INFO:root:Reverse ZERO: tensor(4.6287e-07, device='cuda:0')
 INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')

@@ -55,7 +55,7 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
         '--randomGraph',
         type=str,
         default="BA",
-        help='Choosing random graph model(str): GEO(defult), ER, WS, BA'
+        help='Choosing random graph model(str): RGG(defult), ER, WS, BA'
     )
     parser.add_argument(
         '--seed',
@@ -133,7 +133,7 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
         '--dense',
         type=int,
         default= 8,
-        help='Setting avg degree of BA, WS, ER, GEO (int): 8(defult)'
+        help='Setting avg degree of BA, WS, ER, RGG (int): 8(defult)'
     )
     parser.add_argument(
         '--identicalf',
@@ -161,7 +161,7 @@ def read_arguments(parser: argparse.ArgumentParser) -> Paras:
     paras.seed = args.seed
     paras.n = args.n
     paras.strains = args.strains
-    paras.plot = "2d_geo" if args.randomGraph == "GEO" else "spring"
+    paras.plot = "2d_RGG" if args.randomGraph == "RGG" else "spring"
     paras.device = args.device
     paras.weightModel = args.weightModel
     paras.intense = args.intense
@@ -175,10 +175,10 @@ def read_arguments(parser: argparse.ArgumentParser) -> Paras:
     paras.identicalf= args.identicalf
 
 
-    if paras.weightModel == "gravity" and paras.randomGraph != "GEO":
+    if paras.weightModel == "gravity" and paras.randomGraph != "RGG":
         paras.weightModel = "degree"
         warnings.warn(
-            "Only GEO random graph can apply on gravity model, setting adjacency weight model to degree model!!!",
+            "Only RGG random graph can apply on gravity model, setting adjacency weight model to degree model!!!",
             RuntimeWarning,
         )
 
