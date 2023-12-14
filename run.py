@@ -65,7 +65,7 @@ if paras.randomGraph=="RGG":
 elif paras.randomGraph=="BA":
     A, G= random_graph.get_BA_random_contact(paras.n, paras.dense, device= device)
 elif paras.randomGraph=="WS":
-    A, G= random_graph.get_WS_random_contact(paras.n, paras.dense*2, 0.3, device= device)
+    A, G= random_graph.get_WS_random_contact(paras.n, paras.dense*2, paras.wsProbability, device= device)
 elif paras.randomGraph=="ER":
     A, G= random_graph.get_ER_random_contact(paras.n, paras.dense, device= device)
 
@@ -129,9 +129,9 @@ elif paras.modelLoad=="infer2018":
     myMatch= nn.matchingB(timeHorizon+1, paras.strains, paras.n,  device= device)
     myEpi= nn.EpisB(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
 
-optimizer1 = torch.optim.Adam(myMatch.parameters(),lr=2e-4)
-optimizer2 = torch.optim.Adam({myEpi.taus},lr=2e-4)
-optimizer3 = torch.optim.Adam({myEpi.R0dTaus},lr=2e-4)
+optimizer1 = torch.optim.Adam(myMatch.parameters(),lr=1e-3)
+optimizer2 = torch.optim.Adam({myEpi.taus},lr=1e-3)
+optimizer3 = torch.optim.Adam({myEpi.R0dTaus},lr=1e-3)
 myloss= torch.nn.MSELoss(reduction='sum')
 losses= []
 if paras.modelLoad in ["infer2018", "AB", "BB"]:
@@ -212,6 +212,7 @@ utils.log_print(printFlag,(myEpi.taus*myEpi.R0dTaus)[0])
 PreA= A_mat.reverse_A_mat(PreZ-torch.eye(paras.n, device= device), P)
 IMatrix= torch.eye(paras.n, device= device)
 linksNum= torch.sum(Aw/0.01)
+sumWeight= torch.sum(Aw)
 PreAse= utils.continious_to_sparcity(PreA, linksNum)+IMatrix
 Awse= utils.continious_to_sparcity(Aw, linksNum)+IMatrix
 utils.log_print(printFlag,"err1:", torch.sqrt((PreA-Aw)**2).sum())

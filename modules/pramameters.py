@@ -146,7 +146,7 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
         '--wsProbability',
         type=float,
         default= 0.1,
-        help='Setting WS model rewiring probability (float): 0.01(defult)'
+        help='Setting WS model rewiring probability (float): 0.1(defult)'
     )
 
 
