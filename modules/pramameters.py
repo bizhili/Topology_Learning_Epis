@@ -42,6 +42,7 @@ class Paras:
         self.modelLoad= None
         self.dense= None
         self.identicalf= None
+        self.wsProbability= None
 
 
 def add_arguments(parser: argparse.ArgumentParser) -> None:
@@ -97,7 +98,7 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
         '--intense',
         type=int,
         default=0,
-        help='Setting the intense of selecting nodes degree from low to high(int): 0(defult), 1, 2'
+        help='Setting the intense of selecting nodes degree from low to high(int): 0(defult), 1, 2, -1(linear intense)'
     )
     parser.add_argument(
         '--R0Mean',
@@ -133,13 +134,19 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
         '--dense',
         type=int,
         default= 8,
-        help='Setting avg degree of BA, WS, ER, RGG (int): 8(defult)'
+        help='Setting avg degree of BA, WS, ER, RGG (int), if negative avg degree log(n)-dense: 8(defult)'
     )
     parser.add_argument(
         '--identicalf',
         type=float,
         default= 0.01,
         help='Setting identical float (float): 0.01(defult)'
+    )
+    parser.add_argument(
+        '--wsProbability',
+        type=float,
+        default= 0.1,
+        help='Setting WS model rewiring probability (float): 0.01(defult)'
     )
 
 
@@ -173,6 +180,7 @@ def read_arguments(parser: argparse.ArgumentParser) -> Paras:
     paras.epoches= args.epoches
     paras.dense= args.dense
     paras.identicalf= args.identicalf
+    paras.wsProbability= args.wsProbability
 
 
     if paras.weightModel == "gravity" and paras.randomGraph != "RGG":

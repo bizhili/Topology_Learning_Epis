@@ -18,6 +18,7 @@ import modules.simulation as simulation
 import modules.utils as utils
 import modules.nn as nn
 import modules.evaluate as evaluate
+import math
 
 #Changeable parameters 
 parser = argparse.ArgumentParser(description='Topology fitting parameters')
@@ -54,6 +55,9 @@ device= paras.device if torch.cuda.is_available() else "cpu"
 
 
 P= population.population(paras.n, device= device)
+
+if paras.dense<=0:
+    paras.dense= int(math.log(paras.n))-paras.dense
 
 # generate random graphs: RGG(defult), ER, WS, BA'
 if paras.randomGraph=="RGG":

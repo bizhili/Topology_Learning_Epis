@@ -51,7 +51,6 @@ class matchingA(torch.nn.Module):
         Atemp = F.cosine_similarity(transU, transV, dim=-1)#[50, 50, 2*channel]
         #Atemp = pearson_correlation(transU, transV, dim= -1).squeeze()
 
-
         Anorm= self.Wnorm(Atemp)#[50, 50]
         scalar_sig= self.mySig2(self.scalar_a)
         ATemp= Anorm+self.AmatBias[..., None]

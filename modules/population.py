@@ -4,7 +4,7 @@ import torch
 def population(
     n: int,
     mu: float = 320,
-    sigma: float = 80,
+    sigma: float = 40,
     base: int = 100,
     device: str = "cpu",
     ) -> torch.Tensor:

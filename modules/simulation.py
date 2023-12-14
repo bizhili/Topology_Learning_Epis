@@ -33,6 +33,7 @@ def act(
     """
     deltaSIR = torch.zeros_like(state)
     deltaSIR[0] = -state[0] * torch.matmul(Amat, alpha(state[1], R0, tau))
+    deltaSIR[0][-deltaSIR[0]>state[0]]=-state[0][-deltaSIR[0]>state[0]]
     deltaSIR[2] = state[1] / tau
     deltaSIR[1] = -deltaSIR[0] - deltaSIR[2]
     return state + deltaSIR, -deltaSIR[0]
@@ -41,7 +42,7 @@ def act(
 def one_strain(
     R0: torch.Tensor,
     tau0: torch.Tensor,
-    timeHorizon: int,
+    maxtimeHorizon: int,
     n: int,
     Amat: torch.Tensor,
     startTime: int = 0,
@@ -53,7 +54,7 @@ def one_strain(
     Args:
         R0: The basic reproductive number.
         tau0: The mean infectious period.
-        timeHorizon: The number of time steps to simulate.
+        maxtimeHorizon: The max number of time steps to simulate.
         n: The population size.
         Amat: The contact matrix.
         time: The time step to start the simulation at.
@@ -70,12 +71,13 @@ def one_strain(
     stateNowR = torch.zeros(n, dtype=torch.float32, device=device)
     stateNow = torch.stack([stateNowS, stateNowI, stateNowR])
     # noise = torch.randn((timeHorizon + 1), dtype=torch.float32, device=device) / 400
-    for i in range(timeHorizon):
+    for i in range(maxtimeHorizon):
         if i == startTime:
             stateNow[0, fromS] = 0.99
             stateNow[1, fromS] = 0.01
             deltaSs[-1][fromS] = 0.01
         stateNow, deltaS = act(stateNow, R0, tau0, Amat)
+        deltaSMin= torch.min(deltaS)
         deltaSs.append(deltaS.clone())
     deltaSs = torch.stack(deltaSs)  # + noise[:, None]
     return deltaSs.T
@@ -95,16 +97,25 @@ def multi_strains(
     Returns:
         A tensor of the change in the number of susceptible individuals for each strain and time step.
     """
-    miniTime= 20
-    extraDays= 10#15
-    timeHorizon= miniTime+extraDays
+    maxtimeHorizon= 99
     R0s= paras.R0s
     taus= paras.taus
-    randomList= utils.select_nodes_accroding_to_degree(G, paras.strains, intense)
+    if intense==-1:
+        randomList= utils.select_nodes_linear_degree(G, paras.strains, device= device)
+        pass
+    else:
+        randomList= utils.select_nodes_accroding_to_degree(G, paras.strains, intense)
     for i in range(paras.n):
         Amat[i, i]= 1
     deltaSsList= []
     for i in range(paras.strains):
-        deltaSsList.append(one_strain(R0s[i], taus[i], timeHorizon, paras.n, Amat, startTime= 0, fromS= randomList[i], device= device))
+        deltaSsList.append(one_strain(R0s[i], taus[i], maxtimeHorizon, paras.n, Amat, startTime= 0, fromS= randomList[i], device= device))
     deltaSsTensor= torch.stack(deltaSsList[0:paras.strains], dim= -1)
-    return deltaSsTensor
+    tempFlag= 0
+
+    for i in range(deltaSsTensor.shape[1]):
+        tempSlice= deltaSsTensor[:, i, :]
+        maxTemp= torch.max(tempSlice)
+        if i>20 and maxTemp<1e-2:
+            break
+    return deltaSsTensor[:, 0:i, :]

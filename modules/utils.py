@@ -22,6 +22,23 @@ def select_nodes_accroding_to_degree(G, strains, intense= 0):
     randomList= [random.randint(0, int(n/3))+int(n/3)*intense for _ in range(strains)]
     return [sorted_nodes[i] for i in randomList]
 
+def select_nodes_linear_degree(G, strains, device= "cpu"):
+    #G:
+    #networkx grph object
+    #strains:
+    #select how much nodes
+    
+    # Calculate the degrees of each node
+    degrees = dict(G.degree())
+
+    # Extract nodes and their corresponding degrees as lists
+    nodes, node_degrees = zip(*degrees.items())
+
+    # Use random.choices to sample 3 nodes based on their degrees
+    sampled_nodes = random.choices(nodes, weights=node_degrees, k=40)
+
+    return sampled_nodes[0: strains]
+
 
 
 def get_time_string():
@@ -59,6 +76,28 @@ def continious_to_sparcity(my_tensor, top= 400):
 
     return output_tensor
 
+def continious_to_sparcity_probability(my_tensor, sumWeight= 4, prob= 0.95):
+
+    recallWeight= sumWeight*prob
+
+    # Flatten the array to a 1D array
+    flat_tensor = my_tensor.flatten()
+
+    # Create a new tensor with zeros
+    output_tensor = torch.zeros([my_tensor.shape[0]**2], device= my_tensor.device)
+
+    # Get the indices of the top 400 elements
+    sorted_indices = torch.argsort(flat_tensor, descending= True)
+    accCount= 0
+    for i in sorted_indices:
+        output_tensor[i]= 1
+        accCount+= flat_tensor[i]
+        if accCount>recallWeight:
+            print(accCount)
+            break
+
+    return output_tensor.view([my_tensor.shape[0], my_tensor.shape[0]])
+
 def move_file(source_path, destination_folder):
     try:
         # Check if the source file exists
@@ -92,6 +131,17 @@ def rename_file(old_name, new_name):
     except Exception as e:
         print(f"An error occurred: {e}, so move to archive")
         move_file(old_name, "archive")
+
+def rename_files_replace_string(root_folder, old_string, new_string):
+    print(root_folder)
+    for foldername, subfolders, filenames in os.walk(root_folder):
+        for filename in filenames:
+            if old_string in filename:
+                old_path = os.path.join(foldername, filename)
+                new_filename = filename.replace(old_string, new_string)
+                new_path = os.path.join(foldername, new_filename)
+                os.rename(old_path, new_path)
+                print(f'Renamed: {old_path} to {new_path}')
 
         
 

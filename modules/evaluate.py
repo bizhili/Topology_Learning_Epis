@@ -16,9 +16,14 @@ def spectral_analysis(Z, preZ):
     except:
         return 0
 
-def edge_correctness(Z, preZ):
+def recall(Z, preZ):
     numerator= torch.sum(Z*preZ)
     denominator= torch.sum(torch.abs(Z.float()))
+    return numerator/denominator
+
+def precision(Z, preZ):
+    numerator= torch.sum(Z*preZ)
+    denominator= torch.sum(torch.abs(preZ.float()))
     return numerator/denominator
     
 def jaccard_index(Z, preZ):
