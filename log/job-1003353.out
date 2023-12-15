@@ -1,0 +1,18 @@
+Fri Dec 15 08:29:39 IST 2023
+
+SLURM_JOBID:		 1003353
+SLURM_JOB_NODELIST:	 cs-3090-01 
+
+
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph BA              --seed 11 --strains 2  --dense 0 --n 100 --intense -1 --CMDprogress_0_79
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 12 --strains 1  --dense 0 --n 100 --intense -1 --CMDprogress_1_79
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 10 --strains 2  --dense 0 --n 100 --intense -1 --CMDprogress_2_79
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 13 --strains 4  --dense 0 --n 100 --intense -1 --CMDprogress_3_79
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 12 --strains 1  --dense 0 --n 100 --intense -1 --CMDprogress_4_79
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 11 --strains 1  --dense 0 --n 100 --intense -1 --CMDprogress_5_79
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 12 --strains 2  --dense 0 --n 100 --intense -1 --CMDprogress_6_79
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG              --seed 11 --strains 4  --dense 0 --n 100 --intense -1 --CMDprogress_7_79
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 11 --strains 4  --dense 0 --n 100 --intense -1 --CMDprogress_8_79
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 13 --strains 3  --dense 0 --n 100 --intense -1 --CMDprogress_9_79
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER              --seed 13 --strains 1  --dense 0 --n 100 --intense -1 --CMDprogress_10_79
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph WS              --seed 12 --strains 1  --dense 0 --n 100 --intense -1 --CMDprogress_11_79

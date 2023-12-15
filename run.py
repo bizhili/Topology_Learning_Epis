@@ -129,9 +129,9 @@ elif paras.modelLoad=="infer2018":
     myMatch= nn.matchingB(timeHorizon+1, paras.strains, paras.n,  device= device)
     myEpi= nn.EpisB(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
 
-optimizer1 = torch.optim.Adam(myMatch.parameters(),lr=1e-3)
-optimizer2 = torch.optim.Adam({myEpi.taus},lr=1e-3)
-optimizer3 = torch.optim.Adam({myEpi.R0dTaus},lr=1e-3)
+optimizer1 = torch.optim.Adam(myMatch.parameters(),lr=3e-4)
+optimizer2 = torch.optim.Adam({myEpi.taus},lr=3e-4)
+optimizer3 = torch.optim.Adam({myEpi.R0dTaus},lr=3e-4)
 myloss= torch.nn.MSELoss(reduction='sum')
 losses= []
 if paras.modelLoad in ["infer2018", "AB", "BB"]:
@@ -221,7 +221,7 @@ utils.log_print(printFlag,"cosine similarity:", evaluate.cosine_similarity(Aw, P
 utils.log_print(printFlag,"cosine similarity 2:", evaluate.cosine_similarity(Awse, PreAse))
 utils.log_print(printFlag,"spectral_analysis:", evaluate.spectral_analysis(Aw, PreA))
 #utils.log_print(printFlag,"spectral_analysis 2:", evaluate.spectral_analysis(Awse, PreAse))
-utils.log_print(printFlag,"edge_correctness:", evaluate.edge_correctness(Awse, PreAse))
+utils.log_print(printFlag,"recall:", evaluate.recall(Awse, PreAse))
 utils.log_print(printFlag,"jaccard_index:", evaluate.jaccard_index(Awse, PreAse))
 utils.log_print(printFlag,torch.var(myEpi.taus, dim= 0))
 utils.log_print(printFlag,torch.var(myEpi.R0dTaus, dim= 0))
