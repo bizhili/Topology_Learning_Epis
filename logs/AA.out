@@ -37754,3 +37754,1103 @@ INFO:root:tensor([[0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0050, 0.0000],
         [0.0050, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
         [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000]],
        device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_RGG_identical_10_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using RGG random graph model
+INFO:root:Num of links: 400
+INFO:root:Reverse ZERO: tensor(3.0035e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:4.121254787172628e-06
+INFO:root:[7.544338699637052, 7.457993180354814, 7.578291282205388, 7.581443091514427]
+INFO:root:[7.9068273143667875, 8.110838272595872, 8.44954326934656, 8.145582275343315]
+INFO:root:tensor([7.5445, 7.4581, 7.5777, 7.5814], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([7.9070, 8.1110, 8.4482, 8.1470], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.2245, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(74., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.8776, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7357, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.8040, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7357, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.5819, device='cuda:0')
+INFO:root:tensor([3.5071e-11, 2.7877e-11, 3.1653e-11, 3.2841e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([2.8011e-09, 2.9497e-09, 2.1299e-08, 7.4814e-09], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9996, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9997, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 5.0038e-04, 7.4826e-07, 5.4246e-06, 4.0441e-07, 1.5725e-05,
+         1.0337e-06],
+        [4.9900e-04, 0.0000e+00, 1.1553e-06, 2.1237e-05, 7.9292e-07, 1.5943e-07,
+         1.8403e-06],
+        [4.6682e-08, 1.5603e-08, 0.0000e+00, 2.9227e-08, 4.9747e-04, 1.0934e-07,
+         4.4050e-08],
+        [3.3523e-07, 1.1088e-06, 2.7496e-06, 0.0000e+00, 2.3895e-06, 2.6199e-08,
+         3.2714e-05],
+        [3.1859e-08, 1.2516e-08, 2.5841e-04, 2.8843e-08, 0.0000e+00, 9.4408e-08,
+         8.1150e-08],
+        [5.9394e-07, 1.1659e-07, 1.5251e-06, 6.9404e-08, 1.4085e-06, 0.0000e+00,
+         5.7779e-08],
+        [1.0872e-07, 1.7643e-07, 4.1358e-05, 4.5380e-05, 2.5645e-05, 2.6734e-08,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0005, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0005, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0005, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_RGG_identical_14_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using RGG random graph model
+INFO:root:Num of links: 400
+INFO:root:Reverse ZERO: tensor(3.4110e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:2.5625858394337944e-07
+INFO:root:[7.448346200673635, 7.441105262253295, 7.550367956739654, 7.506595729411562]
+INFO:root:[8.620834025253046, 8.391303717667906, 8.338516662876625, 8.176848050913495]
+INFO:root:tensor([7.4496, 7.4414, 7.5512, 7.5069], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([8.6228, 8.3917, 8.3395, 8.1772], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.1209, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(74., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.9426, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7357, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.6801, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7357, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.5819, device='cuda:0')
+INFO:root:tensor([3.2967e-11, 1.9554e-11, 3.2308e-11, 1.9775e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([6.3642e-09, 9.2800e-09, 1.3136e-08, 8.3948e-09], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9997, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9997, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 1.4631e-07, 5.3255e-08, 5.8032e-08, 1.8571e-08, 7.2107e-07,
+         5.7734e-08],
+        [2.4977e-07, 0.0000e+00, 5.3213e-06, 8.1752e-08, 2.8864e-07, 5.8599e-08,
+         4.7577e-04],
+        [4.7151e-09, 5.9030e-08, 0.0000e+00, 5.8896e-06, 5.0966e-04, 3.5287e-08,
+         7.6763e-08],
+        [2.8542e-08, 6.6623e-09, 6.2514e-05, 0.0000e+00, 4.2147e-06, 1.9154e-07,
+         8.3928e-09],
+        [1.4220e-08, 1.5302e-08, 2.4606e-04, 1.1409e-05, 0.0000e+00, 1.4013e-07,
+         1.9506e-08],
+        [6.9544e-06, 2.9635e-08, 1.8625e-07, 3.4993e-06, 8.8532e-07, 0.0000e+00,
+         5.3502e-08],
+        [8.8583e-08, 4.1400e-04, 1.9489e-06, 4.2088e-08, 1.7174e-07, 9.3115e-08,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0005],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0005, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0005, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0005, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_ER_identical_12_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using ER random graph model
+INFO:root:Num of links: 400
+INFO:root:Reverse ZERO: tensor(3.1316e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:8.912018436355785e-07
+INFO:root:[7.5143003345449495, 7.584280161478151, 7.414498947080219, 7.584184016658588]
+INFO:root:[8.23202343500701, 8.519938200174154, 8.615286642506382, 8.117096046762502]
+INFO:root:tensor([7.5135, 7.5836, 7.4140, 7.5836], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([8.2302, 8.5179, 8.6128, 8.1136], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.4934, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(74., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.6550, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7357, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.1034, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7357, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.5819, device='cuda:0')
+INFO:root:tensor([5.3745e-11, 5.3809e-11, 4.1986e-11, 5.2588e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([1.3909e-08, 1.5272e-08, 1.2669e-08, 1.6373e-08], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9996, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9996, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 3.9758e-05, 2.2612e-04, 1.5445e-06, 5.4686e-07, 5.3269e-07,
+         2.6553e-07],
+        [2.4166e-04, 0.0000e+00, 1.2827e-04, 2.4694e-07, 9.7361e-06, 1.9922e-05,
+         8.6404e-07],
+        [7.6368e-05, 1.0653e-04, 0.0000e+00, 1.0446e-06, 1.3886e-05, 1.1298e-05,
+         9.9337e-07],
+        [8.1452e-06, 4.5281e-07, 2.9478e-05, 0.0000e+00, 5.6918e-06, 6.6455e-06,
+         5.0601e-04],
+        [1.7084e-05, 7.4433e-07, 2.3356e-05, 3.0848e-07, 0.0000e+00, 1.0682e-05,
+         9.1383e-07],
+        [2.6390e-07, 3.9866e-07, 2.5337e-07, 4.4480e-07, 4.3040e-06, 0.0000e+00,
+         1.0843e-06],
+        [5.5770e-06, 8.3823e-07, 8.7341e-06, 1.7226e-04, 9.1130e-06, 1.1312e-05,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0005, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0005],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0005, 0.0000, 0.0000, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_BA_identical_13_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using BA random graph model
+INFO:root:Num of links: 384
+INFO:root:Reverse ZERO: tensor(2.8056e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:9.113734444370147e-07
+INFO:root:[7.403854443664679, 7.55031308136728, 7.4213881792842775, 7.512686798228832]
+INFO:root:[8.70565461990456, 8.162301359537654, 8.546731916017063, 8.542115580737171]
+INFO:root:tensor([7.4017, 7.5492, 7.4198, 7.5109], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([8.7025, 8.1604, 8.5453, 8.5394], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.4165, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(60., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.6780, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7826, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.3869, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7826, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.6429, device='cuda:0')
+INFO:root:tensor([6.3180e-11, 6.1391e-11, 5.8352e-11, 6.5702e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([1.9826e-08, 2.4434e-08, 1.9369e-08, 2.1261e-08], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9993, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9993, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 3.1582e-04, 3.6547e-04, 2.3249e-04, 3.2689e-04, 4.4973e-04,
+         6.3297e-04],
+        [5.3179e-04, 0.0000e+00, 1.3413e-05, 2.5519e-04, 3.8756e-05, 5.6739e-04,
+         1.0301e-04],
+        [4.3780e-04, 9.7050e-07, 0.0000e+00, 3.5598e-04, 7.5524e-05, 3.3892e-05,
+         5.8217e-05],
+        [4.9135e-04, 1.8812e-04, 3.0386e-04, 0.0000e+00, 3.2382e-05, 2.6527e-04,
+         5.0817e-04],
+        [4.3162e-04, 1.4493e-06, 2.7347e-05, 1.7495e-06, 0.0000e+00, 3.0529e-04,
+         1.5443e-04],
+        [5.1648e-04, 1.1924e-04, 1.5923e-04, 2.7300e-04, 6.9145e-04, 0.0000e+00,
+         9.6825e-05],
+        [3.3506e-04, 1.9176e-04, 1.1611e-04, 3.4628e-04, 2.2698e-04, 9.8820e-05,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0005, 0.0005],
+        [0.0005, 0.0000, 0.0000, 0.0000, 0.0000, 0.0005, 0.0000],
+        [0.0005, 0.0000, 0.0000, 0.0005, 0.0000, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0005, 0.0000, 0.0000, 0.0005, 0.0005],
+        [0.0005, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0005, 0.0005, 0.0000, 0.0005, 0.0000, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0000, 0.0005, 0.0000, 0.0000, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_ER_identical_11_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using ER random graph model
+INFO:root:Num of links: 400
+INFO:root:Reverse ZERO: tensor(3.2596e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:9.42349760617407e-07
+INFO:root:[7.418224686014081, 7.555310274048186, 7.494496254866269, 7.5411744454686]
+INFO:root:[7.900239254261904, 8.792137200995326, 8.287652175593326, 8.706297311553454]
+INFO:root:tensor([7.4181, 7.5543, 7.4944, 7.5406], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([7.8973, 8.7897, 8.2861, 8.7041], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.5319, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(74., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.6106, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7357, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.1168, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7357, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.5819, device='cuda:0')
+INFO:root:tensor([7.0447e-11, 3.3856e-11, 5.9797e-11, 5.0275e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([1.6821e-08, 1.4712e-08, 2.0434e-08, 1.4443e-08], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9990, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9990, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 4.9226e-05, 1.2668e-05, 8.5950e-06, 4.1649e-05, 4.1247e-05,
+         5.3876e-05],
+        [2.8222e-05, 0.0000e+00, 2.3590e-05, 2.8261e-05, 1.3157e-05, 9.7603e-06,
+         9.9105e-06],
+        [3.4069e-05, 9.9308e-07, 0.0000e+00, 6.6911e-05, 1.6994e-05, 1.1599e-05,
+         2.0135e-05],
+        [1.4645e-05, 3.7097e-05, 1.7289e-05, 0.0000e+00, 9.3359e-06, 1.2043e-05,
+         2.5827e-05],
+        [2.3919e-04, 2.9618e-07, 2.8669e-05, 9.5831e-07, 0.0000e+00, 4.0960e-05,
+         8.7478e-05],
+        [4.6216e-05, 4.4493e-07, 9.1147e-06, 7.3736e-06, 4.4828e-06, 0.0000e+00,
+         3.1605e-05],
+        [3.3402e-05, 9.8131e-07, 1.2537e-05, 1.1102e-05, 2.3402e-05, 1.6902e-05,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0005],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_RGG_identical_12_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using RGG random graph model
+INFO:root:Num of links: 400
+INFO:root:Reverse ZERO: tensor(3.0734e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:5.076066079855918e-06
+INFO:root:[7.425861996931457, 7.421628627811464, 7.411286227162031, 7.449904783116261]
+INFO:root:[8.639049562192417, 7.862386045096081, 7.88424475644418, 7.808402965463959]
+INFO:root:tensor([7.4261, 7.4218, 7.4113, 7.4502], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([8.6394, 7.8626, 7.8844, 7.8088], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.1062, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(74., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.9548, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7357, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.8329, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7357, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.5819, device='cuda:0')
+INFO:root:tensor([1.4318e-11, 1.5379e-11, 1.6075e-11, 1.6642e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([2.8931e-09, 2.4851e-09, 2.9210e-09, 2.5113e-09], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9995, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9996, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 1.4331e-07, 4.7413e-04, 3.6103e-04, 5.7240e-08, 1.2000e-07,
+         1.3970e-07],
+        [2.1866e-07, 0.0000e+00, 1.4197e-07, 2.3786e-07, 4.7994e-07, 9.6873e-07,
+         7.7524e-08],
+        [4.8900e-04, 1.6776e-07, 0.0000e+00, 4.6429e-04, 2.3479e-07, 3.4904e-07,
+         1.0585e-07],
+        [3.2450e-04, 1.5068e-07, 4.3175e-04, 0.0000e+00, 6.0212e-08, 1.2604e-07,
+         1.4066e-07],
+        [5.7358e-07, 3.6299e-07, 2.2079e-06, 6.1373e-07, 0.0000e+00, 4.5069e-07,
+         8.9509e-08],
+        [6.8437e-07, 7.0412e-06, 6.8783e-07, 7.4390e-07, 2.2313e-05, 0.0000e+00,
+         2.2983e-08],
+        [1.2351e-06, 8.1416e-08, 7.4238e-07, 1.3311e-06, 1.3244e-07, 1.9105e-08,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0000, 0.0005, 0.0005, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0000, 0.0005, 0.0000, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0005, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_WS_identical_12_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using WS random graph model
+INFO:root:Num of links: 400
+INFO:root:Reverse ZERO: tensor(3.5041e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:7.757393457755564e-07
+INFO:root:[7.404143008487846, 7.471590516407156, 7.498012032168966, 7.46505071228759]
+INFO:root:[7.969419139284384, 8.422274006567868, 7.8940115050452375, 8.214892139700346]
+INFO:root:tensor([7.4034, 7.4721, 7.4982, 7.4647], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([7.9713, 8.4205, 7.8909, 8.2153], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.2293, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(74., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.8692, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7357, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.7769, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7357, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.5819, device='cuda:0')
+INFO:root:tensor([5.5514e-11, 5.4186e-11, 5.2569e-11, 6.9416e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([2.4820e-08, 1.2985e-08, 2.4346e-08, 1.6285e-08], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9994, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9994, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 4.6014e-04, 2.2092e-04, 3.2620e-04, 1.8508e-05, 8.2533e-07,
+         5.5676e-07],
+        [2.7373e-04, 0.0000e+00, 5.7679e-05, 1.0505e-03, 8.1741e-04, 8.0310e-04,
+         1.3379e-05],
+        [3.4358e-04, 3.6210e-04, 0.0000e+00, 6.3350e-04, 4.7868e-04, 6.5455e-04,
+         2.7815e-04],
+        [3.7840e-04, 6.0656e-04, 3.2770e-04, 0.0000e+00, 3.3178e-04, 3.1670e-04,
+         5.3932e-04],
+        [4.3977e-07, 5.4742e-04, 2.5618e-04, 6.7663e-04, 0.0000e+00, 2.0740e-04,
+         5.4932e-04],
+        [3.9465e-07, 4.9685e-04, 2.1073e-04, 7.8053e-04, 2.8685e-04, 0.0000e+00,
+         4.3190e-04],
+        [4.0051e-05, 1.0763e-04, 1.0821e-04, 8.0887e-04, 5.2712e-04, 3.1454e-04,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0005, 0.0005, 0.0005, 0.0000, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000],
+        [0.0005, 0.0005, 0.0000, 0.0005, 0.0005, 0.0005, 0.0005],
+        [0.0005, 0.0005, 0.0005, 0.0000, 0.0005, 0.0005, 0.0005],
+        [0.0000, 0.0005, 0.0005, 0.0005, 0.0000, 0.0005, 0.0005],
+        [0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000, 0.0005],
+        [0.0000, 0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_BA_identical_12_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using BA random graph model
+INFO:root:Num of links: 384
+INFO:root:Reverse ZERO: tensor(2.8638e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:9.290695262216316e-07
+INFO:root:[7.543023942266409, 7.447837994382143, 7.545299761719925, 7.5324773530895355]
+INFO:root:[8.159405616469742, 8.551495951387857, 8.326011323812551, 8.301563255930175]
+INFO:root:tensor([7.5420, 7.4467, 7.5441, 7.5314], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([8.1573, 8.5490, 8.3232, 8.2997], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.4170, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(66., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.7064, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7609, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.1201, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7609, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.6140, device='cuda:0')
+INFO:root:tensor([7.6827e-11, 5.9783e-11, 7.0660e-11, 5.4978e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([2.5520e-08, 1.6041e-08, 1.8762e-08, 1.8048e-08], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9996, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9996, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 5.9762e-04, 2.8343e-04, 4.4080e-04, 3.2483e-04, 2.4436e-04,
+         4.5181e-04],
+        [6.1017e-04, 0.0000e+00, 1.6862e-04, 2.3135e-06, 5.4051e-05, 1.5429e-06,
+         9.2178e-05],
+        [3.7535e-04, 2.0884e-04, 0.0000e+00, 2.9573e-04, 1.8331e-04, 2.1350e-04,
+         2.9415e-04],
+        [4.4458e-04, 9.7867e-05, 5.0460e-04, 0.0000e+00, 6.0462e-05, 4.9069e-04,
+         5.9509e-04],
+        [6.7546e-04, 2.5372e-04, 6.6411e-05, 3.0639e-05, 0.0000e+00, 6.4512e-05,
+         3.0305e-04],
+        [5.1598e-04, 2.6436e-05, 2.7374e-04, 3.9008e-04, 1.4493e-04, 0.0000e+00,
+         2.1319e-05],
+        [9.6633e-05, 7.5534e-05, 3.3832e-05, 2.4705e-04, 5.3482e-04, 1.0682e-06,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000],
+        [0.0005, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0000, 0.0005, 0.0005, 0.0005, 0.0000],
+        [0.0005, 0.0000, 0.0005, 0.0000, 0.0000, 0.0005, 0.0005],
+        [0.0005, 0.0000, 0.0005, 0.0000, 0.0000, 0.0000, 0.0005],
+        [0.0005, 0.0000, 0.0005, 0.0005, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0005, 0.0005, 0.0000, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_ER_identical_13_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using ER random graph model
+INFO:root:Num of links: 400
+INFO:root:Reverse ZERO: tensor(3.0850e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:9.245220806203886e-07
+INFO:root:[7.568971814259644, 7.402958014563055, 7.59226923346701, 7.4716092816691795]
+INFO:root:[8.653088388433694, 8.652898518866417, 8.677284809698655, 8.387656716666667]
+INFO:root:tensor([7.5680, 7.4025, 7.5911, 7.4706], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([8.6500, 8.6509, 8.6757, 8.3840], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.4487, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(76., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.6966, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7286, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.6384, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7286, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.5730, device='cuda:0')
+INFO:root:tensor([3.6561e-11, 5.3568e-11, 4.9708e-11, 4.4698e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([1.7943e-08, 2.0951e-08, 1.9136e-08, 1.5063e-08], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9997, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9997, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 1.7516e-05, 1.2601e-04, 8.7801e-05, 1.9657e-05, 1.0352e-04,
+         2.7427e-05],
+        [1.1943e-05, 0.0000e+00, 5.9298e-06, 8.6384e-05, 2.6013e-06, 4.7308e-06,
+         4.0903e-06],
+        [1.7539e-05, 6.1417e-07, 0.0000e+00, 7.3117e-07, 6.7900e-06, 7.9099e-06,
+         7.1728e-05],
+        [2.2609e-05, 1.2565e-04, 1.2159e-05, 0.0000e+00, 2.2783e-06, 1.0701e-05,
+         3.9100e-06],
+        [2.0794e-05, 6.0686e-07, 7.0440e-05, 7.1129e-07, 0.0000e+00, 4.2878e-05,
+         6.4328e-05],
+        [4.0140e-05, 4.5467e-07, 1.9058e-05, 5.4726e-07, 5.2854e-05, 0.0000e+00,
+         1.3759e-04],
+        [5.5242e-06, 5.3668e-07, 3.2008e-05, 5.7429e-07, 1.6946e-04, 1.1746e-05,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0005, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_WS_identical_10_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using WS random graph model
+INFO:root:Num of links: 400
+INFO:root:Reverse ZERO: tensor(3.5099e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:8.659165527171595e-07
+INFO:root:[7.500157422638602, 7.540978283905228, 7.43674717878461, 7.5206411647209706]
+INFO:root:[8.55971180217859, 8.167585984102358, 8.263976214106602, 8.023050425751105]
+INFO:root:tensor([7.4993, 7.5409, 7.4362, 7.5208], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([8.5592, 8.1656, 8.2643, 8.0227], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.2039, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(78., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.8957, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7214, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.7677, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7214, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.5642, device='cuda:0')
+INFO:root:tensor([5.8683e-11, 7.2126e-11, 5.3003e-11, 7.4987e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([1.9272e-08, 1.5312e-08, 1.5546e-08, 1.8325e-08], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9996, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9995, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 3.2337e-04, 1.8375e-04, 3.8491e-04, 2.5816e-04, 2.8100e-05,
+         6.8332e-05],
+        [5.9536e-04, 0.0000e+00, 5.5095e-04, 5.8941e-04, 4.8251e-04, 3.3284e-04,
+         1.2366e-04],
+        [9.2823e-04, 8.9528e-04, 0.0000e+00, 1.9613e-05, 3.6731e-06, 1.9535e-06,
+         1.5935e-04],
+        [1.3190e-04, 3.9338e-04, 2.3265e-04, 0.0000e+00, 4.4853e-04, 6.0672e-04,
+         3.4183e-04],
+        [4.2571e-04, 5.1382e-04, 2.3231e-07, 5.9016e-04, 0.0000e+00, 4.8070e-04,
+         3.9375e-04],
+        [1.4039e-05, 4.2794e-04, 4.0443e-07, 5.0660e-04, 5.1551e-04, 0.0000e+00,
+         5.0238e-04],
+        [1.8986e-05, 4.3438e-05, 2.4125e-04, 6.7562e-04, 5.6974e-04, 2.8409e-04,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0005, 0.0005, 0.0000, 0.0005, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000],
+        [0.0005, 0.0005, 0.0000, 0.0005, 0.0000, 0.0000, 0.0005],
+        [0.0000, 0.0005, 0.0005, 0.0000, 0.0005, 0.0005, 0.0005],
+        [0.0005, 0.0005, 0.0000, 0.0005, 0.0000, 0.0005, 0.0005],
+        [0.0000, 0.0005, 0.0000, 0.0005, 0.0005, 0.0000, 0.0005],
+        [0.0000, 0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_BA_identical_14_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using BA random graph model
+INFO:root:Num of links: 384
+INFO:root:Reverse ZERO: tensor(2.9453e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:9.799177490115885e-07
+INFO:root:[7.4877849508097745, 7.587451345787124, 7.476902548973979, 7.4473403615531355]
+INFO:root:[8.758540113187065, 8.244273989610456, 8.187011168607484, 8.199263497968584]
+INFO:root:tensor([7.4855, 7.5851, 7.4760, 7.4461], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([8.7555, 8.2418, 8.1845, 8.1974], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.4147, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(64., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.7034, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7681, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.2895, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7681, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.6235, device='cuda:0')
+INFO:root:tensor([5.7408e-11, 7.1329e-11, 7.6630e-11, 7.8593e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([2.0856e-08, 3.6750e-08, 2.3596e-08, 1.5562e-08], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9992, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9992, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 5.7560e-04, 5.3121e-04, 1.3768e-04, 4.1578e-04, 9.4729e-07,
+         1.8858e-04],
+        [6.5461e-04, 0.0000e+00, 2.6553e-04, 9.0899e-05, 1.4134e-04, 1.0814e-06,
+         3.9754e-04],
+        [5.3565e-04, 6.2798e-04, 0.0000e+00, 3.8091e-04, 3.7479e-04, 4.9078e-04,
+         1.3755e-06],
+        [3.7271e-04, 2.5635e-05, 1.1132e-04, 0.0000e+00, 1.9890e-05, 2.1415e-06,
+         1.0946e-06],
+        [5.3184e-04, 7.2557e-05, 4.5512e-04, 3.9985e-05, 0.0000e+00, 6.6915e-07,
+         4.1802e-04],
+        [3.5876e-05, 1.0405e-05, 5.1695e-04, 3.9108e-05, 7.3494e-06, 0.0000e+00,
+         1.2406e-06],
+        [1.0505e-04, 4.7066e-04, 5.3917e-05, 1.2568e-05, 5.3131e-04, 1.7299e-06,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0005, 0.0000, 0.0000, 0.0000, 0.0005],
+        [0.0005, 0.0005, 0.0000, 0.0000, 0.0005, 0.0005, 0.0000],
+        [0.0005, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0005, 0.0000, 0.0000, 0.0000, 0.0005],
+        [0.0000, 0.0000, 0.0005, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0005, 0.0000, 0.0000, 0.0005, 0.0000, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_WS_identical_14_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using WS random graph model
+INFO:root:Num of links: 400
+INFO:root:Reverse ZERO: tensor(3.2422e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:7.106463110281206e-07
+INFO:root:[7.514605069354891, 7.438299243333438, 7.597906941977627, 7.479951931315386]
+INFO:root:[8.53518482880149, 8.130123256125003, 7.931690083516979, 8.696150331032088]
+INFO:root:tensor([7.5140, 7.4380, 7.5984, 7.4792], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([8.5337, 8.1291, 7.9335, 8.6947], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.2158, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(72., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.8924, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7429, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.7750, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7429, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.5909, device='cuda:0')
+INFO:root:tensor([4.2050e-11, 4.2755e-11, 6.5093e-11, 3.0013e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([2.1253e-08, 1.1293e-08, 1.6033e-08, 1.4311e-08], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9979, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9979, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 3.5062e-04, 6.4536e-04, 6.3910e-04, 2.3177e-04, 8.4961e-08,
+         3.7318e-05],
+        [5.6279e-04, 0.0000e+00, 6.1819e-04, 5.9708e-04, 9.7117e-05, 4.1778e-04,
+         5.0855e-05],
+        [3.1193e-04, 3.8303e-04, 0.0000e+00, 7.1946e-04, 3.4296e-04, 3.9401e-04,
+         2.1767e-04],
+        [1.4504e-04, 3.3248e-04, 6.6614e-04, 0.0000e+00, 4.6904e-04, 3.7207e-04,
+         3.7163e-04],
+        [6.5856e-05, 2.5316e-04, 5.2343e-04, 5.7258e-04, 0.0000e+00, 4.1234e-04,
+         2.8669e-04],
+        [2.0089e-07, 1.1170e-04, 1.2926e-04, 1.1889e-04, 2.8327e-04, 0.0000e+00,
+         2.3148e-04],
+        [2.1982e-05, 1.5846e-04, 4.0362e-04, 5.1960e-04, 3.0697e-04, 4.3833e-04,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000],
+        [0.0005, 0.0005, 0.0000, 0.0005, 0.0005, 0.0005, 0.0005],
+        [0.0005, 0.0005, 0.0005, 0.0000, 0.0005, 0.0005, 0.0005],
+        [0.0005, 0.0005, 0.0005, 0.0005, 0.0000, 0.0005, 0.0005],
+        [0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000, 0.0005],
+        [0.0000, 0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_BA_identical_11_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using BA random graph model
+INFO:root:Num of links: 384
+INFO:root:Reverse ZERO: tensor(3.1374e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:1.0497280928099091e-06
+INFO:root:[7.507636723226706, 7.506800952015023, 7.44323427356967, 7.517328932667917]
+INFO:root:[8.415794384179478, 8.663839057321214, 8.018343746137761, 8.342941284266942]
+INFO:root:tensor([7.5065, 7.5061, 7.4417, 7.5157], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([8.4148, 8.6624, 8.0160, 8.3409], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.4421, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(74., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.6896, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7319, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.1793, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7319, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.5771, device='cuda:0')
+INFO:root:tensor([7.3669e-11, 5.8504e-11, 8.1303e-11, 7.2792e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([2.8020e-08, 2.4214e-08, 2.0015e-08, 2.2469e-08], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9993, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9993, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 2.7969e-04, 5.2145e-04, 1.3069e-04, 5.4353e-05, 1.9266e-04,
+         7.8861e-05],
+        [6.3540e-05, 0.0000e+00, 4.9076e-04, 8.2698e-05, 6.6881e-05, 1.4215e-04,
+         1.3686e-04],
+        [5.7877e-04, 5.5130e-04, 0.0000e+00, 4.8587e-04, 3.4072e-05, 3.3472e-05,
+         4.9104e-04],
+        [2.5333e-04, 1.6452e-04, 4.9830e-04, 0.0000e+00, 1.5845e-05, 8.0368e-06,
+         3.4021e-05],
+        [7.9899e-05, 8.8034e-05, 2.2928e-06, 9.5421e-05, 0.0000e+00, 1.4354e-04,
+         6.7162e-05],
+        [1.6482e-04, 1.4112e-04, 2.6376e-06, 4.3622e-05, 2.8365e-04, 0.0000e+00,
+         1.2956e-04],
+        [2.5288e-05, 1.9106e-05, 4.9162e-04, 8.5186e-05, 2.3423e-05, 9.2468e-05,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000],
+        [0.0000, 0.0000, 0.0005, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0005, 0.0005, 0.0000, 0.0005, 0.0000, 0.0000, 0.0005],
+        [0.0005, 0.0000, 0.0005, 0.0000, 0.0000, 0.0000, 0.0005],
+        [0.0005, 0.0000, 0.0000, 0.0000, 0.0000, 0.0005, 0.0000],
+        [0.0005, 0.0000, 0.0000, 0.0000, 0.0005, 0.0000, 0.0005],
+        [0.0000, 0.0000, 0.0005, 0.0005, 0.0000, 0.0005, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_RGG_identical_11_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using RGG random graph model
+INFO:root:Num of links: 400
+INFO:root:Reverse ZERO: tensor(3.4226e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:7.966773943494166e-07
+INFO:root:[7.5799967473599645, 7.5954717044679185, 7.5581574260179245, 7.581997943994803]
+INFO:root:[8.01329657913962, 8.780493151305933, 8.336956600671623, 8.12039472655865]
+INFO:root:tensor([7.5805, 7.5959, 7.5582, 7.5828], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([8.0141, 8.7804, 8.3365, 8.1206], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.1549, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(70., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.9230, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7500, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.8188, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7500, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.6000, device='cuda:0')
+INFO:root:tensor([2.8493e-11, 2.1874e-11, 2.9823e-11, 2.5204e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([4.9889e-09, 5.5304e-09, 6.8363e-09, 7.7169e-09], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9998, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9997, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 5.1229e-08, 1.2522e-07, 8.6877e-08, 1.8276e-07, 4.4667e-07,
+         3.6683e-08],
+        [1.2942e-07, 0.0000e+00, 2.9397e-06, 7.8360e-07, 5.1540e-07, 3.0151e-07,
+         7.6320e-06],
+        [1.1585e-07, 2.2104e-07, 0.0000e+00, 3.1519e-08, 4.9833e-07, 3.4002e-05,
+         2.4896e-06],
+        [6.4452e-07, 4.4762e-07, 4.7687e-08, 0.0000e+00, 2.0253e-07, 2.3503e-08,
+         5.2579e-07],
+        [4.9766e-07, 3.0769e-07, 3.4798e-07, 8.3544e-08, 0.0000e+00, 8.7238e-07,
+         2.7821e-07],
+        [3.2251e-07, 3.7424e-08, 4.9449e-04, 1.5333e-08, 2.6680e-07, 0.0000e+00,
+         2.5757e-07],
+        [7.7359e-08, 4.4019e-07, 3.6974e-05, 8.2212e-08, 5.4418e-07, 9.5430e-07,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0005, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0005, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_WS_identical_13_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using WS random graph model
+INFO:root:Num of links: 400
+INFO:root:Reverse ZERO: tensor(3.0501e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:8.379940959011769e-07
+INFO:root:[7.554091661369786, 7.51201910268608, 7.58228068919001, 7.579621489346822]
+INFO:root:[7.820350431798077, 8.75876915169985, 8.405623703732843, 8.505261473371243]
+INFO:root:tensor([7.5540, 7.5112, 7.5820, 7.5789], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([7.8206, 8.7581, 8.4051, 8.5042], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.2530, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(78., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.8568, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7214, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.7461, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7214, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.5642, device='cuda:0')
+INFO:root:tensor([6.5716e-11, 6.8692e-11, 4.1965e-11, 5.0142e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([1.5178e-08, 2.2698e-08, 2.7057e-08, 2.1236e-08], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9992, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9992, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 3.7069e-04, 2.9056e-04, 6.8918e-05, 2.0148e-04, 4.8065e-05,
+         4.1062e-06],
+        [1.9167e-04, 0.0000e+00, 2.1639e-04, 5.2032e-05, 8.9505e-05, 4.8095e-04,
+         1.4134e-05],
+        [1.6837e-04, 2.3302e-04, 0.0000e+00, 8.4531e-05, 1.0130e-04, 6.5092e-04,
+         1.3992e-04],
+        [9.6385e-05, 1.9648e-04, 8.3045e-05, 0.0000e+00, 1.0607e-04, 2.7580e-04,
+         1.8953e-04],
+        [1.0816e-04, 2.0094e-04, 7.7944e-05, 8.2564e-05, 0.0000e+00, 6.2581e-04,
+         2.4475e-04],
+        [1.4681e-05, 3.2865e-04, 2.4664e-04, 3.9891e-05, 7.4273e-05, 0.0000e+00,
+         4.4201e-06],
+        [3.8186e-07, 5.8976e-06, 1.1170e-04, 2.0713e-04, 2.2544e-04, 4.8782e-07,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000],
+        [0.0005, 0.0005, 0.0000, 0.0000, 0.0005, 0.0005, 0.0005],
+        [0.0005, 0.0005, 0.0000, 0.0000, 0.0005, 0.0000, 0.0005],
+        [0.0005, 0.0005, 0.0005, 0.0005, 0.0000, 0.0005, 0.0005],
+        [0.0000, 0.0005, 0.0005, 0.0000, 0.0005, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0005, 0.0005, 0.0005, 0.0000, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_WS_identical_11_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using WS random graph model
+INFO:root:Num of links: 400
+INFO:root:Reverse ZERO: tensor(3.0908e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:6.670835984965507e-07
+INFO:root:[7.527602519757068, 7.415239197834456, 7.551849643819547, 7.586030766276424]
+INFO:root:[8.79510515555471, 8.60952822152268, 8.397536583754638, 7.845113618570738]
+INFO:root:tensor([7.5288, 7.4159, 7.5515, 7.5868], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([8.7955, 8.6102, 8.3971, 7.8453], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.2302, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(76., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.8667, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7286, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.7221, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7286, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.5730, device='cuda:0')
+INFO:root:tensor([4.4806e-11, 3.4377e-11, 3.6770e-11, 4.4946e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([1.5802e-08, 1.7507e-08, 2.1320e-08, 1.6363e-08], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9996, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9996, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 3.4620e-04, 1.2217e-04, 3.5815e-05, 4.7974e-06, 4.4030e-06,
+         7.4961e-07],
+        [5.9297e-04, 0.0000e+00, 6.9706e-04, 1.0741e-04, 1.0853e-04, 5.6694e-04,
+         2.1577e-06],
+        [5.4534e-04, 1.6276e-04, 0.0000e+00, 1.7403e-04, 5.3058e-04, 4.1937e-04,
+         1.6061e-04],
+        [6.2097e-04, 1.8773e-04, 5.4664e-04, 0.0000e+00, 4.2152e-04, 4.7737e-04,
+         3.0537e-04],
+        [2.6139e-06, 3.9661e-04, 5.3783e-04, 4.6930e-04, 0.0000e+00, 3.7327e-04,
+         5.7645e-04],
+        [2.7183e-06, 3.8019e-04, 5.5957e-04, 4.6023e-04, 3.7740e-04, 0.0000e+00,
+         5.4000e-04],
+        [9.5855e-08, 1.8787e-07, 4.5839e-04, 5.6785e-04, 4.9207e-04, 3.7493e-04,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0005, 0.0005, 0.0005, 0.0000, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000],
+        [0.0005, 0.0005, 0.0000, 0.0005, 0.0005, 0.0005, 0.0005],
+        [0.0005, 0.0005, 0.0005, 0.0000, 0.0005, 0.0005, 0.0005],
+        [0.0000, 0.0005, 0.0005, 0.0005, 0.0000, 0.0005, 0.0005],
+        [0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000, 0.0005],
+        [0.0000, 0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_ER_identical_10_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using ER random graph model
+INFO:root:Num of links: 400
+INFO:root:Reverse ZERO: tensor(3.1432e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:1.4329201391330233e-06
+INFO:root:[7.417075600469526, 7.514312287002079, 7.518302665077282, 7.43693188732892]
+INFO:root:[8.57981804310741, 8.15031962076312, 8.40021106176579, 8.62074888124137]
+INFO:root:tensor([7.4172, 7.5132, 7.5174, 7.4367], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([8.5781, 8.1484, 8.3986, 8.6185], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.4910, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(76., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.6565, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7286, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.0467, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7286, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.5730, device='cuda:0')
+INFO:root:tensor([5.1272e-11, 5.3998e-11, 4.8194e-11, 6.4659e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([1.4559e-08, 1.5017e-08, 1.2541e-08, 1.6990e-08], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9991, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9991, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 9.8823e-05, 2.9194e-05, 1.0577e-04, 2.4253e-05, 2.5002e-04,
+         1.5615e-04],
+        [9.3150e-05, 0.0000e+00, 3.6788e-05, 5.6318e-07, 2.9931e-05, 1.0883e-05,
+         8.2151e-07],
+        [9.8915e-06, 1.1401e-05, 0.0000e+00, 1.3769e-06, 3.6535e-06, 2.4440e-05,
+         2.6359e-05],
+        [8.5058e-05, 1.0995e-05, 7.3757e-06, 0.0000e+00, 7.4664e-05, 1.0157e-05,
+         1.5938e-05],
+        [1.2181e-05, 8.6577e-05, 8.0370e-06, 3.0062e-04, 0.0000e+00, 5.4694e-05,
+         5.6524e-07],
+        [1.3475e-04, 4.2795e-05, 1.9926e-05, 5.0133e-07, 1.9564e-04, 0.0000e+00,
+         6.0943e-07],
+        [5.7373e-04, 1.1921e-05, 7.9238e-05, 1.2392e-06, 8.7767e-06, 5.5735e-06,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0005],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0005, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0005, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_RGG_identical_13_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using RGG random graph model
+INFO:root:Num of links: 400
+INFO:root:Reverse ZERO: tensor(3.0093e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:3.714236007919995e-07
+INFO:root:[7.488890808116291, 7.46765112635428, 7.58253055543553, 7.47506065604084]
+INFO:root:[8.733005898141247, 8.7523981979525, 8.472314227555595, 8.483638381416814]
+INFO:root:tensor([7.4890, 7.4683, 7.5827, 7.4753], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([8.7330, 8.7531, 8.4730, 8.4840], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.1009, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(74., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.9608, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7357, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.8432, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7357, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.5819, device='cuda:0')
+INFO:root:tensor([1.3874e-11, 2.3371e-11, 1.6996e-11, 2.6359e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([4.0231e-09, 8.4834e-09, 3.2515e-09, 5.2529e-09], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9992, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9992, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 2.3048e-07, 3.9366e-05, 9.4454e-08, 4.8260e-08, 3.7190e-07,
+         5.0173e-07],
+        [2.2814e-07, 0.0000e+00, 1.8380e-07, 2.8001e-07, 2.9696e-07, 4.6362e-04,
+         3.8082e-08],
+        [4.3506e-05, 2.1048e-07, 0.0000e+00, 8.1431e-08, 5.0850e-08, 3.0053e-07,
+         2.2440e-07],
+        [1.1195e-07, 3.5211e-06, 1.8760e-07, 0.0000e+00, 9.6394e-07, 3.4292e-06,
+         2.1701e-07],
+        [8.3464e-08, 1.4588e-06, 5.4079e-08, 6.5043e-07, 0.0000e+00, 2.0747e-07,
+         4.5467e-07],
+        [3.3479e-07, 4.9452e-04, 4.4300e-07, 2.5381e-07, 1.2441e-07, 0.0000e+00,
+         3.0850e-08],
+        [1.8518e-07, 1.6740e-08, 1.1317e-07, 7.6503e-08, 1.0324e-07, 2.2696e-08,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0005, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0005, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_BA_identical_10_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using BA random graph model
+INFO:root:Num of links: 384
+INFO:root:Reverse ZERO: tensor(2.7823e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:1.1455222047282941e-06
+INFO:root:[7.493865405253721, 7.518089922352687, 7.5403899465115245, 7.498926941334979]
+INFO:root:[8.306665398694904, 7.8431404373777935, 7.96645439319059, 8.781787571398317]
+INFO:root:tensor([7.4927, 7.5178, 7.5384, 7.4978], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([8.3047, 7.8415, 7.9642, 8.7798], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.4117, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(68., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.7236, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7536, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.4122, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7536, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.6047, device='cuda:0')
+INFO:root:tensor([5.4469e-11, 1.0872e-10, 8.6165e-11, 5.0227e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([2.8153e-08, 3.3936e-08, 2.2435e-08, 2.1548e-08], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9983, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9982, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 5.0448e-04, 2.7408e-04, 4.7268e-04, 3.8626e-04, 2.4155e-04,
+         3.2647e-04],
+        [5.3317e-04, 0.0000e+00, 4.0287e-04, 5.2222e-04, 3.4131e-05, 3.8591e-04,
+         1.9633e-05],
+        [2.1843e-04, 4.8649e-04, 0.0000e+00, 1.2824e-04, 1.0101e-04, 3.1638e-05,
+         4.8757e-05],
+        [2.9549e-04, 5.0420e-04, 7.1376e-05, 0.0000e+00, 1.5637e-04, 1.4055e-04,
+         3.9325e-05],
+        [8.7194e-04, 8.4963e-07, 1.7776e-04, 3.7319e-04, 0.0000e+00, 3.1736e-04,
+         5.4161e-05],
+        [1.8139e-04, 4.9873e-04, 5.6264e-05, 1.7043e-04, 3.1431e-04, 0.0000e+00,
+         1.5473e-04],
+        [2.9035e-05, 1.6292e-06, 2.1679e-05, 1.9517e-05, 2.4208e-04, 1.6687e-05,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0005, 0.0005, 0.0005, 0.0005, 0.0005, 0.0000],
+        [0.0005, 0.0000, 0.0005, 0.0005, 0.0000, 0.0005, 0.0000],
+        [0.0005, 0.0005, 0.0000, 0.0000, 0.0005, 0.0000, 0.0000],
+        [0.0005, 0.0005, 0.0000, 0.0000, 0.0005, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0005, 0.0005, 0.0000, 0.0000, 0.0005],
+        [0.0005, 0.0005, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0005, 0.0000, 0.0000]],
+       device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AA/AA_ER_identical_14_4_-1_0_100_0.5_150000
+INFO:root:Strains: 4
+INFO:root:Using ER random graph model
+INFO:root:Num of links: 400
+INFO:root:Reverse ZERO: tensor(3.0152e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(0, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:9.080521708297469e-07
+INFO:root:[7.407557853555521, 7.509188318586277, 7.417974588072934, 7.5900118392956255]
+INFO:root:[8.746162266570833, 8.307495425818074, 8.767877830676005, 8.23726382928241]
+INFO:root:tensor([7.4049, 7.5073, 7.4157, 7.5893], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([8.7391, 8.3052, 8.7651, 8.2316], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:err1: tensor(0.6154, device='cuda:0', grad_fn=<SumBackward0>)
+INFO:root:err2: tensor(78., device='cuda:0')
+INFO:root:cosine similarity: tensor(0.4628, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:cosine similarity 2: tensor(0.7214, device='cuda:0')
+INFO:root:spectral_analysis: tensor(0.2026, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:recall: tensor(0.7214, device='cuda:0')
+INFO:root:jaccard_index: tensor(0.5642, device='cuda:0')
+INFO:root:tensor([9.2569e-11, 2.8566e-11, 2.5927e-11, 5.2905e-11], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([2.2440e-08, 8.3497e-09, 9.9923e-09, 2.4927e-08], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor(0.9997, device='cuda:0', grad_fn=<DivBackward0>)
+INFO:root:tensor(0.9997, device='cuda:0')
+INFO:root:tensor([[0.0000e+00, 2.7173e-06, 8.9951e-05, 3.8601e-04, 6.2066e-06, 2.8862e-06,
+         6.5660e-06],
+        [8.1636e-05, 0.0000e+00, 1.8392e-05, 8.2437e-05, 9.9036e-05, 1.2712e-05,
+         5.7267e-04],
+        [2.2415e-05, 1.1969e-05, 0.0000e+00, 5.3847e-05, 1.1920e-05, 5.6954e-05,
+         5.0405e-05],
+        [6.6604e-05, 3.4615e-05, 3.8637e-05, 0.0000e+00, 2.7529e-05, 1.1564e-05,
+         3.7528e-04],
+        [3.6161e-05, 1.5374e-04, 7.1754e-07, 7.7196e-05, 0.0000e+00, 4.4962e-07,
+         1.9613e-04],
+        [1.9493e-05, 3.2432e-05, 2.2438e-05, 2.7873e-05, 1.3826e-05, 0.0000e+00,
+         3.2891e-05],
+        [5.1471e-05, 8.9861e-06, 1.5203e-05, 1.3795e-05, 4.5288e-05, 3.4486e-06,
+         0.0000e+00]], device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0000, 0.0005, 0.0005, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0005, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0005, 0.0000, 0.0000, 0.0000, 0.0005, 0.0000, 0.0000],
+        [0.0000, 0.0005, 0.0000, 0.0005, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000]],
+       device='cuda:0')
