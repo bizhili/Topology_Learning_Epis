@@ -84,7 +84,7 @@ def one_strain(
 
 
 def multi_strains(
-    G, paras: object, Amat: torch.tensor, intense: int =0, device: str = "cpu") -> torch.Tensor:
+    G, paras: object, Amat: torch.tensor, intense: int =0, lower=20, device: str = "cpu") -> torch.Tensor:
     """Simulates the SIR model for multiple strains.
 
     Args:
@@ -116,6 +116,6 @@ def multi_strains(
     for i in range(deltaSsTensor.shape[1]):
         tempSlice= deltaSsTensor[:, i, :]
         maxTemp= torch.max(tempSlice)
-        if i>20 and maxTemp<1e-2:
+        if i>lower and maxTemp<1e-2:
             break
     return deltaSsTensor[:, 0:i, :]

@@ -31,7 +31,7 @@ def plot_2d_RGG(G: nx.Graph, pos: dict) -> None:
 
 
 
-def plot_spring_layout(G: nx.Graph) -> None:
+def plot_spring_layout(G: nx.Graph, Gref= None, fixMin= None, fixMax= None) -> None:
     """Plot a spring layout graph.
 
     Args:
@@ -47,7 +47,22 @@ def plot_spring_layout(G: nx.Graph) -> None:
     plt.subplot(1, 2, 2)
     # Get the degrees of all nodes
     degrees = [d for n, d in G.degree()]
-    plt.hist(degrees, bins=np.arange(min(degrees), max(degrees) + 1) - 0.5, density=True, alpha=0.75)
+    refMin= min(degrees)
+    refMax= max(degrees)+1
+    if Gref is not None:
+        degreesRef= [d for n, d in Gref.degree()]
+        refMin= min(refMin, min(degreesRef))
+        refMax= max(refMax, max(degreesRef)+1)
+        if fixMin is not None:
+            refMin= fixMin
+            refMax= fixMax
+        plt.hist(degreesRef, bins=np.arange(refMin, refMax)-0.5, density=True, alpha=0.75)
+        plt.hist(degrees, bins=np.arange(refMin, refMax)-0.5, density=True, alpha=0.5)
+    else:
+        if fixMin is not None:
+            refMin= fixMin
+            refMax= fixMax
+        plt.hist(degrees, bins=np.arange(refMin, refMax)-0.5, density=True, alpha=0.75)
     plt.title("Degree Distribution Histogram")
     plt.xlabel("Degree")
     plt.ylabel("Probability")

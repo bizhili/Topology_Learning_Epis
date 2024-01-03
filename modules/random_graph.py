@@ -11,7 +11,7 @@ def calculate_distance(point1, point2):
     return math.sqrt((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2)
 
 
-def get_ER_random_contact(n: int, avgDegree: float, device: str="cpu") -> torch.Tensor:
+def get_ER_random_contact(n: int, avgDegree: float, shuffle= False, device: str="cpu") -> torch.Tensor:
     """
     Generates a random contact matrix for an Erdős-Rényi random graph.
 
@@ -28,10 +28,15 @@ def get_ER_random_contact(n: int, avgDegree: float, device: str="cpu") -> torch.
     graph = nx.dense_gnm_random_graph(n, n * avgDegree)
     while nx.is_connected(graph) is False:
         graph = nx.dense_gnm_random_graph(n, n * avgDegree)
+    if shuffle:
+        # Shuffle the index of the graph
+        node_list = list(graph.nodes())
+        random.shuffle(node_list)
+        graph = nx.relabel_nodes(graph, dict(zip(graph.nodes(), node_list)))
     contact = torch.FloatTensor(nx.to_numpy_array(graph)).to(device)
     return contact, graph
 
-def get_WS_random_contact(n: int, k: int, p: float, device: str="cpu") -> torch.Tensor:
+def get_WS_random_contact(n: int, k: int, p: float, shuffle= False, device: str="cpu") -> torch.Tensor:
     """
     Generates a random contact matrix for a Watts-Strogatz small-world graph.
 
@@ -49,10 +54,15 @@ def get_WS_random_contact(n: int, k: int, p: float, device: str="cpu") -> torch.
     graph = nx.watts_strogatz_graph(n, k, p)
     while nx.is_connected(graph) is False:
         graph = nx.watts_strogatz_graph(n, k, p)
+    if shuffle:
+        # Shuffle the index of the graph
+        node_list = list(graph.nodes())
+        random.shuffle(node_list)
+        graph = nx.relabel_nodes(graph, dict(zip(graph.nodes(), node_list)))
     contact = torch.FloatTensor(nx.to_numpy_array(graph)).to(device)
     return contact, graph
 
-def get_BA_random_contact(n: int, m: int, device: str="cpu") -> torch.Tensor:
+def get_BA_random_contact(n: int, m: int, shuffle= False, device: str="cpu") -> torch.Tensor:
     """
     Generates a random contact matrix for a Barabási-Albert preferential attachment graph.
 
@@ -68,10 +78,15 @@ def get_BA_random_contact(n: int, m: int, device: str="cpu") -> torch.Tensor:
     graph = nx.barabasi_albert_graph(n, m)
     while nx.is_connected(graph) is False:
         graph = nx.barabasi_albert_graph(n, m)
+    if shuffle:
+        # Shuffle the index of the graph
+        node_list = list(graph.nodes())
+        random.shuffle(node_list)
+        graph = nx.relabel_nodes(graph, dict(zip(graph.nodes(), node_list)))
     contact = torch.FloatTensor(nx.to_numpy_array(graph)).to(device)
     return contact, graph
 
-def get_RGG_random_contact(n: int, m: int, device: str="cpu") -> torch.Tensor:
+def get_RGG_random_contact(n: int, m: int, shuffle= False, device: str="cpu") -> torch.Tensor:
     """
     Generates a random contact matrix for a random RGGmetric graph.
 
@@ -103,6 +118,10 @@ def get_RGG_random_contact(n: int, m: int, device: str="cpu") -> torch.Tensor:
             graph= nx.Graph(contactNp)
             if nx.is_connected(graph):
                 break
-    
+    if shuffle:
+        # Shuffle the index of the graph
+        node_list = list(graph.nodes())
+        random.shuffle(node_list)
+        graph = nx.relabel_nodes(graph, dict(zip(graph.nodes(), node_list)))
     contact = torch.FloatTensor(nx.to_numpy_array(graph)).to(device)
     return contact, graph, pos

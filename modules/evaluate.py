@@ -1,5 +1,6 @@
 import torch
 
+
 def square_error(Z, preZ):
     return torch.sqrt((Z-preZ)**2).sum()
 
@@ -31,6 +32,16 @@ def jaccard_index(Z, preZ):
     denominator= torch.sum((Z+preZ)-Z*preZ)
     return numerator/denominator
 
+def normalized_hamming_distance(Z, preZ):
+    """Calculates the Normalized Hamming Distance between two matrices."""
 
+    assert Z.shape == preZ.shape, "Matrices must have the same shape."
+    num_nodes = Z.shape[0]
+    max_distance = num_nodes * (num_nodes - 1)   # Maximum possible distance for a full matrix
+
+    hamming_distance = torch.sum(torch.logical_xor(Z, preZ)) #01, 10, (11, 00)
+    normalized_distance = torch.sqrt(hamming_distance /max_distance)
+
+    return normalized_distance
 
 
