@@ -68,6 +68,8 @@ elif paras.randomGraph=="WS":
     A, G= random_graph.get_WS_random_contact(paras.n, paras.dense*2, paras.wsProbability, device= device)
 elif paras.randomGraph=="ER":
     A, G= random_graph.get_ER_random_contact(paras.n, paras.dense, device= device)
+else:
+    A, G= random_graph.read_from_file("graphs/"+paras.randomGraph+".npy")
 
 #assign adjacency weight to matrix: degree(defult), gravity
 
@@ -86,8 +88,6 @@ if plotFlag==1:
         plotGraph.plot_2d_RGG(G, pos)
     elif paras.plot== "spring":
         plotGraph.plot_spring_layout(G)
-
-
 
 
 

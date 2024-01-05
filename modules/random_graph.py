@@ -125,3 +125,10 @@ def get_RGG_random_contact(n: int, m: int, shuffle= False, device: str="cpu") ->
         graph = nx.relabel_nodes(graph, dict(zip(graph.nodes(), node_list)))
     contact = torch.FloatTensor(nx.to_numpy_array(graph)).to(device)
     return contact, graph, pos
+
+def read_from_file(FileName, device: str="cpu"):
+    Anp= np.load(FileName)
+    contact = torch.FloatTensor(Anp).to(device)
+    graph = nx.from_numpy_array(Anp)
+    return contact, graph
+
