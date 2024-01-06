@@ -215,14 +215,17 @@ linksNum= torch.sum(Aw/0.01)
 sumWeight= torch.sum(Aw)
 PreAse= utils.continious_to_sparcity(PreA, linksNum)+IMatrix
 Awse= utils.continious_to_sparcity(Aw, linksNum)+IMatrix
+np.savez("results/"+fileName+".npz", A= Aw.cpu().detach(), Apre= PreA.cpu().detach(), 
+         cosine_similarity= evaluate.cosine_similarity(Aw, PreA).item(),
+         loss= losses, taus= paras.taus, r0s= paras.R0s, tausP= myEpi.taus.cpu().detach(), 
+         r0sP= (myEpi.R0dTaus*myEpi.taus).cpu().detach(), signal= signal.cpu().detach(), predSignal= predSignal.cpu().detach())
 utils.log_print(printFlag,"err1:", torch.sqrt((PreA-Aw)**2).sum())
 utils.log_print(printFlag,"err2:", torch.abs(PreAse-Awse).sum())
 utils.log_print(printFlag,"cosine similarity:", evaluate.cosine_similarity(Aw, PreA))
-utils.log_print(printFlag,"cosine similarity 2:", evaluate.cosine_similarity(Awse, PreAse))
+utils.log_print(printFlag,"cosine similarity 2:", evaluate.cosine_similarity(Aw, PreA))
 utils.log_print(printFlag,"spectral_analysis:", evaluate.spectral_analysis(Aw, PreA))
-#utils.log_print(printFlag,"spectral_analysis 2:", evaluate.spectral_analysis(Awse, PreAse))
-utils.log_print(printFlag,"recall:", evaluate.recall(Awse, PreAse))
-utils.log_print(printFlag,"jaccard_index:", evaluate.jaccard_index(Awse, PreAse))
+utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+utils.log_print(printFlag,"jaccard_index:", evaluate.jaccard_index(Aw.cpu(), PreA.cpu()))
 utils.log_print(printFlag,torch.var(myEpi.taus, dim= 0))
 utils.log_print(printFlag,torch.var(myEpi.R0dTaus, dim= 0))
 utils.log_print(printFlag,torch.sum(predSignal[29, :, 0:-1])/paras.strains)
@@ -231,10 +234,7 @@ startV= 5
 deltaV= 7
 utils.log_print(printFlag,PreA[startV:startV+deltaV, startV:startV+deltaV])
 utils.log_print(printFlag,Aw[startV:startV+deltaV, startV:startV+deltaV])
-np.savez("results/"+fileName+".npz", A= Aw.cpu().detach(), Apre= PreA.cpu().detach(), 
-         cosine_similarity= evaluate.cosine_similarity(Aw, PreA).item(),
-         loss= losses, taus= paras.taus, r0s= paras.R0s, tausP= myEpi.taus.cpu().detach(), 
-         r0sP= (myEpi.R0dTaus*myEpi.taus).cpu().detach(), signal= signal.cpu().detach(), predSignal= predSignal.cpu().detach())
+
 
 
 
