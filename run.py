@@ -70,6 +70,8 @@ elif paras.randomGraph=="ER":
     A, G= random_graph.get_ER_random_contact(paras.n, paras.dense, device= device)
 else:
     A, G= random_graph.read_from_file("graphs/"+paras.randomGraph+".npy")
+    paras.n= A.shape[0]
+    P= population.population(paras.n, device= device)
 
 #assign adjacency weight to matrix: degree(defult), gravity
 

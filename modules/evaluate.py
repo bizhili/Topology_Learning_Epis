@@ -87,8 +87,8 @@ def accuracy(Z, preZ):
     Z= torch.tensor(continious_to_sparcity(Z.numpy(), links))+IMatrix
     preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
 
-    numerator= torch.sum(Z*preZ+(1-Z)*(1-preZ))
-    denominator= Z.shape[0]*Z.shape[1]
+    numerator= torch.sum(1-torch.logical_xor(Z, preZ).float())
+    denominator= Z.shape[0]*Z.shape[0]
     return numerator/denominator
 
 def jaccard_index(Z, preZ):
@@ -151,10 +151,10 @@ def draw_prc(As, preAs, legends= []):
         # Plot ROC curve
         plt.plot(recall, precision, label=f'{legends[i]}')
 
-    plt.plot([0, 1], [1, 0], color='navy', linestyle='--', label= "Radom pred")
+    plt.plot([0, 1], [1, 0], color='navy', linestyle='--')
     plt.xlim([0.0, 1.05])
     plt.ylim([0.0, 1.05])
-    plt.xlabel('False Positive Rate')
+    plt.xlabel('Recall')
     plt.ylabel('Precision')
     plt.title('Precision-Recall')
     plt.legend(loc="lower right")
