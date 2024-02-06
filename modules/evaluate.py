@@ -2,6 +2,7 @@ import torch
 import numpy as np
 from sklearn.metrics import roc_curve, auc, precision_recall_curve
 import matplotlib.pyplot as plt
+import scipy.optimize
 
 
 def continious_to_sparcity(my_array, top= 400):
@@ -26,6 +27,35 @@ def cosine_similarity(Z, preZ):
     numerator= torch.sum(Z*preZ)
     denominator= torch.sqrt(torch.sum(Z**2))*torch.sqrt(torch.sum(preZ**2))
     return numerator/denominator
+
+def pearson_correlation(matrix1, matrix2):
+    # Flatten matrices to 1D arrays
+    flat_matrix1 = matrix1.flatten()
+    flat_matrix2 = matrix2.flatten()
+    
+    # Calculate mean of each matrix
+    mean_matrix1 = torch.mean(flat_matrix1)
+    mean_matrix2 = torch.mean(flat_matrix2)
+    
+    # Calculate Pearson correlation coefficient
+    numerator = torch.sum((flat_matrix1 - mean_matrix1) * (flat_matrix2 - mean_matrix2))
+    denominator = torch.sqrt(torch.sum((flat_matrix1 - mean_matrix1)**2) * torch.sum((flat_matrix2 - mean_matrix2)**2))
+    pearson_corr = numerator / denominator
+    return pearson_corr
+
+def jaccard_similarity(matrix1, matrix2):
+    # Flatten matrices to 1D tensors
+    flat_matrix1 = matrix1.flatten()
+    flat_matrix2 = matrix2.flatten()
+    
+    # Calculate intersection and union
+    intersection = torch.sum(torch.minimum(flat_matrix1, flat_matrix2))
+    union = torch.sum(torch.maximum(flat_matrix1, flat_matrix2))
+    
+    # Calculate Jaccard similarity index
+    jaccard_similarity = intersection / union
+    
+    return jaccard_similarity  # Convert to Python float
 
 def spectral_analysis(Z, preZ):
     try:
@@ -106,13 +136,34 @@ def normalized_hamming_distance(Z, preZ):
     """Calculates the Normalized Hamming Distance between two matrices."""
 
     assert Z.shape == preZ.shape, "Matrices must have the same shape."
+    links= int(torch.sum(Z>1e-6))
+    IMatrix= torch.eye(Z.shape[0], device= "cpu")
+    Z= torch.tensor(continious_to_sparcity(Z.numpy(), links))+IMatrix
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
     num_nodes = Z.shape[0]
     max_distance = num_nodes * (num_nodes - 1)   # Maximum possible distance for a full matrix
 
     hamming_distance = torch.sum(torch.logical_xor(Z, preZ)) #01, 10, (11, 00)
+
     normalized_distance = torch.sqrt(hamming_distance /max_distance)
 
     return normalized_distance
+
+def graph_edit_distance(matrix1, matrix2):
+    # Convert matrices to numpy arrays
+    matrix1_np = matrix1.numpy()
+    matrix2_np = matrix2.numpy()
+    
+    # Calculate the cost matrix based on absolute differences in weights
+    cost_matrix = np.abs(matrix1_np[:, np.newaxis] - matrix2_np).sum(axis=2)  # Sum along the third axis
+    
+    # Solve assignment problem using the Hungarian algorithm
+    row_ind, col_ind = scipy.optimize.linear_sum_assignment(cost_matrix)
+    
+    # Calculate graph edit distance
+    ged = cost_matrix[row_ind, col_ind].sum()
+    
+    return ged
 
 def draw_auc_roc(As, preAs, legends= []):
     plt.figure()

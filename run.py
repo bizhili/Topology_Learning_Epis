@@ -71,7 +71,15 @@ elif paras.randomGraph=="ER":
 else:
     A, G= random_graph.read_from_file("graphs/"+paras.randomGraph+".npy")
     paras.n= A.shape[0]
-    P= population.population(paras.n, device= device)
+    if A.diagonal().sum()> paras.n+1:
+        Pop= A.diagonal()
+        A_in= A.sum(dim=0)+1e-5
+        A= A/Pop
+        A= A-torch.eye(paras.n)
+        P= torch.tensor(Pop, device= device)
+        G = nx.from_numpy_array((A>0.005).numpy())
+    else:
+        P= population.population(paras.n, device= device)
 
 #assign adjacency weight to matrix: degree(defult), gravity
 
