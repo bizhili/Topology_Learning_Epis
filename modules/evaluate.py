@@ -123,7 +123,7 @@ def accuracy(Z, preZ):
 
 def jaccard_index(Z, preZ):
 
-    links= int(torch.sum(Z>1e-6))
+    links= int(torch.sum(Z>5e-3))
     IMatrix= torch.eye(Z.shape[0], device= "cpu")
     Z= torch.tensor(continious_to_sparcity(Z.numpy(), links))+IMatrix
     preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix

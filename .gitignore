@@ -97,3 +97,4 @@ celerybeat-schedule
 celerybeat-schedule.db
 
 #others
+gitCommon.sh
