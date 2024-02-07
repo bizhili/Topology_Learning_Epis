@@ -1,0 +1,78 @@
+Wed Feb 7 10:30:54 IST 2024
+
+SLURM_JOBID:		 1045495
+SLURM_JOB_NODELIST:	 ise-3090-03 
+
+
+python run.py --epoches 150000 --modelLoad AA --weightModel none --randomGraph mobility_us        --seed 11 --strains 3  --dense 0 --n 100 --intense -1 --CMDprogress_0_7
+python run.py --epoches 150000 --modelLoad AA --weightModel none --randomGraph mobility_us        --seed 11 --strains 4  --dense 0 --n 100 --intense -1 --CMDprogress_1_7
+python run.py --epoches 150000 --modelLoad AA --weightModel none --randomGraph mobility_german        --seed 11 --strains 4  --dense 0 --n 100 --intense -1 --CMDprogress_2_7
+python run.py --epoches 150000 --modelLoad AA --weightModel none --randomGraph mobility_german        --seed 11 --strains 3  --dense 0 --n 100 --intense -1 --CMDprogress_3_7
+/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py:78: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  P= torch.tensor(Pop, device= device)
+/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py:78: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  P= torch.tensor(Pop, device= device)
+/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py:78: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  P= torch.tensor(Pop, device= device)
+/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py:78: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  P= torch.tensor(Pop, device= device)
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 239, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 239, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 239, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 239, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+python run.py --epoches 150000 --modelLoad AA --weightModel none --randomGraph mobility_german        --seed 11 --strains 2  --dense 0 --n 100 --intense -1 --CMDprogress_4_7
+python run.py --epoches 150000 --modelLoad AA --weightModel none --randomGraph mobility_us        --seed 11 --strains 2  --dense 0 --n 100 --intense -1 --CMDprogress_5_7
+python run.py --epoches 150000 --modelLoad AA --weightModel none --randomGraph mobility_german        --seed 11 --strains 1  --dense 0 --n 100 --intense -1 --CMDprogress_6_7
+python run.py --epoches 150000 --modelLoad AA --weightModel none --randomGraph mobility_us        --seed 11 --strains 1  --dense 0 --n 100 --intense -1 --CMDprogress_7_7
+/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py:78: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  P= torch.tensor(Pop, device= device)
+/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py:78: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  P= torch.tensor(Pop, device= device)
+/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py:78: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  P= torch.tensor(Pop, device= device)
+/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py:78: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  P= torch.tensor(Pop, device= device)
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 239, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 239, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 239, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 239, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
