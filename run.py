@@ -72,7 +72,7 @@ else:
     A, G= random_graph.read_from_file("graphs/"+paras.randomGraph+".npy")
     paras.n= A.shape[0]
     if A.diagonal().sum()> paras.n+1:
-        Pop= A.sum(dim= 1)+1e-5
+        Pop=  A.sum(axis=0)+A.sum(axis=1)-A.diagonal()+1e-5
         A= A/Pop
         A= A.fill_diagonal_(0)
         P= torch.tensor(Pop, device= device)
