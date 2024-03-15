@@ -17,6 +17,51 @@ def pearson_correlation(x, y, dim=0):
     return corr_coeff
 
 #neural network to compute similarity of two metapopulation nodes
+class matchingAttention(torch.nn.Module):
+    def __init__(self, timeDim, strainDim, n, channel= 3, midLayer= 20, device= "cpu"):
+        super(matchingAttention, self).__init__()
+
+        self.channel=  channel
+        self.n= n
+        self.midLayer= midLayer
+
+        self.Wu= torch.nn.Linear(timeDim, midLayer*channel, device= device)
+        self.WuAtt= torch.nn.MultiheadAttention(midLayer*channel, channel, device= device)
+        self.Wv= torch.nn.Linear(timeDim, midLayer*channel, device= device)
+        self.WvAtt= torch.nn.MultiheadAttention(midLayer*channel, channel, device= device)
+        self.scalar_a = torch.nn.Parameter(torch.tensor(0.0), requires_grad=True)
+
+        #self.midU= torch.nn.Linear(midLayer, midLayer, device= device)
+        #self.midV= torch.nn.Linear(midLayer, midLayer, device= device)
+
+        self.Wnorm= torch.nn.Linear(strainDim*channel, 1, bias= True, device= device)
+
+        self.AmatBias= torch.randn((n, n), dtype= torch.float32, device=device)*1e-6
+        self.AmatBias= torch.nn.Parameter(self.AmatBias)
+
+        self.myEye= torch.eye(n, dtype= torch.float32, device= device)
+        self.myMask= torch.ones(n, dtype= torch.float32, device= device)- self.myEye
+        self.mySig= torch.nn.Sigmoid()
+        self.mySig2= torch.nn.Sigmoid()
+
+    def forward(self, x, mode= 0): #[50, 2, timeDim]
+        transU= (self.Wu(x))#[50, 1, 2*channel, midlayer]
+        transUAtt, _= self.WuAtt(transU, transU, transU)
+        U= (transU+transUAtt).view(self.n, 1, self.channel*x.shape[1], self.midLayer)
+        transV= (self.Wv(x))#[1, 50, 2*channel, midlayer]
+        transVAtt, _= self.WvAtt(transV, transV, transV)
+        V= (transV+transVAtt).view(1, self.n, self.channel*x.shape[1], self.midLayer)
+        Atemp = F.cosine_similarity(U, V, dim=-1)#[50, 50, 2*channel]
+        #Atemp = pearson_correlation(transU, transV, dim= -1).squeeze()
+
+        Anorm= self.Wnorm(Atemp)#[50, 50]
+        scalar_sig= self.mySig2(self.scalar_a)
+        ATemp= Anorm+self.AmatBias[..., None]
+        ATemp2= scalar_sig*ATemp+(1-scalar_sig)*ATemp.transpose(0, 1)
+        Ainfer= self.mySig(ATemp2)*self.myMask[..., None]
+        return Ainfer.squeeze()
+
+#neural network to compute similarity of two metapopulation nodes
 class matchingA(torch.nn.Module):
     def __init__(self, timeDim, strainDim, n, channel= 3, midLayer= 40, device= "cpu"):
         super(matchingA, self).__init__()
