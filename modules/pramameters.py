@@ -128,7 +128,7 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
         '--modelLoad',
         type=str,
         default= "AA",
-        help='Setting load model (string): AA(defult), AB, BA, BB, infer2018'
+        help='Setting load model (string): AA(defult), AB, BA, BB, infer2018, ATA'
     )
     parser.add_argument(
         '--dense',
