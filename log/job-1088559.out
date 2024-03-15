@@ -1,0 +1,62 @@
+Fri Mar 15 15:28:38 IST 2024
+
+SLURM_JOBID:		 1088559
+SLURM_JOB_NODELIST:	 ise-pheno-11 
+
+
+python run.py --epoches 150000 --modelLoad AA --weightModel none --randomGraph us_air        --seed 11 --strains 2  --dense 0 --n 100 --intense -1 --CMDprogress_0_7
+python run.py --epoches 150000 --modelLoad AA --weightModel none --randomGraph global_air        --seed 11 --strains 4  --dense 0 --n 100 --intense -1 --CMDprogress_1_7
+python run.py --epoches 150000 --modelLoad AA --weightModel none --randomGraph us_air        --seed 11 --strains 3  --dense 0 --n 100 --intense -1 --CMDprogress_2_7
+python run.py --epoches 150000 --modelLoad AA --weightModel none --randomGraph us_air        --seed 11 --strains 4  --dense 0 --n 100 --intense -1 --CMDprogress_3_7
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 228, in <module>
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 228, in <module>
+    PreAse= utils.continious_to_sparcity(PreA, linksNum)+IMatrix
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/utils.py", line 66, in continious_to_sparcity
+    PreAse= utils.continious_to_sparcity(PreA, linksNum)+IMatrix
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/utils.py", line 66, in continious_to_sparcity
+    top_indices = torch.topk(flat_tensor, k=int(top.item())).indices
+RuntimeError: selected index k out of range
+    top_indices = torch.topk(flat_tensor, k=int(top.item())).indices
+RuntimeError: selected index k out of range
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 228, in <module>
+    PreAse= utils.continious_to_sparcity(PreA, linksNum)+IMatrix
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/utils.py", line 66, in continious_to_sparcity
+    top_indices = torch.topk(flat_tensor, k=int(top.item())).indices
+RuntimeError: selected index k out of range
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 228, in <module>
+    PreAse= utils.continious_to_sparcity(PreA, linksNum)+IMatrix
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/utils.py", line 66, in continious_to_sparcity
+    top_indices = torch.topk(flat_tensor, k=int(top.item())).indices
+RuntimeError: selected index k out of range
+python run.py --epoches 150000 --modelLoad AA --weightModel none --randomGraph global_air        --seed 11 --strains 2  --dense 0 --n 100 --intense -1 --CMDprogress_4_7
+python run.py --epoches 150000 --modelLoad AA --weightModel none --randomGraph us_air        --seed 11 --strains 1  --dense 0 --n 100 --intense -1 --CMDprogress_5_7
+python run.py --epoches 150000 --modelLoad AA --weightModel none --randomGraph global_air        --seed 11 --strains 3  --dense 0 --n 100 --intense -1 --CMDprogress_6_7
+python run.py --epoches 150000 --modelLoad AA --weightModel none --randomGraph global_air        --seed 11 --strains 1  --dense 0 --n 100 --intense -1 --CMDprogress_7_7
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 228, in <module>
+    PreAse= utils.continious_to_sparcity(PreA, linksNum)+IMatrix
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/utils.py", line 66, in continious_to_sparcity
+    top_indices = torch.topk(flat_tensor, k=int(top.item())).indices
+RuntimeError: selected index k out of range
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 228, in <module>
+    PreAse= utils.continious_to_sparcity(PreA, linksNum)+IMatrix
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/utils.py", line 66, in continious_to_sparcity
+    top_indices = torch.topk(flat_tensor, k=int(top.item())).indices
+RuntimeError: selected index k out of range
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 228, in <module>
+    PreAse= utils.continious_to_sparcity(PreA, linksNum)+IMatrix
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/utils.py", line 66, in continious_to_sparcity
+    top_indices = torch.topk(flat_tensor, k=int(top.item())).indices
+RuntimeError: selected index k out of range
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 228, in <module>
+    PreAse= utils.continious_to_sparcity(PreA, linksNum)+IMatrix
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/utils.py", line 66, in continious_to_sparcity
+    top_indices = torch.topk(flat_tensor, k=int(top.item())).indices
+RuntimeError: selected index k out of range
