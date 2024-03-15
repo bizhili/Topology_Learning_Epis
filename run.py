@@ -225,12 +225,13 @@ PreA= A_mat.reverse_A_mat(PreZ-torch.eye(paras.n, device= device), P)
 IMatrix= torch.eye(paras.n, device= device)
 linksNum= torch.sum(Aw/0.01)
 sumWeight= torch.sum(Aw)
-PreAse= utils.continious_to_sparcity(PreA, linksNum)+IMatrix
-Awse= utils.continious_to_sparcity(Aw, linksNum)+IMatrix
+
 np.savez("results/"+fileName+".npz", A= Aw.cpu().detach(), Apre= PreA.cpu().detach(), 
          cosine_similarity= evaluate.cosine_similarity(Aw, PreA).item(),
          loss= losses, taus= paras.taus, r0s= paras.R0s, tausP= myEpi.taus.cpu().detach(), 
          r0sP= (myEpi.R0dTaus*myEpi.taus).cpu().detach(), signal= signal.cpu().detach(), predSignal= predSignal.cpu().detach())
+PreAse= utils.continious_to_sparcity(PreA, linksNum)+IMatrix
+Awse= utils.continious_to_sparcity(Aw, linksNum)+IMatrix
 utils.log_print(printFlag,"err1:", torch.sqrt((PreA-Aw)**2).sum())
 utils.log_print(printFlag,"err2:", torch.abs(PreAse-Awse).sum())
 utils.log_print(printFlag,"cosine similarity:", evaluate.cosine_similarity(Aw, PreA))
