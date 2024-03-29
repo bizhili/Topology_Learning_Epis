@@ -1,0 +1,230 @@
+Thu Mar 28 16:44:12 IST 2024
+
+SLURM_JOBID:		 1098084
+SLURM_JOB_NODELIST:	 cs-3090-02 
+
+
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph us_air200        --seed 11 --strains 1  --dense 0 --n 100 --intense -1 --CMDprogress_0_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph us_air100        --seed 11 --strains 2  --dense 0 --n 100 --intense -1 --CMDprogress_1_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph us_air100        --seed 11 --strains 4  --dense 0 --n 100 --intense -1 --CMDprogress_2_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph us_air400        --seed 11 --strains 2  --dense 0 --n 100 --intense -1 --CMDprogress_3_31
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph spain_car        --seed 11 --strains 3  --dense 0 --n 100 --intense -1 --CMDprogress_4_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph spain_train        --seed 11 --strains 3  --dense 0 --n 100 --intense -1 --CMDprogress_5_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph spain_plane        --seed 11 --strains 2  --dense 0 --n 100 --intense -1 --CMDprogress_6_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph spain_train        --seed 11 --strains 1  --dense 0 --n 100 --intense -1 --CMDprogress_7_31
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph us_air300        --seed 11 --strains 4  --dense 0 --n 100 --intense -1 --CMDprogress_8_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph spain_bus        --seed 11 --strains 1  --dense 0 --n 100 --intense -1 --CMDprogress_9_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph spain_bus        --seed 11 --strains 2  --dense 0 --n 100 --intense -1 --CMDprogress_10_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph spain_car        --seed 11 --strains 4  --dense 0 --n 100 --intense -1 --CMDprogress_11_31
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph spain_bus        --seed 11 --strains 4  --dense 0 --n 100 --intense -1 --CMDprogress_12_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph spain_plane        --seed 11 --strains 1  --dense 0 --n 100 --intense -1 --CMDprogress_13_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph us_air300        --seed 11 --strains 3  --dense 0 --n 100 --intense -1 --CMDprogress_14_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph spain_train        --seed 11 --strains 2  --dense 0 --n 100 --intense -1 --CMDprogress_15_31
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph us_air400        --seed 11 --strains 1  --dense 0 --n 100 --intense -1 --CMDprogress_16_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph us_air100        --seed 11 --strains 1  --dense 0 --n 100 --intense -1 --CMDprogress_17_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph us_air200        --seed 11 --strains 4  --dense 0 --n 100 --intense -1 --CMDprogress_18_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph spain_car        --seed 11 --strains 1  --dense 0 --n 100 --intense -1 --CMDprogress_19_31
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph us_air200        --seed 11 --strains 2  --dense 0 --n 100 --intense -1 --CMDprogress_20_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph us_air300        --seed 11 --strains 1  --dense 0 --n 100 --intense -1 --CMDprogress_21_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph us_air400        --seed 11 --strains 4  --dense 0 --n 100 --intense -1 --CMDprogress_22_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph spain_plane        --seed 11 --strains 3  --dense 0 --n 100 --intense -1 --CMDprogress_23_31
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph us_air400        --seed 11 --strains 3  --dense 0 --n 100 --intense -1 --CMDprogress_24_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph spain_train        --seed 11 --strains 4  --dense 0 --n 100 --intense -1 --CMDprogress_25_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph us_air200        --seed 11 --strains 3  --dense 0 --n 100 --intense -1 --CMDprogress_26_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph spain_plane        --seed 11 --strains 4  --dense 0 --n 100 --intense -1 --CMDprogress_27_31
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph us_air100        --seed 11 --strains 3  --dense 0 --n 100 --intense -1 --CMDprogress_28_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph us_air300        --seed 11 --strains 2  --dense 0 --n 100 --intense -1 --CMDprogress_29_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph spain_car        --seed 11 --strains 2  --dense 0 --n 100 --intense -1 --CMDprogress_30_31
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph spain_bus        --seed 11 --strains 3  --dense 0 --n 100 --intense -1 --CMDprogress_31_31
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+Traceback (most recent call last):
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/run.py", line 240, in <module>
+    utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
+  File "/sise/home/lx/code/12_1_topology_learning/Topology_Learning_Epis/modules/evaluate.py", line 73, in recall
+    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
