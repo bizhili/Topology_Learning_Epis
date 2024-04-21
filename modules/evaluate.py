@@ -23,12 +23,12 @@ def continious_to_sparcity(my_array, top= 400):
 def square_error(Z, preZ):
     return torch.sqrt((Z-preZ)**2).sum()
 
-def cosine_similarity(Z, preZ):
+def cosine_similarity(Z, preZ):#V
     numerator= torch.sum(Z*preZ)
     denominator= torch.sqrt(torch.sum(Z**2))*torch.sqrt(torch.sum(preZ**2))
     return numerator/denominator
 
-def pearson_correlation(matrix1, matrix2):
+def pearson_correlation(matrix1, matrix2):#V
     # Flatten matrices to 1D arrays
     flat_matrix1 = matrix1.flatten()
     flat_matrix2 = matrix2.flatten()
@@ -43,7 +43,7 @@ def pearson_correlation(matrix1, matrix2):
     pearson_corr = numerator / denominator
     return pearson_corr
 
-def jaccard_similarity(matrix1, matrix2):
+def jaccard_similarity(matrix1, matrix2):#V
     # Flatten matrices to 1D tensors
     flat_matrix1 = matrix1.flatten()
     flat_matrix2 = matrix2.flatten()
@@ -57,13 +57,37 @@ def jaccard_similarity(matrix1, matrix2):
     
     return jaccard_similarity  # Convert to Python float
 
-def spectral_analysis(Z, preZ):
+def spectral_similarity(Z, preZ):#V
     try:
         preEig, _ = torch.linalg.eig(preZ)
         Eig, _ = torch.linalg.eig(Z)
         return cosine_similarity(Eig.real, preEig.real)
     except:
         return 0
+    
+def ROC_AUC(Z, preZ):
+    links= int(torch.sum(Z>1e-6))
+    IMatrix= torch.eye(Z.shape[0], device= "cpu")
+    A= torch.tensor(continious_to_sparcity(Z.numpy(), links))+IMatrix
+    y_true = A.cpu().numpy().flatten()
+    y_pred = preZ.cpu().numpy().flatten()
+    # Calculate false positive rate, true positive rate, and thresholds
+    fpr, tpr, _ = roc_curve(y_true, y_pred, pos_label=1)
+    # Calculate AUC
+    roc_auc = auc(fpr, tpr)
+    return roc_auc
+
+def PR_AUC(Z, preZ):
+    links= int(torch.sum(Z>1e-6))
+    IMatrix= torch.eye(Z.shape[0], device= "cpu")
+    A= torch.tensor(continious_to_sparcity(Z.numpy(), links))+IMatrix
+    y_true = A.cpu().numpy().flatten()
+    y_pred = preZ.cpu().numpy().flatten()
+    # Calculate false positive rate, true positive rate, and thresholds
+    precision, recall, _  = precision_recall_curve(y_true, y_pred, pos_label= 1)
+    # Calculate AUC
+    roc_auc = auc(recall, precision)
+    return roc_auc
 
 def recall(Z, preZ):
 
@@ -71,7 +95,6 @@ def recall(Z, preZ):
     IMatrix= torch.eye(Z.shape[0], device= "cpu")
     Z= torch.tensor(continious_to_sparcity(Z.numpy(), links))+IMatrix
     preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
-
     numerator= torch.sum(Z*preZ)
     denominator= torch.sum(torch.abs(Z.float()))
     return numerator/denominator
@@ -149,8 +172,9 @@ def normalized_hamming_distance(Z, preZ):
 
     return normalized_distance
 
-def graph_edit_distance(matrix1, matrix2):
+def graph_avg_edit_distance(matrix1, matrix2):
     # Convert matrices to numpy arrays
+    n=matrix1.shape[0]
     matrix1_np = matrix1.numpy()
     matrix2_np = matrix2.numpy()
     
@@ -166,7 +190,8 @@ def graph_edit_distance(matrix1, matrix2):
     return ged
 
 def draw_auc_roc(As, preAs, legends= []):
-    plt.figure()
+    plt.figure(figsize=(8, 6))
+    fontSize= 22
     for i, A in enumerate(As):
         # Flatten matrices into 1D arrays
         y_true = A.numpy().flatten()
@@ -177,19 +202,21 @@ def draw_auc_roc(As, preAs, legends= []):
         # Calculate AUC
         roc_auc = auc(fpr, tpr)
         # Plot ROC curve
-        plt.plot(fpr, tpr, label=f'{legends[i]}(area=%0.3f)' % roc_auc)
+        plt.plot(fpr, tpr, label=f'{legends[i]}')
 
     plt.plot([0, 1], [0, 1], color='navy', linestyle='--', label= "Radom pred")
     plt.xlim([0.0, 1.05])
     plt.ylim([0.0, 1.05])
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title('Receiver Operating Characteristic')
-    plt.legend(loc="lower right")
+    plt.xlabel('False Positive Rate', fontsize= fontSize)
+    plt.ylabel('True Positive Rate', fontsize= fontSize)
+    plt.tick_params(axis='both', labelsize=fontSize)
+    #plt.title('Receiver Operating Characteristic')
+    plt.legend(loc="lower right", fontsize= fontSize-5)
     plt.show()
 
 def draw_prc(As, preAs, legends= []):
-    plt.figure()
+    plt.figure(figsize=(8, 6))
+    fontSize= 22
     for i, A in enumerate(As):
         # Flatten matrices into 1D arrays
         y_true = A.numpy().flatten()
@@ -205,8 +232,9 @@ def draw_prc(As, preAs, legends= []):
     plt.plot([0, 1], [1, 0], color='navy', linestyle='--')
     plt.xlim([0.0, 1.05])
     plt.ylim([0.0, 1.05])
-    plt.xlabel('Recall')
-    plt.ylabel('Precision')
-    plt.title('Precision-Recall')
-    plt.legend(loc="lower right")
+    plt.xlabel('Recall', fontsize= fontSize)
+    plt.ylabel('Precision', fontsize= fontSize)
+    plt.tick_params(axis='both', labelsize=fontSize)
+    #plt.title('Precision-Recall')
+    plt.legend(loc="lower right", fontsize= fontSize-5)
     plt.show()

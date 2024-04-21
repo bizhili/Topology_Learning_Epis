@@ -43,6 +43,7 @@ class Paras:
         self.dense= None
         self.identicalf= None
         self.wsProbability= None
+        self.evaluateEvery= None
 
 
 def add_arguments(parser: argparse.ArgumentParser) -> None:
@@ -148,7 +149,12 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
         default= 0.1,
         help='Setting WS model rewiring probability (float): 0.1(defult)'
     )
-
+    parser.add_argument(
+        '--evaluateEvery',
+        type=int,
+        default= 100,
+        help='How many epoches to perform evaluate once'
+    )
 
 
 def read_arguments(parser: argparse.ArgumentParser) -> Paras:
@@ -181,6 +187,7 @@ def read_arguments(parser: argparse.ArgumentParser) -> Paras:
     paras.dense= args.dense
     paras.identicalf= args.identicalf
     paras.wsProbability= args.wsProbability
+    paras.evaluateEvery= args.evaluateEvery
 
 
     if paras.weightModel == "gravity" and paras.randomGraph != "RGG":

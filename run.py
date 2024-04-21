@@ -109,7 +109,7 @@ R0s_taus= [[random.uniform(paras.R0Mean-paras.R0Std, paras.R0Mean+paras.R0Std),
             random.uniform(paras.tauMean-paras.tauStd, paras.tauMean+paras.tauStd)] for _ in range(40)]
 paras.R0s=  [ R0s_taus[i][0] for i in range(40)]
 paras.taus= [ R0s_taus[i][1] for i in range(40)]
-deltaSsTensor= simulation.multi_strains(G, paras, Zmat, intense= paras.intense,  device= device)
+deltaSsTensor, _= simulation.multi_strains(G, paras, Zmat, intense= paras.intense,  device= device)
 divide= deltaSsTensor.transpose(1, 2)
 #utils.log_print(printFlag,divide.shape)
 if plotFlag==1:
@@ -155,9 +155,17 @@ if paras.modelLoad in ["infer2018", "AB", "BB"]:
 
 
 
+def evaluate_epoch(preZ, methods= []):
+    IMatrix= torch.eye(paras.n, device= device)
+    preA= A_mat.reverse_A_mat(preZ-IMatrix, P)
+    oneResult= []
+    for method in methods:
+        oneResult.append(method(Aw.cpu(), preA.cpu()))
+    return oneResult
 
 
-
+evaluateMeth= [evaluate.spectral_similarity, evaluate.pearson_correlation, evaluate.jaccard_similarity,evaluate.ROC_AUC, evaluate.PR_AUC]
+evaluateResults= []
 if paras.modelLoad== "infer2018":
     for j in (range(paras.epoches)):
         optimizer1.zero_grad()
@@ -176,8 +184,10 @@ if paras.modelLoad== "infer2018":
         optimizer1.step()
         optimizer2.step()
         optimizer3.step()
+        if j%paras.evaluateEvery== 0:
+            evaluateResults.append(evaluate_epoch(PreZ.detach(), evaluateMeth))
 else:
-    for j in (range(paras.epoches)):
+    for j in tqdm(range(paras.epoches)):
         optimizer1.zero_grad()
         optimizer2.zero_grad()
         optimizer3.zero_grad()
@@ -193,6 +203,9 @@ else:
         optimizer1.step()
         optimizer2.step()
         optimizer3.step()
+        if j%paras.evaluateEvery== 0:
+            evaluateResults.append(evaluate_epoch(PreZ.detach(), evaluateMeth))
+
 utils.log_print(printFlag,"\n\n\n.........................initialize..........................")
 utils.log_print(printFlag,"FileName:", fileName)
 utils.log_print(printFlag,"Strains:", paras.strains)
@@ -216,64 +229,33 @@ utils.log_print(printFlag,losses[-1]/timeHorizon*100)#
 
 
 
+
 #save: A, preA, losses, taus, pretaus, R0s, preR0s, [errors]
 utils.log_print(printFlag,paras.taus[0: paras.strains])
 utils.log_print(printFlag,paras.R0s[0: paras.strains])
 utils.log_print(printFlag,myEpi.taus[0])
 utils.log_print(printFlag,(myEpi.taus*myEpi.R0dTaus)[0])
-PreA= A_mat.reverse_A_mat(PreZ-torch.eye(paras.n, device= device), P)
-IMatrix= torch.eye(paras.n, device= device)
-linksNum= torch.sum(Aw/0.01)
-sumWeight= torch.sum(Aw)
 
-np.savez("results/"+fileName+".npz", A= Aw.cpu().detach(), Apre= PreA.cpu().detach(), 
-         cosine_similarity= evaluate.cosine_similarity(Aw, PreA).item(),
-         loss= losses, taus= paras.taus, r0s= paras.R0s, tausP= myEpi.taus.cpu().detach(), 
-         r0sP= (myEpi.R0dTaus*myEpi.taus).cpu().detach(), signal= signal.cpu().detach(), predSignal= predSignal.cpu().detach())
-PreAse= utils.continious_to_sparcity(PreA, linksNum)+IMatrix
-Awse= utils.continious_to_sparcity(Aw, linksNum)+IMatrix
-utils.log_print(printFlag,"err1:", torch.sqrt((PreA-Aw)**2).sum())
-utils.log_print(printFlag,"err2:", torch.abs(PreAse-Awse).sum())
-utils.log_print(printFlag,"cosine similarity:", evaluate.cosine_similarity(Aw, PreA))
-utils.log_print(printFlag,"cosine similarity 2:", evaluate.cosine_similarity(Aw, PreA))
-utils.log_print(printFlag,"spectral_analysis:", evaluate.spectral_analysis(Aw, PreA))
-utils.log_print(printFlag,"recall:", evaluate.recall(Aw.cpu(), PreA.cpu()))
-utils.log_print(printFlag,"jaccard_index:", evaluate.jaccard_index(Aw.cpu(), PreA.cpu()))
+IMatrix= torch.eye(paras.n, device= device)
+PreA= A_mat.reverse_A_mat(PreZ-IMatrix, P)
+evaluateResults.append(evaluate_epoch(PreZ.detach(), evaluateMeth))
+
+utils.log_print(printFlag,"spectral_similarity:", evaluateResults[-1][0])
+utils.log_print(printFlag,"pearson_correlation:", evaluateResults[-1][1])
+utils.log_print(printFlag,"jaccard_similarity:", evaluateResults[-1][2])
+utils.log_print(printFlag,"ROC_AUC:", evaluateResults[-1][3])
+utils.log_print(printFlag,"PR_AUC:", evaluateResults[-1][4])
 utils.log_print(printFlag,torch.var(myEpi.taus, dim= 0))
 utils.log_print(printFlag,torch.var(myEpi.R0dTaus, dim= 0))
-utils.log_print(printFlag,torch.sum(predSignal[29, :, 0:-1])/paras.strains)
-utils.log_print(printFlag,torch.sum(signal[29, :, 1:])/paras.strains)
 startV= 5
 deltaV= 7
 utils.log_print(printFlag,PreA[startV:startV+deltaV, startV:startV+deltaV])
 utils.log_print(printFlag,Aw[startV:startV+deltaV, startV:startV+deltaV])
-
-
-
-
-
-
-
-
-
-
-if plotFlag==1:
-    plt.plot(losses)
-    plt.yscale("log")
-    plt.ylabel("Loss")
-    plt.xlabel("Epoches")
-
-
-if plotFlag==1:
-    node= 4
-    plt.plot(signal[node, :, 1:].squeeze().T.cpu().detach(), label=paras.strains*["true"])
-    utils.log_print(printFlag,signal[node, 0, 1])
-    utils.log_print(printFlag,predSignal[node, 0, 0])
-    #plt.plot(embedded_tensor[0, :, -1:].squeeze().T.cpu().detach())
-    plt.plot(predSignal[node, :, 0:-1].squeeze().T.cpu().detach(), label=paras.strains*["Pred"])
-    #plt.plot(noise[0].T.cpu().detach())
-    plt.legend()
-
+np.savez("results/"+fileName+".npz", A= Aw.cpu().detach(), Apre= PreA.cpu().detach(), 
+         cosine_similarity= evaluate.cosine_similarity(Aw, PreA).item(),
+         loss= losses, taus= paras.taus, r0s= paras.R0s, tausP= myEpi.taus.cpu().detach(), 
+         r0sP= (myEpi.R0dTaus*myEpi.taus).cpu().detach(), signal= signal.cpu().detach(), predSignal= predSignal.cpu().detach(),
+           evaluates= evaluateResults)
 
 
 

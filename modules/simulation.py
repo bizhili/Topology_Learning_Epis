@@ -118,4 +118,4 @@ def multi_strains(
         maxTemp= torch.max(tempSlice)
         if i>lower and maxTemp<1e-2:
             break
-    return deltaSsTensor[:, 0:i, :]
+    return deltaSsTensor[:, 0:i, :], randomList
