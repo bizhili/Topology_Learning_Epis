@@ -16,50 +16,6 @@ def pearson_correlation(x, y, dim=0):
 
     return corr_coeff
 
-#neural network to compute similarity of two metapopulation nodes
-class matchingAttention(torch.nn.Module):
-    def __init__(self, timeDim, strainDim, n, channel= 3, midLayer= 20, device= "cpu"):
-        super(matchingAttention, self).__init__()
-
-        self.channel=  channel
-        self.n= n
-        self.midLayer= midLayer
-
-        self.Wu= torch.nn.Linear(timeDim, midLayer*channel, device= device)
-        self.WuAtt= torch.nn.MultiheadAttention(midLayer*channel, channel, device= device)
-        self.Wv= torch.nn.Linear(timeDim, midLayer*channel, device= device)
-        self.WvAtt= torch.nn.MultiheadAttention(midLayer*channel, channel, device= device)
-        self.scalar_a = torch.nn.Parameter(torch.tensor(0.0), requires_grad=True)
-
-        #self.midU= torch.nn.Linear(midLayer, midLayer, device= device)
-        #self.midV= torch.nn.Linear(midLayer, midLayer, device= device)
-
-        self.Wnorm= torch.nn.Linear(strainDim*channel, 1, bias= True, device= device)
-
-        self.AmatBias= torch.randn((n, n), dtype= torch.float32, device=device)*1e-6
-        self.AmatBias= torch.nn.Parameter(self.AmatBias)
-
-        self.myEye= torch.eye(n, dtype= torch.float32, device= device)
-        self.myMask= torch.ones(n, dtype= torch.float32, device= device)- self.myEye
-        self.mySig= torch.nn.Sigmoid()
-        self.mySig2= torch.nn.Sigmoid()
-
-    def forward(self, x, mode= 0): #[50, 2, timeDim]
-        transU= (self.Wu(x))#[50, 1, 2*channel, midlayer]
-        transUAtt, _= self.WuAtt(transU, transU, transU)
-        U= (transU+transUAtt).view(self.n, 1, self.channel*x.shape[1], self.midLayer)
-        transV= (self.Wv(x))#[1, 50, 2*channel, midlayer]
-        transVAtt, _= self.WvAtt(transV, transV, transV)
-        V= (transV+transVAtt).view(1, self.n, self.channel*x.shape[1], self.midLayer)
-        Atemp = F.cosine_similarity(U, V, dim=-1)#[50, 50, 2*channel]
-        #Atemp = pearson_correlation(transU, transV, dim= -1).squeeze()
-
-        Anorm= self.Wnorm(Atemp)#[50, 50]
-        scalar_sig= self.mySig2(self.scalar_a)
-        ATemp= Anorm+self.AmatBias[..., None]
-        ATemp2= scalar_sig*ATemp+(1-scalar_sig)*ATemp.transpose(0, 1)
-        Ainfer= self.mySig(ATemp2)*self.myMask[..., None]
-        return Ainfer.squeeze()
 
 #neural network to compute similarity of two metapopulation nodes
 class matchingA(torch.nn.Module):
@@ -103,6 +59,69 @@ class matchingA(torch.nn.Module):
         Ainfer= self.mySig(ATemp2)*self.myMask[..., None]
         return Ainfer.squeeze()
     
+#neural network to compute similarity of two metapopulation nodes
+class matchingAVar(torch.nn.Module):
+    def __init__(self, timeDim, strainDim, n, channel= 12, midLayer= 40, device= "cpu"):
+        super(matchingAVar, self).__init__()
+
+        self.channel=  channel
+        self.n= n
+        self.midLayer= midLayer
+        self.strainDim= strainDim
+
+        self.Wu= torch.nn.Linear(timeDim, midLayer*channel, device= device)
+        self.Wv= torch.nn.Linear(timeDim, midLayer*channel, device= device)
+
+        self.scalar_a = torch.nn.Parameter(torch.tensor(0.0), requires_grad=True)
+
+        #self.midU= torch.nn.Linear(midLayer, midLayer, device= device)
+        #self.midV= torch.nn.Linear(midLayer, midLayer, device= device)
+
+        self.Wnorm= torch.nn.Linear(channel, channel, bias= True, device= device)
+        self.Wnorm2= torch.nn.Linear(channel, channel, bias= True, device= device)
+        self.Wnorm3= torch.nn.Linear(channel, 1, bias= True, device= device)
+
+        self.WnormVar= torch.nn.Linear(channel, channel, bias= True, device= device)
+        self.WnormVar2= torch.nn.Linear(channel, channel, bias= True, device= device)
+        self.WnormVar3= torch.nn.Linear(channel, 1, bias= True, device= device)
+
+        self.AmatBias= torch.randn((n, n), dtype= torch.float32, device=device)*1e-6
+        self.AmatBias= torch.nn.Parameter(self.AmatBias)
+
+        self.myEye= torch.eye(n, dtype= torch.float32, device= device)
+        self.myMask= torch.ones(n, dtype= torch.float32, device= device)- self.myEye
+        self.myRelu= torch.nn.ReLU()
+        self.mySig= torch.nn.Sigmoid()
+
+        self.device= device
+
+    def forward(self, x, mode= 0): #[50, 2, timeDim]
+        transU= (self.Wu(x)).view(self.n, 1, self.channel*x.shape[1], self.midLayer)#[50, 1, strainDim*channel, midlayer]
+
+        transV= (self.Wv(x)).view(1, self.n, self.channel*x.shape[1], self.midLayer)#[1, 50, strainDim*channel, midlayer]
+
+        Atemp = F.cosine_similarity(transU, transV, dim=-1)#[50, 50, strainDim*channel]
+
+        Atemp= Atemp.view(self.n, self.n, self.channel, self.strainDim)
+        Atemp= torch.mean(Atemp, dim= -1)
+
+        Anorm= self.myRelu(self.Wnorm(Atemp))#[50, 50, 12]
+        Anorm= self.myRelu(self.Wnorm2(Anorm))
+        Anorm= self.myRelu(self.Wnorm3(Anorm)).squeeze()
+
+        AnormVar= self.myRelu(self.WnormVar(Atemp))
+        AnormVar= self.myRelu(self.WnormVar2(AnormVar))
+        self.AnormVar= self.myRelu(self.WnormVar3(AnormVar)).squeeze()
+
+        scalar_sig= self.mySig(self.scalar_a)
+        Anorm= Anorm+self.AmatBias
+        self.Anorm= scalar_sig*Anorm+(1-scalar_sig)*Anorm.transpose(0, 1)
+        
+        randSample= torch.randn((self.n, self.n), device= self.device)
+        Ainfer= self.myRelu(self.Anorm+self.AnormVar*randSample)*self.myMask
+
+        return Ainfer
+    
 #neural network to compute the SIR spidemic gradient
 class EpisA(torch.nn.Module):
     def __init__(self, input_dim= 20, num_heads= 1, n= 50, device= "cpu"):
@@ -110,9 +129,9 @@ class EpisA(torch.nn.Module):
         self.device= device
         self.num_heads= num_heads
         self.n= n
-        self.taus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*6.2
+        self.taus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*6
         self.taus= torch.nn.Parameter(self.taus)
-        self.R0dTaus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*1.35
+        self.R0dTaus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*1
         self.R0dTaus= torch.nn.Parameter(self.R0dTaus)
         self.mat, self.mask= self.create_temporal_mat(input_dim)
         self.myRelu= torch.nn.ReLU()
@@ -176,9 +195,9 @@ class EpisB(torch.nn.Module):
         self.device= device
         self.num_heads= num_heads
         self.n= n
-        self.taus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*6.2
+        self.taus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*6
         self.taus= torch.nn.Parameter(self.taus)
-        self.R0dTaus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*1.35
+        self.R0dTaus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*1
         self.R0dTaus= torch.nn.Parameter(self.R0dTaus)
         self.myRelu= torch.nn.ReLU()
         self.mySig= torch.nn.Sigmoid()
