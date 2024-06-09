@@ -16,7 +16,7 @@ import modules.population as population
 import modules.plotGraph as plotGraph
 import modules.simulation as simulation
 import modules.utils as utils
-import modules.nn as nn
+import modules.nn as mynn
 import modules.evaluate as evaluate
 import math
 
@@ -125,21 +125,26 @@ if plotFlag==1:
 
 
 timeHorizon= divide.shape[2]-1
+
+timeHorizon= divide.shape[2]-1
 if   paras.modelLoad=="AA":
-    myMatch= nn.matchingA(timeHorizon+1, paras.strains, paras.n,  device= device)
-    myEpi= nn.EpisA(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
+    myMatch= mynn.matchingA(timeHorizon+1, paras.strains, paras.n, channel= 24,  device= device)
+    myEpi= mynn.EpisA(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
+elif paras.modelLoad=="AsA":
+    myMatch= mynn.matchingAs(timeHorizon+1, paras.strains, paras.n, channel= 24,  device= device)
+    myEpi= mynn.EpisA(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
 elif paras.modelLoad=="AB":
-    myMatch= nn.matchingA(timeHorizon+1, paras.strains, paras.n,  device= device)
-    myEpi= nn.EpisB(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
+    myMatch= mynn.matchingA(timeHorizon+1, paras.strains, paras.n, channel= 3,  device= device)
+    myEpi= mynn.EpisB(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
 elif paras.modelLoad=="BA":
-    myMatch= nn.matchingB(timeHorizon+1, paras.strains, paras.n,  device= device)
-    myEpi= nn.EpisA(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
+    myMatch= mynn.matchingB(timeHorizon+1, paras.strains, paras.n,  device= device)
+    myEpi= mynn.EpisA(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
 elif paras.modelLoad=="BB":
-    myMatch= nn.matchingB(timeHorizon+1, paras.strains, paras.n,  device= device)
-    myEpi= nn.EpisB(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
+    myMatch= mynn.matchingB(timeHorizon+1, paras.strains, paras.n,  device= device)
+    myEpi= mynn.EpisB(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
 elif paras.modelLoad=="infer2018":
-    myMatch= nn.matchingB(timeHorizon+1, paras.strains, paras.n,  device= device)
-    myEpi= nn.EpisB(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
+    myMatch= mynn.matchingB(timeHorizon+1, paras.strains, paras.n,  device= device)
+    myEpi= mynn.EpisB(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
 
 optimizer1 = torch.optim.Adam(myMatch.parameters(),lr=3e-4)
 optimizer2 = torch.optim.Adam({myEpi.taus},lr=3e-4)
