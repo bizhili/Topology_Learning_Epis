@@ -188,9 +188,9 @@ def graph_avg_edit_distance(matrix1, matrix2):
     
     return ged
 
-def draw_auc_roc(As, preAs, legends= []):
+def draw_auc_roc(As, preAs,  legends= [] , random_real_pre= None):
     plt.figure(figsize=(8, 6))
-    fontSize= 22
+    fontSize= 27
     for i, A in enumerate(As):
         # Flatten matrices into 1D arrays
         y_true = A.numpy().flatten()
@@ -202,20 +202,27 @@ def draw_auc_roc(As, preAs, legends= []):
         roc_auc = auc(fpr, tpr)
         # Plot ROC curve
         plt.plot(fpr, tpr, label=f'{legends[i]}')
+    if random_real_pre is not None:
+        print("haha")
+        random_true= random_real_pre[0].flatten()
+        random_pred= random_real_pre[1].numpy().flatten()
+        # Calculate false positive rate, true positive rate, and thresholds
+        fpr, tpr, thresholds = roc_curve(random_true, random_pred, pos_label=1)
+        # Plot ROC curve
+        plt.plot(fpr, tpr,  color='navy', linestyle='--', label= "Random pred")
 
-    plt.plot([0, 1], [0, 1], color='navy', linestyle='--', label= "Radom pred")
     plt.xlim([0.0, 1.05])
     plt.ylim([0.0, 1.05])
     plt.xlabel('False Positive Rate', fontsize= fontSize)
     plt.ylabel('True Positive Rate', fontsize= fontSize)
     plt.tick_params(axis='both', labelsize=fontSize)
     #plt.title('Receiver Operating Characteristic')
-    plt.legend(loc="lower right", fontsize= fontSize-5)
+    # plt.legend(loc="lower right", fontsize= fontSize-5)
     plt.show()
 
-def draw_prc(As, preAs, legends= []):
+def draw_prc(As, preAs, legends= [], random_real_pre= None):
     plt.figure(figsize=(8, 6))
-    fontSize= 22
+    fontSize= 27
     for i, A in enumerate(As):
         # Flatten matrices into 1D arrays
         y_true = A.numpy().flatten()
@@ -227,13 +234,19 @@ def draw_prc(As, preAs, legends= []):
         #roc_auc = auc(fpr, tpr)
         # Plot ROC curve
         plt.plot(recall, precision, label=f'{legends[i]}')
-
-    plt.plot([0, 1], [1, 0], color='navy', linestyle='--')
+    if random_real_pre is not None:
+        print("haha")
+        random_true= random_real_pre[0].flatten()
+        random_pred= random_real_pre[1].numpy().flatten()
+        # Calculate false positive rate, true positive rate, and thresholds
+        precision, recall, thresholds = precision_recall_curve(random_true, random_pred)
+        # Plot ROC curve
+        plt.plot(recall, precision, color='navy', linestyle='--', label= "Random pred")
     plt.xlim([0.0, 1.05])
     plt.ylim([0.0, 1.05])
     plt.xlabel('Recall', fontsize= fontSize)
     plt.ylabel('Precision', fontsize= fontSize)
     plt.tick_params(axis='both', labelsize=fontSize)
     #plt.title('Precision-Recall')
-    plt.legend(loc="lower right", fontsize= fontSize-5)
+    # plt.legend(loc="lower right", fontsize= fontSize-5)
     plt.show()

@@ -181,7 +181,7 @@ class matchingB(torch.nn.Module):
         self.mySig= torch.nn.Sigmoid()
 
     def forward(self, x, mode=0): #[50, 1, 36]
-        if mode=="BA":
+        if mode=="BA"  or mode=="infer2018":
             return self.mySig(self.Amat)*self.AmatMask
         return self.Amat
 

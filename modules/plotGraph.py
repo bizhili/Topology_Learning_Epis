@@ -34,7 +34,7 @@ def plot_degree_distribution(G: nx.graph, Gpre= None, fixMin= 0, fixMax= 30, ax=
     degrees = [d for n, d in G.degree()]
     refMin= min(degrees)
     refMax= max(degrees)+1
-    fontZise= 25
+    fontZise= 44
     if Gpre is not None:
         degreesRef= [d for n, d in Gpre.degree()]
         refMin= min(refMin, min(degreesRef))
@@ -52,8 +52,8 @@ def plot_degree_distribution(G: nx.graph, Gpre= None, fixMin= 0, fixMax= 30, ax=
         ax.hist(degrees, bins=np.arange(refMin, refMax)-0.5, density=True, color="royalblue", alpha=0.5, label="True Graph")
     #ax.set_title(f"Degree distribution", fontsize=fontZise)
     #ax.legend(prop = { "size": fontZise }, loc ="upper right")
-    ax.set_xlabel("Degree", fontsize=fontZise)
-    ax.set_ylabel("Probability", fontsize=fontZise)
+    # ax.set_xlabel("Degree", fontsize=fontZise)
+    # ax.set_ylabel("Probability", fontsize=fontZise)
     ax.tick_params(axis='both', labelsize=fontZise)
     ax.grid(True)
 
@@ -64,7 +64,7 @@ def read_posDic_from_json(filename= ""):
     return posDic
 
 def plot_spring_layout(G= None, GPre= None, pos= None, ax= None, label= False, stringT= ""):
-    fontZise= 25
+    fontZise= 44
     if ax is None:
         fig, ax = plt.subplots(figsize=(16, 6))
     # Calculate node positions using spring layout
@@ -100,7 +100,7 @@ def plot_spring_layout(G= None, GPre= None, pos= None, ax= None, label= False, s
     ax.set_title(stringT, fontsize=fontZise)
     ax.axis('off')
 def plot_spring_and_degree(G: nx.graph, GPre= None, pos= None, fixMin= 0, fixMax= 30, stringT=""):
-    f, (ax1, ax2) = plt.subplots(1, 2, sharey= False, figsize=(16, 6))
+    f, (ax1, ax2) = plt.subplots(1, 2, sharey= False, figsize=(14, 6))
     plot_degree_distribution(G, GPre, fixMin, fixMax, ax2)
     plot_spring_layout(G, GPre, pos, ax1, label= False, stringT= stringT)
     plt.tight_layout(pad=0.2, w_pad=0.2, h_pad=0.2)
