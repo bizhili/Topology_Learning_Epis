@@ -153,9 +153,9 @@ myloss= torch.nn.MSELoss(reduction='sum')
 losses= []
 if paras.modelLoad in ["infer2018", "AB", "BB"]:
     threshold_value= 0.1
-    hook = nn.ThresholdHook(threshold_value)
+    hook = mynn.ThresholdHook(threshold_value)
     myEpi.taus.register_hook(hook)
-    hook = nn.ThresholdHook(threshold_value)
+    hook = mynn.ThresholdHook(threshold_value)
     myEpi.R0dTaus.register_hook(hook)
 
 
