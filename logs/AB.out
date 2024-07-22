@@ -7483,3 +7483,48 @@ INFO:root:tensor([[0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0100, 0.0000],
         [0.0100, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
         [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000]],
        device='cuda:0')
+INFO:root:
+
+
+.........................initialize..........................
+INFO:root:FileName: AB/AB_contious_china_identical_11_4_-1_0_100_10.0_1500
+INFO:root:Strains: 4
+INFO:root:Using contious_china random graph model
+INFO:root:Num of links: 69
+INFO:root:Reverse ZERO: tensor(6.6124e-08, device='cuda:0')
+INFO:root:Num links weight bigger than 0.1: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.05: tensor(0, device='cuda:0')
+INFO:root:Num links weight bigger than 0.01: tensor(64, device='cuda:0')
+INFO:root:.............................................................
+INFO:root:1607.945556640625
+INFO:root:[7.456043878514171, 7.440795775873937, 7.453838785605768, 7.41209111518651]
+INFO:root:[8.414303015724869, 8.717360178492576, 7.816574793079155, 8.24570551998216]
+INFO:root:tensor([5.6166, 5.6123, 5.6054, 5.5875], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:tensor([4.7466, 4.8017, 4.5944, 4.7351], device='cuda:0',
+       grad_fn=<SelectBackward0>)
+INFO:root:spectral_similarity: tensor(0.4387)
+INFO:root:pearson_correlation: tensor(0.0751)
+INFO:root:jaccard_similarity: tensor(0.0223)
+INFO:root:ROC_AUC: 0.4246518620443628
+INFO:root:PR_AUC: 0.156411967211433
+INFO:root:tensor([0.0191, 0.0190, 0.0193, 0.0194], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([0.0159, 0.0144, 0.0161, 0.0151], device='cuda:0',
+       grad_fn=<VarBackward0>)
+INFO:root:tensor([[0.0000, 0.0542, 0.0692, 0.0436, 0.0635, 0.0610, 0.0682],
+        [0.0603, 0.0000, 0.0688, 0.0433, 0.0626, 0.0599, 0.0679],
+        [0.0571, 0.0493, 0.0000, 0.0422, 0.0581, 0.0516, 0.0655],
+        [0.0615, 0.0550, 0.0687, 0.0000, 0.0643, 0.0625, 0.0678],
+        [0.0607, 0.0537, 0.0692, 0.0436, 0.0000, 0.0601, 0.0682],
+        [0.0595, 0.0523, 0.0688, 0.0430, 0.0616, 0.0000, 0.0678],
+        [0.0571, 0.0494, 0.0679, 0.0422, 0.0582, 0.0519, 0.0000]],
+       device='cuda:0', grad_fn=<SliceBackward0>)
+INFO:root:tensor([[0.0000, 0.0100, 0.0000, 0.0000, 0.0000, 0.0100, 0.0000],
+        [0.0100, 0.0000, 0.0000, 0.0000, 0.0100, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0000, 0.0100, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+        [0.0100, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0100],
+        [0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0100, 0.0000]],
+       device='cuda:0')
