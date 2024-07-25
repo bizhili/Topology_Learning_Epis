@@ -128,10 +128,10 @@ timeHorizon= divide.shape[2]-1
 
 timeHorizon= divide.shape[2]-1
 if   paras.modelLoad=="AA":
-    myMatch= mynn.matchingA(timeHorizon+1, paras.strains, paras.n, channel= 24,  device= device)
+    myMatch= mynn.matchingA(timeHorizon+1, paras.strains, paras.n, channel= 4,  device= device)
     myEpi= mynn.EpisA(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
 elif paras.modelLoad=="AsA":
-    myMatch= mynn.matchingAs(timeHorizon+1, paras.strains, paras.n, channel= 24,  device= device)
+    myMatch= mynn.matchingAs(timeHorizon+1, paras.strains, paras.n, channel= 4,  device= device)
     myEpi= mynn.EpisA(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
 elif paras.modelLoad=="AB":
     myMatch= mynn.matchingA(timeHorizon+1, paras.strains, paras.n, channel= 3,  device= device)

@@ -20,7 +20,7 @@ def pearson_correlation(x, y, dim=0):
 
 #neural network to compute similarity of two metapopulation nodes
 class matchingA(torch.nn.Module):
-    def __init__(self, timeDim, strainDim, n, channel= 3, midLayer= 40, device= "cpu"):
+    def __init__(self, timeDim, strainDim, n, channel= 3, midLayer= 30, device= "cpu"):
         super(matchingA, self).__init__()
 
         self.channel=  channel
@@ -44,6 +44,7 @@ class matchingA(torch.nn.Module):
         self.myEye= torch.eye(n, dtype= torch.float32, device= device)
         self.myMask= torch.ones(n, dtype= torch.float32, device= device)- self.myEye
         self.mySig= torch.nn.Sigmoid()
+        self.mySig2= torch.nn.Sigmoid()
         self.init_weight()
 
     def init_weight(self):
@@ -67,7 +68,7 @@ class matchingA(torch.nn.Module):
         Anorm= self.Wnorm(self.Atemp).squeeze()#[50, 50]
         ATemp= Anorm+self.AmatBias
         
-        scalar_sig= self.mySig(self.scalar_a)+1
+        scalar_sig= self.mySig2(self.scalar_a)
         ATemp2= scalar_sig*ATemp+(1-scalar_sig)*ATemp.transpose(0, 1)
         Ainfer= self.mySig(ATemp2)*self.myMask
         return Ainfer
@@ -120,7 +121,7 @@ class matchingAs(torch.nn.Module):
 
         Anorm= self.Wnorm(self.Atemp).squeeze()#[50, 50]
         ATemp= Anorm#+self.AmatBias
-        scalar_sig= self.mySig(self.scalar_a)+1
+        scalar_sig= self.mySig(self.scalar_a)
         ATemp2= scalar_sig*ATemp+(1-scalar_sig)*ATemp.transpose(0, 1)
         Ainfer= self.mySig(ATemp2)*self.myMask
         return Ainfer
