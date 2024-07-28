@@ -128,13 +128,13 @@ timeHorizon= divide.shape[2]-1
 
 timeHorizon= divide.shape[2]-1
 if   paras.modelLoad=="AA":
-    myMatch= mynn.matchingA(timeHorizon+1, paras.strains, paras.n, channel= 4,  device= device)
+    myMatch= mynn.matchingA(timeHorizon+1, paras.strains, paras.n, channel= 5,  device= device)
     myEpi= mynn.EpisA(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
 elif paras.modelLoad=="AsA":
-    myMatch= mynn.matchingAs(timeHorizon+1, paras.strains, paras.n, channel= 4,  device= device)
+    myMatch= mynn.matchingAs(timeHorizon+1, paras.strains, paras.n, channel= 5,  device= device)
     myEpi= mynn.EpisA(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
 elif paras.modelLoad=="AB":
-    myMatch= mynn.matchingA(timeHorizon+1, paras.strains, paras.n, channel= 3,  device= device)
+    myMatch= mynn.matchingA(timeHorizon+1, paras.strains, paras.n, channel= 5,  device= device)
     myEpi= mynn.EpisB(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
 elif paras.modelLoad=="BA":
     myMatch= mynn.matchingB(timeHorizon+1, paras.strains, paras.n,  device= device)
@@ -144,7 +144,7 @@ elif paras.modelLoad=="BB":
     myEpi= mynn.EpisB(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
 elif paras.modelLoad=="infer2018":
     myMatch= mynn.matchingB(timeHorizon+1, paras.strains, paras.n,  device= device)
-    myEpi= mynn.EpisB(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
+    myEpi= mynn.EpisA(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
 
 optimizer1 = torch.optim.Adam(myMatch.parameters(),lr=3e-4)
 optimizer2 = torch.optim.Adam({myEpi.taus},lr=3e-4)
@@ -177,6 +177,7 @@ if paras.modelLoad== "infer2018":
         optimizer2.zero_grad()
         optimizer3.zero_grad()
         inferZmat= myMatch(divide, paras.modelLoad)
+        inferZmat= inferZmat*0.1
         predSignal, signal, PreZ= myEpi(divide, inferZmat)
         tempEye= torch.eye(paras.n, device= device)
         loss= myloss(predSignal[:, :, 0:-1], signal[:, :, 1:])*10+ torch.var(myEpi.taus, dim= 0).sum()\
@@ -197,6 +198,8 @@ else:
         optimizer2.zero_grad()
         optimizer3.zero_grad()
         inferZmat= myMatch(divide, paras.modelLoad)
+        if paras.modelLoad== "BA":
+            inferZmat= inferZmat*0.1
         predSignal, signal, PreZ= myEpi(divide, inferZmat)
         loss= myloss(predSignal[:, :, 0:-1], signal[:, :, 1:])*10+ torch.var(myEpi.taus, dim= 0).sum()\
             + torch.var(myEpi.R0dTaus, dim= 0).sum()

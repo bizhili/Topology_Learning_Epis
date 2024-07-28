@@ -53,7 +53,6 @@ def jaccard_similarity(matrix1, matrix2):#V
     union = torch.sum(torch.maximum(flat_matrix1, flat_matrix2))
     # Calculate Jaccard similarity index
     jaccard_similarity = intersection / union
-    
     return jaccard_similarity  # Convert to Python float
 
 def spectral_similarity(Z, preZ):#V

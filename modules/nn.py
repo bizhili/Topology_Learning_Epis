@@ -33,8 +33,6 @@ class matchingA(torch.nn.Module):
 
         self.scalar_a = torch.nn.Parameter(torch.tensor(0.0), requires_grad=True)
 
-        #self.midU= torch.nn.Linear(midLayer, midLayer, device= device)
-        #self.midV= torch.nn.Linear(midLayer, midLayer, device= device)
 
         self.Wnorm= torch.nn.Linear(channel, 1, bias= False, device= device)
 
@@ -72,7 +70,7 @@ class matchingA(torch.nn.Module):
         ATemp2= scalar_sig*ATemp+(1-scalar_sig)*ATemp.transpose(0, 1)
         Ainfer= self.mySig(ATemp2)*self.myMask
         return Ainfer
-    
+
 #neural network to compute similarity of two metapopulation nodes
 class matchingAs(torch.nn.Module):
     def __init__(self, timeDim, strainDim, n, channel= 3, midLayer= 40, device= "cpu"):
@@ -81,7 +79,6 @@ class matchingAs(torch.nn.Module):
         self.channel=  channel
         self.n= n
         self.midLayer= midLayer
-        self.strainDim= strainDim
 
         self.Wu= torch.nn.Linear(timeDim, midLayer*channel, device= device)
         self.Wv= torch.nn.Linear(timeDim, midLayer*channel, device= device)
@@ -91,7 +88,7 @@ class matchingAs(torch.nn.Module):
         #self.midU= torch.nn.Linear(midLayer, midLayer, device= device)
         #self.midV= torch.nn.Linear(midLayer, midLayer, device= device)
 
-        self.Wnorm= torch.nn.Linear(channel, 1, bias= False, device= device)
+        self.Wnorm= torch.nn.Linear(strainDim*channel, 1, bias= True, device= device)
 
         self.AmatBias= torch.randn((n, n), dtype= torch.float32, device=device)*1e-6
         self.AmatBias= torch.nn.Parameter(self.AmatBias)
@@ -99,32 +96,22 @@ class matchingAs(torch.nn.Module):
         self.myEye= torch.eye(n, dtype= torch.float32, device= device)
         self.myMask= torch.ones(n, dtype= torch.float32, device= device)- self.myEye
         self.mySig= torch.nn.Sigmoid()
-        self.init_weight()
-
-    def init_weight(self):
-        init.xavier_uniform_(self.Wu.weight)
-        init.normal_(self.Wu.bias, mean=0.0, std=0.1)
-        init.xavier_uniform_(self.Wv.weight)
-        init.normal_(self.Wv.bias, mean=0.0, std=0.1)
-        init.xavier_uniform_(self.Wnorm.weight)
+        self.mySig2= torch.nn.Sigmoid()
 
     def forward(self, x, mode= 0): #[50, 2, timeDim]
         transU= (self.Wu(x)).view(self.n, 1, self.channel*x.shape[1], self.midLayer)#[50, 1, 2*channel, midlayer]
 
         transV= (self.Wv(x)).view(1, self.n, self.channel*x.shape[1], self.midLayer)#[1, 50, 2*channel, midlayer]
 
-        self.Atemp = F.cosine_similarity(transU, transV, dim=-1)#[50, 50, 2*channel]
-
-        self.Atemp= self.Atemp.view(self.n, self.n, self.channel, self.strainDim)
-        self.Atemp= torch.mean(self.Atemp, dim= -1).squeeze()
-
-
-        Anorm= self.Wnorm(self.Atemp).squeeze()#[50, 50]
-        ATemp= Anorm#+self.AmatBias
-        scalar_sig= self.mySig(self.scalar_a)
+        Atemp = F.cosine_similarity(transU, transV, dim=-1)#[50, 50, 2*channel]
+        
+        Anorm= self.Wnorm(Atemp)#[50, 50]
+        scalar_sig= self.mySig2(self.scalar_a)
+        ATemp= Anorm+self.AmatBias[..., None]
         ATemp2= scalar_sig*ATemp+(1-scalar_sig)*ATemp.transpose(0, 1)
-        Ainfer= self.mySig(ATemp2)*self.myMask
-        return Ainfer
+        Ainfer= self.mySig(ATemp2)*self.myMask[..., None]
+        return Ainfer.squeeze()
+    
     
 #neural network to compute the SIR spidemic gradient
 class EpisA(torch.nn.Module):
@@ -162,9 +149,9 @@ class EpisA(torch.nn.Module):
         #noise= x[:, 0, :] #\noise delta S
         signal= self.myRelu(x) #\delta S
         Ss= 1- torch.cumsum(signal, dim= -1) #easiy negative
-        IsMat= torch.exp(self.mat*torch.log(1-1/self.taus[... , None, None]))*self.mask
+        IsMat= torch.exp(self.mat*torch.log(1-1/torch.abs(self.taus[... , None, None])))*self.mask
         Is= torch.matmul(IsMat, signal[..., None]).squeeze(dim=-1)
-        alpha= (1-torch.exp(-self.R0dTaus[... , None]*Is))
+        alpha= (1-torch.exp(-torch.abs(self.R0dTaus[... , None])*Is))
         temp= tempAmat[..., None, None]*alpha[:, None, ...]
         Alpha= temp.sum(dim= 0)
         predSignal= Alpha*Ss
