@@ -177,7 +177,6 @@ if paras.modelLoad== "infer2018":
         optimizer2.zero_grad()
         optimizer3.zero_grad()
         inferZmat= myMatch(divide, paras.modelLoad)
-        inferZmat= inferZmat*0.1
         predSignal, signal, PreZ= myEpi(divide, inferZmat)
         tempEye= torch.eye(paras.n, device= device)
         loss= myloss(predSignal[:, :, 0:-1], signal[:, :, 1:])*10+ torch.var(myEpi.taus, dim= 0).sum()\
@@ -198,8 +197,6 @@ else:
         optimizer2.zero_grad()
         optimizer3.zero_grad()
         inferZmat= myMatch(divide, paras.modelLoad)
-        if paras.modelLoad== "BA":
-            inferZmat= inferZmat*0.1
         predSignal, signal, PreZ= myEpi(divide, inferZmat)
         loss= myloss(predSignal[:, :, 0:-1], signal[:, :, 1:])*10+ torch.var(myEpi.taus, dim= 0).sum()\
             + torch.var(myEpi.R0dTaus, dim= 0).sum()
