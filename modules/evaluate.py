@@ -55,6 +55,8 @@ def jaccard_similarity(matrix1, matrix2):#V
     jaccard_similarity = intersection / union
     return jaccard_similarity  # Convert to Python float
 
+
+
 def spectral_similarity(Z, preZ):#V
     try:
         preEig, _ = torch.linalg.eig(preZ)
