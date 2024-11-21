@@ -126,7 +126,7 @@ def plot_adjacenty(trueGraph, preGraphs=[], campThis= "viridis"):
         plt.imshow(preGraphs[2], cmap= campThis, norm=Normalize(vmin=0, vmax= maxValue))
         plt.title(f'{i+1} strains')
         colorbar =plt.colorbar(shrink=0.01)
-        colorbar.ax.set_axis_off()
+        # colorbar.ax.set_axis_off()
     
     plt.subplot(1, len(preGraphs)+1, len(preGraphs)+1)
     plt.axis('off')

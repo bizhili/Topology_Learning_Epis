@@ -218,7 +218,7 @@ def draw_auc_roc(As, preAs,  legends= [] , random_real_pre= None):
     plt.ylabel('True Positive Rate', fontsize= fontSize)
     plt.tick_params(axis='both', labelsize=fontSize)
     #plt.title('Receiver Operating Characteristic')
-    # plt.legend(loc="lower right", fontsize= fontSize-5)
+    plt.legend(loc="lower right", fontsize= fontSize-5)
     plt.show()
 
 def draw_prc(As, preAs, legends= [], random_real_pre= None):
