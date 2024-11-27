@@ -67,6 +67,7 @@ class matchingA(torch.nn.Module):
         ATemp= Anorm+self.AmatBias
         
         scalar_sig= self.mySig2(self.scalar_a)
+        scalar_sig= 0.5
         ATemp2= scalar_sig*ATemp+(1-scalar_sig)*ATemp.transpose(0, 1)
         Ainfer= self.mySig(ATemp2)*self.myMask
         return Ainfer
