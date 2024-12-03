@@ -67,7 +67,6 @@ class matchingA(torch.nn.Module):
         ATemp= Anorm+self.AmatBias
         
         scalar_sig= self.mySig2(self.scalar_a)
-        scalar_sig= 0.5
         ATemp2= scalar_sig*ATemp+(1-scalar_sig)*ATemp.transpose(0, 1)
         Ainfer= self.mySig(ATemp2)*self.myMask
         return Ainfer
@@ -150,9 +149,9 @@ class EpisA(torch.nn.Module):
         #noise= x[:, 0, :] #\noise delta S
         signal= self.myRelu(x) #\delta S
         Ss= 1- torch.cumsum(signal, dim= -1) #easiy negative
-        IsMat= torch.exp(self.mat*torch.log(1-1/torch.abs(self.taus[... , None, None])))*self.mask
+        IsMat= torch.exp(self.mat*torch.log( 1-1/(torch.abs(self.taus[... , None, None])+1.01) ))*self.mask
         Is= torch.matmul(IsMat, signal[..., None]).squeeze(dim=-1)
-        alpha= (1-torch.exp(-torch.abs(self.R0dTaus[... , None])*Is))
+        alpha= (1-torch.exp(-(1e-3+torch.abs(self.R0dTaus[... , None]))*Is))
         temp= tempAmat[..., None, None]*alpha[:, None, ...]
         Alpha= temp.sum(dim= 0)
         predSignal= Alpha*Ss

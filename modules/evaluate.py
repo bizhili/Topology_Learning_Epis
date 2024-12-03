@@ -59,16 +59,16 @@ def jaccard_similarity(matrix1, matrix2):#V
 
 def spectral_similarity(Z, preZ):#V
     try:
-        preEig, _ = torch.linalg.eig(preZ)
-        Eig, _ = torch.linalg.eig(Z)
-        return cosine_similarity(Eig.real, preEig.real)
+        preEig, preEigV = torch.linalg.eig(preZ)
+        Eig, eigV = torch.linalg.eig(Z)
+        return cosine_similarity(preEigV[:, 0].real, eigV[:, 0].real)
     except:
         return 0
     
 def ROC_AUC(Z, preZ):
     links= int(torch.sum(Z>1e-6))
     IMatrix= torch.eye(Z.shape[0], device= "cpu")
-    A= torch.tensor(continious_to_sparcity(Z.numpy(), links))+IMatrix
+    A= torch.tensor(continious_to_sparcity(Z.cpu().detach().numpy(), links))+IMatrix
     y_true = A.cpu().numpy().flatten()
     y_pred = preZ.cpu().numpy().flatten()
     # Calculate false positive rate, true positive rate, and thresholds
@@ -78,9 +78,9 @@ def ROC_AUC(Z, preZ):
     return roc_auc
 
 def PR_AUC(Z, preZ):
-    links= int(torch.sum(Z>1e-6))
+    links= int(torch.sum(Z>1e-2))
     IMatrix= torch.eye(Z.shape[0], device= "cpu")
-    A= torch.tensor(continious_to_sparcity(Z.numpy(), links))+IMatrix
+    A= torch.tensor(continious_to_sparcity(Z.cpu().detach().numpy(), links))+IMatrix
     y_true = A.cpu().numpy().flatten()
     y_pred = preZ.cpu().numpy().flatten()
     # Calculate false positive rate, true positive rate, and thresholds
@@ -91,7 +91,7 @@ def PR_AUC(Z, preZ):
 
 def recall(Z, preZ):
 
-    links= int(torch.sum(Z>1e-6))
+    links= int(torch.sum(Z>1e-3))
     IMatrix= torch.eye(Z.shape[0], device= "cpu")
     Z= torch.tensor(continious_to_sparcity(Z.numpy(), links))+IMatrix
     preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
@@ -148,9 +148,9 @@ def jaccard_index(Z, preZ):
 
     links= int(torch.sum(Z>5e-3))
     IMatrix= torch.eye(Z.shape[0], device= "cpu")
-    Z= torch.tensor(continious_to_sparcity(Z.numpy(), links))+IMatrix
-    preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
-
+    Z= torch.tensor(continious_to_sparcity(Z.cpu().detach().numpy(), links))+IMatrix
+    preZ= torch.tensor(continious_to_sparcity(preZ.cpu().detach().numpy(), links))+IMatrix
+    
     numerator= torch.sum(Z*preZ)
     denominator= torch.sum((Z+preZ)-Z*preZ)
     return numerator/denominator
