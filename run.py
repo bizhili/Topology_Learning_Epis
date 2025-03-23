@@ -25,18 +25,6 @@ parser = argparse.ArgumentParser(description='Topology fitting parameters')
 pramameters.add_arguments(parser)
 paras= pramameters.read_arguments(parser)
 #preset
-# paras.modelLoad= "BB"
-# paras.randomGraph= "RGG"
-# paras.weightModel= "identical"
-# paras.epoches= 100
-# paras.intense= 0
-# paras.modelLoad= "BA"
-# paras.plot= "spring"
-# paras.epoches= 50000
-# paras.randomGraph= "BA"
-# paras.weightModel= "identical"
-# paras.seed= 20
-#paras.dense= 8
 
 
 random.seed(paras.seed)
@@ -192,7 +180,7 @@ if paras.modelLoad== "infer2018":
         if j%paras.evaluateEvery== 0:
             evaluateResults.append(evaluate_epoch(PreZ.detach(), evaluateMeth))
 else:
-    for j in tqdm(range(paras.epoches)):
+    for j in range(paras.epoches):
         optimizer1.zero_grad()
         optimizer2.zero_grad()
         optimizer3.zero_grad()

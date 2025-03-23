@@ -40,6 +40,7 @@ class Paras:
         self.taus= None
         self.R0s= None
         self.modelLoad= None
+        self.epi= None
         self.dense= None
         self.identicalf= None
         self.wsProbability= None
@@ -155,6 +156,12 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
         default= 100,
         help='How many epoches to perform evaluate once'
     )
+    parser.add_argument(
+        '--epi',
+        type=str,
+        default= "H1N1",
+        help='epidemic empirical data read'
+    )
 
 
 def read_arguments(parser: argparse.ArgumentParser) -> Paras:
@@ -188,6 +195,7 @@ def read_arguments(parser: argparse.ArgumentParser) -> Paras:
     paras.identicalf= args.identicalf
     paras.wsProbability= args.wsProbability
     paras.evaluateEvery= args.evaluateEvery
+    paras.epi= args.epi
 
 
     if paras.weightModel == "gravity" and paras.randomGraph != "RGG":

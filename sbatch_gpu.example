@@ -7,7 +7,7 @@
 #SBATCH --mail-user=lx@post.bgu.ac.il    ### User's email for sending job status
 #SBATCH --mail-type=ALL        ### Conditions when to send the email. ALL,BEGIN,END,FAIL, REQUEU, NONE
 
-#SBATCH --gpus="1"    ### number of GPUs, ask for more than 1 only if you can parallelize your code for multi GPU
+#SBATCH --gpus="rtx_3090:1"    ### number of GPUs, ask for more than 1 only if you can parallelize your code for multi GPU
 #SBATCH --mem=24G              ### ammount of RAM memory
 #SBATCH --cpus-per-task=4     ### number of CPU cores
 
@@ -21,5 +21,5 @@ module load anaconda            ### load anaconda module (must present when work
 source activate tf          ### activating environment, environment must be configured before running the job
 export OUTPUT_DIR=./output_v1
 export DATA_DIR=./data
-chmod +x myCommands.sh
-./myCommands.sh
+chmod +x myCommandsReal.sh
+./myCommandsReal.sh

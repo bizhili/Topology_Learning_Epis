@@ -33,10 +33,9 @@ class matchingA(torch.nn.Module):
 
         self.scalar_a = torch.nn.Parameter(torch.tensor(0.0), requires_grad=True)
 
-
         self.Wnorm= torch.nn.Linear(channel, 1, bias= False, device= device)
 
-        self.AmatBias= torch.randn((n, n), dtype= torch.float32, device=device)*1e-6
+        self.AmatBias= torch.rand((n, n), dtype= torch.float32, device=device)*1
         self.AmatBias= torch.nn.Parameter(self.AmatBias)
 
         self.myEye= torch.eye(n, dtype= torch.float32, device= device)
@@ -44,12 +43,13 @@ class matchingA(torch.nn.Module):
         self.mySig= torch.nn.Sigmoid()
         self.mySig2= torch.nn.Sigmoid()
         self.init_weight()
+    
 
     def init_weight(self):
         init.xavier_uniform_(self.Wu.weight)
-        init.normal_(self.Wu.bias, mean=0.0, std=0.1)
+        init.normal_(self.Wu.bias, mean=0.0, std=1)
         init.xavier_uniform_(self.Wv.weight)
-        init.normal_(self.Wv.bias, mean=0.0, std=0.1)
+        init.normal_(self.Wv.bias, mean=0.0, std=1)
         init.xavier_uniform_(self.Wnorm.weight)
 
     def forward(self, x, mode= 0): #[50, 2, timeDim]
@@ -90,7 +90,7 @@ class matchingAs(torch.nn.Module):
 
         self.Wnorm= torch.nn.Linear(strainDim*channel, 1, bias= True, device= device)
 
-        self.AmatBias= torch.randn((n, n), dtype= torch.float32, device=device)*1e-6
+        self.AmatBias= torch.rand((n, n), dtype= torch.float32, device=device)*1e-6
         self.AmatBias= torch.nn.Parameter(self.AmatBias)
 
         self.myEye= torch.eye(n, dtype= torch.float32, device= device)
@@ -120,9 +120,12 @@ class EpisA(torch.nn.Module):
         self.device= device
         self.num_heads= num_heads
         self.n= n
-        self.taus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*6
+        # self.taus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*6
+        self.taus= torch.rand((n, num_heads), dtype= torch.float32, device=device)*torch.rand(1).item()*30
         self.taus= torch.nn.Parameter(self.taus)
-        self.R0dTaus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*1
+
+        # self.R0dTaus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*1
+        self.R0dTaus= torch.rand((n, num_heads), dtype= torch.float32, device=device)
         self.R0dTaus= torch.nn.Parameter(self.R0dTaus)
         self.mat, self.mask= self.create_temporal_mat(input_dim)
         self.myRelu= torch.nn.ReLU()
@@ -146,13 +149,13 @@ class EpisA(torch.nn.Module):
         # divide= self.mySoft(self.output)*x[:, :, -1:]#(1, 2, 20), dim of nodes, dim of heads, dim of signal
         # divide= divide.transpose(1, 2)
         tempAmat= Amat.T+ self.myEye
-        #noise= x[:, 0, :] #\noise delta S
         signal= self.myRelu(x) #\delta S
         Ss= 1- torch.cumsum(signal, dim= -1) #easiy negative
         IsMat= torch.exp(self.mat*torch.log( 1-1/(torch.abs(self.taus[... , None, None])+1.01) ))*self.mask
         Is= torch.matmul(IsMat, signal[..., None]).squeeze(dim=-1)
         alpha= (1-torch.exp(-(1e-3+torch.abs(self.R0dTaus[... , None]))*Is))
         temp= tempAmat[..., None, None]*alpha[:, None, ...]
+        # print(alpha.shape)
         Alpha= temp.sum(dim= 0)
         predSignal= Alpha*Ss
         #signalPredict= self.alpha(Is[0: -1], R0, tau)*Ss[0:-1] 

@@ -1,8 +1,0 @@
-Sat Dec 9 17:18:54 IST 2023
-
-SLURM_JOBID:		 999812
-SLURM_JOB_NODELIST:	 cs-pheno-21 
-
-
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA --seed 14 --strains 2 --CMDprogress_78_79
-python run.py --epoches 140000 --modelLoad AA --weightModel identical --randomGraph BA --seed 14 --strains 3 --CMDprogress_79_79

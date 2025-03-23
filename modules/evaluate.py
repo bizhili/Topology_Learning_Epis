@@ -61,7 +61,7 @@ def spectral_similarity(Z, preZ):#V
     try:
         preEig, preEigV = torch.linalg.eig(preZ)
         Eig, eigV = torch.linalg.eig(Z)
-        return cosine_similarity(preEigV[:, 0].real, eigV[:, 0].real)
+        return cosine_similarity(preEig.real, Eig.real)
     except:
         return 0
     
@@ -78,7 +78,7 @@ def ROC_AUC(Z, preZ):
     return roc_auc
 
 def PR_AUC(Z, preZ):
-    links= int(torch.sum(Z>1e-2))
+    links= int(torch.sum(Z>1e-6))
     IMatrix= torch.eye(Z.shape[0], device= "cpu")
     A= torch.tensor(continious_to_sparcity(Z.cpu().detach().numpy(), links))+IMatrix
     y_true = A.cpu().numpy().flatten()
@@ -91,7 +91,7 @@ def PR_AUC(Z, preZ):
 
 def recall(Z, preZ):
 
-    links= int(torch.sum(Z>1e-3))
+    links= int(torch.sum(Z>1e-6))
     IMatrix= torch.eye(Z.shape[0], device= "cpu")
     Z= torch.tensor(continious_to_sparcity(Z.numpy(), links))+IMatrix
     preZ= torch.tensor(continious_to_sparcity(preZ.numpy(), links))+IMatrix
