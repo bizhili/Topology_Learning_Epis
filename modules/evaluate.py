@@ -210,7 +210,7 @@ def draw_auc_roc(As, preAs,  legends= [] , random_real_pre= None):
         # Calculate false positive rate, true positive rate, and thresholds
         fpr, tpr, thresholds = roc_curve(random_true, random_pred, pos_label=1)
         # Plot ROC curve
-        plt.plot(fpr, tpr,  color='navy', linestyle='--', label= "Random pred")
+        plt.plot(fpr, tpr,  color='navy', linestyle='--', label= "base")
 
     plt.xlim([0.0, 1.05])
     plt.ylim([0.0, 1.05])

@@ -5,28 +5,7 @@ from matplotlib.colors import Normalize
 import json
 
 
-def plot_2d_RGG(G: nx.Graph, pos: dict) -> None:
-    """Plot a 2D RGGmetric graph.
-    Args:
-        G: A networkx Graph object.
-        pos: A dictionary mapping node IDs to (x, y) coordinates.
-    """
-    plt.figure(figsize=(8, 6))
-    plt.subplot(1, 2, 1)
-    nx.draw_networkx_edges(G, pos, alpha=0.4)
-    nx.draw_networkx_nodes(G, pos, node_size=80)
-    plt.xlabel("x")
-    plt.ylabel("y")
-    plt.title("Random RGGmetric graph")
-    plt.subplot(1, 2, 2)
-    # Get the degrees of all nodes
-    degrees = [d for n, d in G.degree()]
-    plt.hist(degrees, bins=np.arange(min(degrees), max(degrees) + 1) - 0.5, density=True, alpha=0.75)
-    plt.title("Degree Distribution Histogram")
-    plt.xlabel("Degree")
-    plt.ylabel("Probability")
-    plt.grid(True)
-    plt.show()
+
 
 def plot_degree_distribution(G: nx.graph, Gpre= None, fixMin= 0, fixMax= 30, ax= None):
     if ax is None:
@@ -99,11 +78,13 @@ def plot_spring_layout(G= None, GPre= None, pos= None, ax= None, label= False, s
     #ax.legend(prop = { "size": fontZise }, loc ="upper right")
     ax.set_title(stringT, fontsize=fontZise)
     ax.axis('off')
+    return pos
 def plot_spring_and_degree(G: nx.graph, GPre= None, pos= None, fixMin= 0, fixMax= 30, stringT=""):
     f, (ax1, ax2) = plt.subplots(1, 2, sharey= False, figsize=(14, 6))
     plot_degree_distribution(G, GPre, fixMin, fixMax, ax2)
-    plot_spring_layout(G, GPre, pos, ax1, label= False, stringT= stringT)
+    pos= plot_spring_layout(G, GPre, pos, ax1, label= False, stringT= stringT)
     plt.tight_layout(pad=0.2, w_pad=0.2, h_pad=0.2)
+    return pos
         
 def plot_adjacenty(trueGraph, preGraphs=[], campThis= "viridis"):
     maxValue= 0
