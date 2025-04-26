@@ -55,6 +55,7 @@ def plot_spring_layout(G= None, GPre= None, pos= None, ax= None, label= False, s
         pos = nx.spring_layout(G, k= 2/n, iterations= 100)
     if G is not None:
         edgesList= nx.to_edgelist(G)
+        print(len(edgesList))
         for edge in edgesList:
             node0= pos[edge[0]]
             node1= pos[edge[1]]

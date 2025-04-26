@@ -25,7 +25,8 @@ class Paras:
 
     def __init__(self):
         self.randomGraph = None
-        self.seed = None
+        self.seed = None # seed used for generating topology and data
+        self.seed2 = None # seed used for multipe running
         self.n = None
         self.strains = None
         self.epoches = None
@@ -63,8 +64,14 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         '--seed',
         type=int,
-        default=11,
-        help='Setting random seed(int): 10(defult)'
+        default=10,
+        help='Setting random seed(int): 10(defult)<used for generating topology and data>'
+    )
+    parser.add_argument(
+        '--seed2',
+        type=int,
+        default=10,
+        help='Setting random seed(int): 10(defult)<used for multipe running>'
     )
     parser.add_argument(
         '--n',
@@ -179,6 +186,10 @@ def read_arguments(parser: argparse.ArgumentParser) -> Paras:
 
     paras.randomGraph = args.randomGraph
     paras.seed = args.seed
+    if args.seed2== 10: # equal to defult value, not set, let it equal to seed
+        paras.seed2 = args.seed
+    else:
+        paras.seed2 = args.seed2
     paras.n = args.n
     paras.strains = args.strains
     paras.plot = "2d_RGG" if args.randomGraph == "RGG" else "spring"

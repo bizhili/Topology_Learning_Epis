@@ -35,7 +35,7 @@ class matchingA(torch.nn.Module):
 
         self.Wnorm= torch.nn.Linear(channel, 1, bias= False, device= device)
 
-        self.AmatBias= torch.rand((n, n), dtype= torch.float32, device=device)*1
+        self.AmatBias= torch.rand((n, n), dtype= torch.float32, device=device)*1e-6
         self.AmatBias= torch.nn.Parameter(self.AmatBias)
 
         self.myEye= torch.eye(n, dtype= torch.float32, device= device)
@@ -121,7 +121,7 @@ class EpisA(torch.nn.Module):
         self.num_heads= num_heads
         self.n= n
         # self.taus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*6
-        self.taus= torch.rand((n, num_heads), dtype= torch.float32, device=device)*torch.rand(1).item()*30
+        self.taus= torch.rand((n, num_heads), dtype= torch.float32, device=device)*6#*30
         self.taus= torch.nn.Parameter(self.taus)
 
         # self.R0dTaus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*1
