@@ -121,7 +121,8 @@ class EpisA(torch.nn.Module):
         self.num_heads= num_heads
         self.n= n
         # self.taus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*6
-        self.taus= torch.rand((n, num_heads), dtype= torch.float32, device=device)*6#*30
+        self.taus= torch.rand((n, num_heads), dtype= torch.float32, device=device)*torch.rand(1).item()*30#*6, torch.rand(1).item()*30
+        print(torch.mean(self.taus))
         self.taus= torch.nn.Parameter(self.taus)
 
         # self.R0dTaus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*1
