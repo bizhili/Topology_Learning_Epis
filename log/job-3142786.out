@@ -1,0 +1,86 @@
+Thu 01 May 2025 16:10:46 IDT
+
+SLURM_JOBID:		 3142786
+SLURM_JOB_NODELIST:	 cs-4090-07 
+
+
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1000 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_0_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1007 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_1_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1002 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_2_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1005 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_3_39
+[17, 70, 69, 15]
+[17]
+[17]
+[79, 79, 57, 63]
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1006 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_4_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1009 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_5_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1008 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_6_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1003 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_7_39
+[79, 79, 57, 63]
+[17, 70, 69, 15]
+[17]
+[17, 70, 69, 15]
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1005 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_8_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1004 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_9_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1006 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_10_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1008 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_11_39
+[79]
+[79, 79, 57, 63]
+[79, 79, 57, 63]
+[17]
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1009 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_12_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1003 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_13_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1008 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_14_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1002 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_15_39
+[79, 79, 57, 63]
+[79]
+[17, 70, 69, 15]
+[79, 79, 57, 63]
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1007 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_16_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1002 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_17_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1000 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_18_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1001 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_19_39
+[79, 79, 57, 63]
+[79, 79, 57, 63]
+[79, 79, 57, 63]
+[17]
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1003 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_20_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1000 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_21_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1008 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_22_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1003 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_23_39
+[17, 70, 69, 15]
+[79]
+[79]
+[17]
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1004 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_24_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1007 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_25_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1001 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_26_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1004 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_27_39
+[79]
+[79]
+[17]
+[17]
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1005 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_28_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1002 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_29_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1006 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_30_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1009 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_31_39
+[17, 70, 69, 15]
+[79]
+[79, 79, 57, 63]
+[17, 70, 69, 15]
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1006 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_32_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1001 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_33_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1009 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_34_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1000 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_35_39
+[79]
+[17]
+[79]
+[17]
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1001 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_36_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1004 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_37_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph RGG            --seed 10 --seed2 1005 --strains 1  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_38_39
+python run.py --epoches 150000 --modelLoad AA --weightModel identical --randomGraph ER            --seed 10 --seed2 1007 --strains 4  --dense 0 --n 100 --intense -1 --identicalf 0.01 --CMDprogress_39_39
+[17, 70, 69, 15]
+[79]
+[17, 70, 69, 15]
+[17, 70, 69, 15]

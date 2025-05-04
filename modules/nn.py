@@ -65,7 +65,7 @@ class matchingA(torch.nn.Module):
 
         Anorm= self.Wnorm(self.Atemp).squeeze()#[50, 50]
         ATemp= Anorm+self.AmatBias
-        
+
         scalar_sig= self.mySig2(self.scalar_a)
         ATemp2= scalar_sig*ATemp+(1-scalar_sig)*ATemp.transpose(0, 1)
         Ainfer= self.mySig(ATemp2)*self.myMask
@@ -121,21 +121,16 @@ class EpisA(torch.nn.Module):
         self.num_heads= num_heads
         self.n= n
         # self.taus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*6
-        self.taus= torch.rand((n, num_heads), dtype= torch.float32, device=device)*torch.rand(1).item()*30#*6, torch.rand(1).item()*30
-        print(torch.mean(self.taus))
-        self.taus= torch.nn.Parameter(self.taus)
-
+        self.taus= torch.rand((n, num_heads), dtype= torch.float32, device=device)*torch.rand(1).item()*6#*6, torch.rand(1).item()*30
+        # self.taus= torch.nn.Parameter(self.taus)
         # self.R0dTaus= torch.ones((n, num_heads), dtype= torch.float32, device=device)*1
         self.R0dTaus= torch.rand((n, num_heads), dtype= torch.float32, device=device)
-        self.R0dTaus= torch.nn.Parameter(self.R0dTaus)
+        # self.R0dTaus= torch.nn.Parameter(self.R0dTaus)
         self.mat, self.mask= self.create_temporal_mat(input_dim)
         self.myRelu= torch.nn.ReLU()
         self.mySig= torch.nn.Sigmoid()
         self.mySoft= torch.nn.Softmax(dim=2)
         self.myEye= torch.eye(n, dtype= torch.float32, device= device)
-
-    def alpha(self, i, R0, tau):
-        return 1-torch.exp(-(R0/tau)*i)
     
     def create_temporal_mat(self, lang):
         mat= torch.zeros((lang, lang), dtype= torch.float32, device= self.device)
@@ -156,10 +151,8 @@ class EpisA(torch.nn.Module):
         Is= torch.matmul(IsMat, signal[..., None]).squeeze(dim=-1)
         alpha= (1-torch.exp(-(1e-3+torch.abs(self.R0dTaus[... , None]))*Is))
         temp= tempAmat[..., None, None]*alpha[:, None, ...]
-        # print(alpha.shape)
         Alpha= temp.sum(dim= 0)
         predSignal= Alpha*Ss
-        #signalPredict= self.alpha(Is[0: -1], R0, tau)*Ss[0:-1] 
         return predSignal, signal, tempAmat.T
 
 #neural network to compute similarity of two metapopulation nodes

@@ -31,7 +31,7 @@ random.seed(paras.seed)
 
 #results and logs file name
 fileName= f"{paras.modelLoad}/{paras.modelLoad}_{paras.randomGraph}_{paras.weightModel}_{paras.seed}_{paras.strains}\
-_{paras.intense}_{paras.dense}_{paras.n}_{paras.identicalf*1000}_{paras.epoches}_{paras.seed2}"
+_{paras.intense}_{paras.dense}_{paras.n}_{paras.identicalf*1000}_{paras.epoches}_{paras.seed2}_paraFree"
 
 printFlag= 0
 if printFlag!=1:
@@ -110,10 +110,6 @@ if plotFlag==1:
     # plt.title(f"Example of {numPlot} nodes epidemic newly infected.")
 
 
-
-
-timeHorizon= divide.shape[2]-1
-
 timeHorizon= divide.shape[2]-1
 if   paras.modelLoad=="AA":
     myMatch= mynn.matchingA(timeHorizon+1, paras.strains, paras.n, channel= 5,  device= device)
@@ -135,8 +131,15 @@ elif paras.modelLoad=="infer2018":
     myEpi= mynn.EpisA(input_dim= timeHorizon+1, num_heads= paras.strains, n= paras.n, device= device)
 
 optimizer1 = torch.optim.Adam(myMatch.parameters(),lr=1e-4)
-optimizer2 = torch.optim.Adam({myEpi.taus},lr=1e-4)
-optimizer3 = torch.optim.Adam({myEpi.R0dTaus},lr=1e-4)
+# optimizer2 = torch.optim.Adam({myEpi.taus},lr=1e-4)
+# optimizer3 = torch.optim.Adam({myEpi.R0dTaus},lr=1e-4)
+tausToset= torch.tensor(paras.taus[0: paras.strains], dtype=torch.float32, device=device)
+R0dTausToset= torch.tensor(paras.R0s[0: paras.strains], dtype=torch.float32, device=device)/tausToset
+myEpi.taus*= 0
+myEpi.taus+= tausToset[None, :]- 1.01
+myEpi.R0dTaus*=0
+myEpi.R0dTaus+= R0dTausToset[None, :]-1e-3
+
 myloss= torch.nn.MSELoss(reduction='sum')
 losses= []
 if paras.modelLoad in ["infer2018", "AB", "BB"]:
@@ -180,25 +183,25 @@ if paras.modelLoad== "infer2018":
         if j%paras.evaluateEvery== 0:
             evaluateResults.append(evaluate_epoch(PreZ.detach(), evaluateMeth))
 else:
-    for j in tqdm(range(paras.epoches)):
+    for j in (range(paras.epoches)):
         optimizer1.zero_grad()
-        optimizer2.zero_grad()
-        optimizer3.zero_grad()
+        # optimizer2.zero_grad()
+        # optimizer3.zero_grad()
         inferZmat= myMatch(divide, paras.modelLoad)
         predSignal, signal, PreZ= myEpi(divide, inferZmat)
-        loss= myloss(predSignal[:, :, 0:-1], signal[:, :, 1:])*10+ torch.var(myEpi.taus, dim= 0).sum()\
-            + torch.var(myEpi.R0dTaus, dim= 0).sum()
+        loss= myloss(predSignal[:, :, 0:-1], signal[:, :, 1:])*10#+ torch.var(myEpi.taus, dim= 0).sum()\
+            #+ torch.var(myEpi.R0dTaus, dim= 0).sum()
         if torch.isnan(loss).any():
             utils.log_print(printFlag, f"meet nan value at {j}")#
             break
         losses.append(loss.item())
         loss.backward(retain_graph=True)
-        optimizer1.step()
-        optimizer2.step()
-        optimizer3.step()
+        optimizer1.step()    
+        # optimizer2.step()
+        # optimizer3.step()
         if j%paras.evaluateEvery== 0:
             evaluateResults.append(evaluate_epoch(PreZ.detach(), evaluateMeth))
-
+            
 utils.log_print(printFlag,"\n\n\n.........................initialize..........................")
 utils.log_print(printFlag,"FileName:", fileName)
 utils.log_print(printFlag,"Strains:", paras.strains)

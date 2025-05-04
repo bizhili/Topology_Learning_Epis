@@ -32,12 +32,11 @@ def act(
     """
     deltaSIR = torch.zeros_like(state)
     deltaSIR[0] = -state[0]*(Amat@ alpha(state[1], R0, tau))# here to check Amat cell importance
-    AmatTrans= Amat* alpha(state[1], R0, tau)*state[0]
     
     deltaSIR[0][-deltaSIR[0]>state[0]]=-state[0][-deltaSIR[0]>state[0]]
     deltaSIR[2] = state[1] / tau
     deltaSIR[1] = -deltaSIR[0] - deltaSIR[2]
-    return state + deltaSIR, -deltaSIR[0], AmatTrans
+    return state + deltaSIR, -deltaSIR[0]
 
 
 def one_strain(
@@ -70,19 +69,15 @@ def one_strain(
     stateNowI = torch.zeros(n, dtype=torch.float32, device=device)
     stateNowR = torch.zeros(n, dtype=torch.float32, device=device)
     stateNow = torch.stack([stateNowS, stateNowI, stateNowR])
-    AmatTransSum= torch.zeros((n, n), dtype=torch.float32, device=device)
-    # noise = torch.randn((timeHorizon + 1), dtype=torch.float32, device=device) / 400
     for i in range(maxtimeHorizon):
         if i == startTime:
             stateNow[0, fromS] = 0.99
             stateNow[1, fromS] = 0.01
             deltaSs[-1][fromS] = 0.01
-        stateNow, deltaS, AmatTrans= act(stateNow, R0, tau0, Amat)
-        AmatTransSum+= AmatTrans
-        deltaSMin= torch.min(deltaS)
+        stateNow, deltaS= act(stateNow, R0, tau0, Amat)
         deltaSs.append(deltaS.clone())
     deltaSs = torch.stack(deltaSs)  # + noise[:, None]
-    return deltaSs.T, AmatTransSum
+    return deltaSs.T
 
 
 def multi_strains(
@@ -102,7 +97,6 @@ def multi_strains(
     maxtimeHorizon= 99
     R0s= paras.R0s
     taus= paras.taus
-    AmatTransSumSum= 0
     if intense==-1:
         randomList= utils.select_nodes_linear_degree(G, paras.strains, device= device)
         pass
@@ -113,15 +107,13 @@ def multi_strains(
         Amat[i, i]= 1
     deltaSsList= []
     for i in range(paras.strains):
-        deltaS, AmatTransSum= one_strain(R0s[i], taus[i], maxtimeHorizon, paras.n, Amat, startTime= 0, fromS= randomList[i], device= device)
+        deltaS= one_strain(R0s[i], taus[i], maxtimeHorizon, paras.n, Amat, startTime= 0, fromS= randomList[i], device= device)
         deltaSsList.append(deltaS)
-        AmatTransSumSum+= AmatTransSum
     deltaSsTensor= torch.stack(deltaSsList[0:paras.strains], dim= -1)
-    tempFlag= 0
 
     for i in range(deltaSsTensor.shape[1]):
         tempSlice= deltaSsTensor[:, i, :]
         maxTemp= torch.max(tempSlice)
         if i>lower and maxTemp<1e-2:
             break
-    return deltaSsTensor[:, 0:i, :], randomList, AmatTransSumSum
+    return deltaSsTensor[:, 0:i, :], randomList
