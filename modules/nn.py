@@ -43,7 +43,7 @@ class matchingA(torch.nn.Module):
         self.mySig= torch.nn.Sigmoid()
         self.mySig2= torch.nn.Sigmoid()
         self.init_weight()
-    
+
 
     def init_weight(self):
         init.xavier_uniform_(self.Wu.weight)

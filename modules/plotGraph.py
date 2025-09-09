@@ -121,3 +121,50 @@ def plot_adjacenty(trueGraph, preGraphs=[], campThis= "viridis"):
     plt.tight_layout()
     # Show the plot
     plt.show()
+
+def plot_spring_and_degree_connecting_flight(G: nx.graph, wrongLinks= None, pos= None, seleLinksT=None, routingNodes=None,  stringT=""):
+    f, ax = plt.subplots(sharey= False, figsize=(8, 6))
+    pos= plot_spring_layout_connecting_flight(G, pos, ax, wrongLinks= wrongLinks, label= False, seleLinksT=seleLinksT, routingNodes=routingNodes, stringT= stringT)
+    plt.tight_layout(pad=0.2, w_pad=0.2, h_pad=0.2)
+    return pos
+
+def plot_spring_layout_connecting_flight(G= None, pos= None, ax= None, label= False, wrongLinks= None, seleLinksT=None, routingNodes=None, stringT= ""):
+    fontZise= 44
+    if ax is None:
+        fig, ax = plt.subplots(figsize=(16, 6))
+    # Calculate node positions using spring layout
+    n= nx.number_of_nodes(G)
+    if pos is None:
+        pos = nx.spring_layout(G, k= 2/n, iterations= 100)
+    if G is not None:
+        edgesList= nx.to_edgelist(G)
+        for edge in edgesList:
+            node0= pos[edge[0]]
+            node1= pos[edge[1]]
+            ax.plot([node0[0], node1[0]], 
+                    [node0[1], node1[1]], marker = '', color="royalblue", alpha=0.8)
+        ax.plot([node0[0], node1[0]], 
+                    [node0[1], node1[1]], marker = '', color="royalblue", alpha=0.5, label= "True links")  
+    for i in pos:
+        ax.plot([pos[i][0]], [pos[i][1]], marker='.', color="black", alpha=1 )
+        if label:
+            ax.text(pos[i][0], pos[i][1], f"{i}")
+    if wrongLinks is not None:
+        for link in wrongLinks:
+            node0= pos[(link[ 0])]
+            node1= pos[(link[ 1])]
+            ax.plot([node0[0], node1[0]], 
+                    [node0[1], node1[1]], marker = '', color="red", alpha=0.2)
+    if seleLinksT is not None:
+        for link in seleLinksT:
+            node0= pos[(link[0])]
+            node1= pos[(link[1])]
+            ax.plot([node0[0], node1[0]], 
+                    [node0[1], node1[1]], marker = '', color="green", alpha=0.3)
+    if routingNodes is not None:
+        for i in routingNodes:
+            ax.plot([pos[i][0]], [pos[i][1]], marker='.', color="orange", alpha=1 )
+        pass
+    ax.set_title(stringT, fontsize=fontZise)
+    ax.axis('off')
+    return pos
